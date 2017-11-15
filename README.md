@@ -9,3 +9,5 @@
 Θάνος Κωνσταντίνος 03113601 konstantinost95@hotmail.com
 
 Περράκης Γεώργιος 03113511 george.perrakis.eestec@gmail.com
+
+Κουδιγκέλη Χριστιάνα 03113649 ckoudigkeli@gmail.com
