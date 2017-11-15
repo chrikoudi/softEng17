@@ -11,3 +11,5 @@
 Περράκης Γεώργιος 03113511 george.perrakis.eestec@gmail.com
 
 Κουδιγκέλη Χριστιάνα 03113649 ckoudigkeli@gmail.com
+
+Ζαϊρές Σωτήριος 03113305 sotiriszair@gmail.com
