@@ -7,3 +7,5 @@ Team Name: Resident MEANers
 Γκαρτζονίκας Μάριος 03113609 gartzos007@gmail.com
 
 Θάνος Κωνσταντίνος 03113601 konstantinost95@hotmail.com
+
+Περράκης Γεώργιος 03113511 george.perrakis.eestec@gmail.com
