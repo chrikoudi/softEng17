@@ -7,11 +7,13 @@ import { HttpModule} from '@angular/http';
 import { routes} from './routes';
 import { AuthService } from './services/auth.service';
 import { LoginformComponent } from './loginform/loginform.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginformComponent
+    LoginformComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
