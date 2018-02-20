@@ -1,0 +1,10 @@
+<form *ngIf="!user">
+  <h2> Σύνδεση Γονέα </h2>
+  <label> E-mail </label>
+  <input type="text" [(ngModel)]="formInfo.username" name="username"/>
+  <br>
+  <label> Κωδικός πρόσβασης </label>
+  <input type="password" [(ngModel)]="formInfo.password" name="password"/>
+
+  <button (click)="login()"> Σύνδεση </button>
+</form>

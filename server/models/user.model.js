@@ -4,15 +4,15 @@ const bcrypt   = require('bcrypt');
 
 
 const UserSchema = new Schema({
-  username: { type: String, required: [true, "Email is required"] },
-  password: { type: String, required: [true, "Password is required"] }, 
-  firstName: { type: String }, 
-  lastName: { type: String }, 
-  points: { type: Number }, 
-  bonusPoints: { type: Number }, 
+  username:            { type: String, required: [true, "Email is required"] },
+  password:            { type: String, required: [true, "Password is required"] }, 
+  firstName:           { type: String }, 
+  lastName:            { type: String }, 
+  points:              { type: Number }, 
+  bonusPoints:         { type: Number }, 
 //   eventsBought: [ PlanSchema ],
-  locked: { type: Boolean }, 
-  admin: { type: Boolean }
+  locked:              { type: Boolean }, 
+  admin:               { type: Boolean }
 });
 
 UserSchema.methods.generateHash = function(password) {
