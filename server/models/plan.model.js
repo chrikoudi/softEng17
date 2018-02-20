@@ -2,9 +2,10 @@ const mongoose = require('mongoose');
 const Schema   = mongoose.Schema;
 const bcrypt   = require('bcrypt');
 
+
 const PlanSchema = new Schema({
-    _creator: { type: Schema.Types.ObjectId, ref: 'Provider'},
-    image: { type: Schema.Types.ObjectId, ref: 'Image'},
+    // _creator: [ ProviderSchema ],
+    // image: [ ImageSchema ],
     title: { type: String, required: [true, "Title is required"] },
     description: { type: String, required: [true, "Description is required"] },
     price: { type: Number, required: [true, "Price is required"]},
