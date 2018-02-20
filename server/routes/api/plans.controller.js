@@ -28,6 +28,7 @@ router.post('/events', (req, res, next) => {
     startDate: req.body.startDate,
     endDate: req.body.endDate,
     location: req.body.location,
+    type: req.body.type,
     minAge: req.body.minAge,
     maxAge: req.body.maxAge,
     sex: req.body.sex,

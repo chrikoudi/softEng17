@@ -6,6 +6,7 @@ import { FormsModule} from '@angular/forms';
 import { HttpModule} from '@angular/http';
 import { routes} from './routes';
 import { AuthService } from './services/auth.service';
+import { EventService } from './services/event.service';
 import { LoginformComponent } from './loginform/loginform.component';
 import { HomeComponent } from './home/home.component';
 import { EventpageComponent } from './eventpage/eventpage.component';
@@ -14,8 +15,7 @@ import { EventpageComponent } from './eventpage/eventpage.component';
   declarations: [
     AppComponent,
     LoginformComponent,
-    HomeComponent
-    AppComponent,
+    HomeComponent,
     EventpageComponent
   ],
   imports: [
@@ -24,7 +24,7 @@ import { EventpageComponent } from './eventpage/eventpage.component';
     HttpModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService],
+  providers: [AuthService, EventService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
