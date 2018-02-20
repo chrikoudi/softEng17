@@ -1,0 +1,19 @@
+{
+  "name": "kiddos",
+  "version": "1.0.0",
+  "description": "Resident MEANers' project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chrikoudi/softEng17.git"
+  },
+  "author": "Resident MEANers",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chrikoudi/softEng17/issues"
+  },
+  "homepage": "https://github.com/chrikoudi/softEng17#readme"
+}
