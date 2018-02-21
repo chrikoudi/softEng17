@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { EventpageComponent } from './eventpage/eventpage.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from './layout/footer/footer.component';
     AppComponent,
     EventpageComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,
