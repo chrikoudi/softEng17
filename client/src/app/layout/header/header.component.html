@@ -1,57 +1,13 @@
-<!--<popup #log>
-  <form class="bigger">
-    <h1 id="log"> Login </h1>
-    <br>
-      <label> Email</label>
-      <input type="text" id="email1" required />
-      <br>
-      <label> Password </label>
-      <input type="password" id="password1" required />
-      <br>    
-    </form>
-    <br>
-    <hr>
-    <h2>Did you forget your password?</h2> 
-  </popup>
+<header>
+  <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/sketchy/bootstrap.min.css" rel="stylesheet" integrity="sha384-7ELRJF5/u1pkLd0W7K793Y7ZCb1ISE8FjEKiDAwHD3nSDbA2E9Txc423ovuNf1CV" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
-  <popup #reg>
-    <form class="bigger right">
-      <h1 id="reg"> Register </h1>
-      <br>
-        <label> Name</label>
-        <input type="text" id="name" required />
-        
-        <br>
-        <label> Surname</label>
-        <input type="text" id="surname" required />
-        
-      <br>
-        <label> Email</label>
-        <input type="text" id="email2" required />
-        <br>
-        <label> Password </label>
-        <input type="password" id="password2" required />
-       
-        <br>
-        <label> Confirm </label>
-        <input type="password" id="password3" required />
-        <br>      
-      </form>
-      <br>
-      <hr>
-      <h2>Already have an account?</h2> 
-  </popup>
+  <img id="logo" src="../../assets/images/logo.png" style="width:160px;height:120px"/>
+  
+  <div style="position: absolute;right: 80px;top: 25px" class="sticky">
+    <button type="button" class="btn btn-warning">Σύνδεση</button>
+    &nbsp;
+    <button type="button" class="btn btn-danger">Εγγραφή</button>
+  </div>
 
-  <header>
-  <nav class="topnav">
-  <ul class="navbar">
-    <li><a [routerLink]="['home']" ><img id="logo" src="../../assets/images/logo.png"/></a></li>
-    <button (click)='userLogin()' class="btn btn-warning btn-lg signin"><li> Login <li></button>
-    <button (click)='userRegister()' class="btn btn-warning btn-lg signup"><li> Register </li></button>
-  </ul>
-</nav>
 </header>
--->
-<p style="color: red">
-  Header Works
-</p>
