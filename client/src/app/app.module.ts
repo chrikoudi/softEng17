@@ -10,13 +10,20 @@ import { EventService } from './services/event.service';
 import { LoginformComponent } from './loginform/loginform.component';
 import { HomeComponent } from './home/home.component';
 import { EventpageComponent } from './eventpage/eventpage.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginformComponent,
     HomeComponent,
-    EventpageComponent
+    AppComponent,
+    EventpageComponent,
+    HeaderComponent,
+    FooterComponent,
+    SearchResultsComponent
   ],
   imports: [
     BrowserModule,

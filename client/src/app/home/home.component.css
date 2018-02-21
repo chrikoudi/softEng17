@@ -1,3 +1,7 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
+
 #searchBar {
    height: 70px;
    font-size: 30px;
@@ -14,7 +18,7 @@
 }
 
 #space {
-    padding-top: 20vh;
+    padding-top: 40vh;
 }
 
   
@@ -27,7 +31,7 @@
   h1 {
     color: #fff;
     text-align: center;
-    font-size: 4rem;
+    font-size: 2rem;
     font-weight: normal;
   } 
   

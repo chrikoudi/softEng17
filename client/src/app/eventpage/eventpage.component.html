@@ -1,3 +1,111 @@
-<p>
-  eventpage works!
-</p>
+<div class="back_img">    
+    <div class="container">  
+        <div class="row mb-3"></div>   
+        <div class="row">
+            <!-- Event main info -->
+            <div class="col-12 col-lg-8">
+                <div class="card border-light mb-3 card_height">
+                        <div class="card-body">
+                                <h3 class="card-title" id="title_font">{{event.title}}</h3>
+                                <span *ngFor="let ev of event.type">
+                                    <span class="badge badge-info">{{ev}}</span>
+                                </span>
+                                <!-- <span class="badge badge-info">Είδος</span> -->
+                                <!-- <span class="badge badge-info">Είδος</span> -->
+                        </div>
+                        <!-- <a href="" data-toggle="modal" data-target="#productModal"> -->
+                        <img class="img-fluid" src="https://dummyimage.com/800x800/55595c/fff" alt="Card image"/>
+                        <!-- </a> -->
+                    </div>
+                </div>
+
+            <!-- Buy ticket -->
+            <div class="col-12 col-lg-4 buy_ticket_block">
+                <div class="card bg-light mb-3 card_height">
+                    <div class="card-body">
+                        <h3 class="card-title">Αγορά Εισιτηρίου</h3>
+                        <hr class="my-4">
+                        <span>
+                            <div class="label_text">Τιμή : </div>
+                            <p class="price_quant"> {{event.price | number}} </p>
+                        </span>
+                        <span>
+                            <div class="label_text">Διαθέσιμα εισιτήρια: </div>
+                            <p class="price_quant"> 150 </p>
+                        </span>
+                        <!-- <p class="price_quant">Τιμή: 99.00 $</p> -->
+                        <!-- <p class="price_quant" >Διαθέσιμα: 150</p> -->
+                        <form method="get" action="cart.html">
+                            <div class="form-group">
+                                <div class="label_text">Ποσότητα :</div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+                                            <i class="fa fa-minus"></i>
+                                        </button>
+                                    </div>
+                                    <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
+                                    <div class="input-group-append">
+                                        <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                            <i class="fa fa-plus"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button (click)="buy_ticket()" type="button" class="btn btn-success btn-lg btn-block text-uppercase">
+                                <i class="fa fa-shopping-cart"></i> Αγορα
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+                <!-- Event Date -->
+                <div class="col-lg-3">
+                    <div class="card border-light mb-3">
+                        <div class="card-header bg-info text-white text-uppercase"><i class="fa fa-calendar-check-o"></i> Ημερομηνια</div>
+                        <div class="card-body">
+                            <p class="card-text info_text">Ημερομηνία</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                    <div class="card border-light mb-3">
+                        <div class="card-header text-white bg-info text-uppercase"><i class="fa fa-location-arrow"></i> Τοποθεσια</div>
+                        <div class="card-body">
+                            <p class="card-text info_text">{{event.location}}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3">
+                        <div class="card border-light mb-3">
+                            <div class="card-header text-white bg-info text-uppercase"><i class="fa fa-child"></i> Ηλικια</div>
+                            <div class="card-body">
+                                <p class="card-text info_text"> {{event.minAge}} - {{event.maxAge}}</p>
+                            </div>
+                        </div>
+                    </div>
+                <div class="col-lg-3">
+                        <div class="card border-light mb-3">
+                            <div class="card-header text-white bg-info text-uppercase"><i class="fa fa-venus-mars"></i> Φυλο</div>
+                            <div class="card-body">
+                                <p class="card-text info_text">{{event.sex}}</p>
+                            </div>
+                        </div>
+                    </div>
+        </div>
+
+        <div class="row">
+            <!-- Event Description -->
+            <div class="col-12">
+                <div class="card border-light mb-3">
+                    <div class="card-header bg-info text-white text-uppercase"><i class="fa fa-align-justify"></i> Περιγραφη</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ event.description }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
