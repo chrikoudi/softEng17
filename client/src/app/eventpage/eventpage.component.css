@@ -1,11 +1,9 @@
 
-.title {
+#title_font {
     font-weight: bold;
 }
-.img-fluid {
-    height: 24rem; 
-    width: 100%; 
-    display: block;
+.card_height {
+    max-height: 30rem;
 }
 .buy_ticket_block {
     height: 100%;
