@@ -1,0 +1,33 @@
+
+.title {
+    font-weight: bold;
+}
+.img-fluid {
+    height: 24rem; 
+    width: 100%; 
+    display: block;
+}
+.buy_ticket_block {
+    height: 100%;
+    text-align: center;
+}
+.buy_ticket_block .price_quant {
+    color: #c01508;
+    /* text-align: center; */
+    font-weight: bold;
+    font-size: 200%;
+    /* margin-bottom: 0; */
+}
+.label_text {
+    text-align: left;
+}
+.info_text{
+    text-align: center;
+}
+.back_img { 
+    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg');
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }

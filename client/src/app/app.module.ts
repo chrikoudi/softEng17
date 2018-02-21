@@ -14,7 +14,7 @@ import { EventpageComponent } from './eventpage/eventpage.component';
   declarations: [
     AppComponent,
     LoginformComponent,
-    HomeComponent
+    HomeComponent,
     AppComponent,
     EventpageComponent
   ],
