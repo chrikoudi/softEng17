@@ -9,6 +9,8 @@ import { AuthService } from './services/auth.service';
 import { LoginformComponent } from './loginform/loginform.component';
 import { HomeComponent } from './home/home.component';
 import { EventpageComponent } from './eventpage/eventpage.component';
+import { HeaderComponent } from './layout/header/header.component';
+import { FooterComponent } from './layout/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { EventpageComponent } from './eventpage/eventpage.component';
     LoginformComponent,
     HomeComponent,
     AppComponent,
-    EventpageComponent
+    EventpageComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
