@@ -21,7 +21,7 @@ export class EventpageComponent implements OnInit {
     type: ["Διασκέδαση", "Θέατρο"],
     minAge:  8,
     maxAge:  12,
-    sex: "Αγόρι"
+    sex: "Αγόρια"
   }
 
   constructor() { }
