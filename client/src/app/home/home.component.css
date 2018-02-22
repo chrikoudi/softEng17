@@ -14,7 +14,7 @@
 
 #go:hover {
     text-decoration: none;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
 }
 
 #space {
