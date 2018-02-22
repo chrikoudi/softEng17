@@ -12,8 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { EventpageComponent } from './eventpage/eventpage.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
 import { PdfDownloaderComponent } from './pdf-downloader/pdf-downloader.component';
+import { ResultsComponent } from './search-results/results.component';
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import { PdfDownloaderComponent } from './pdf-downloader/pdf-downloader.componen
     EventpageComponent,
     HeaderComponent,
     FooterComponent,
-    SearchResultsComponent,
-    PdfDownloaderComponent
+    PdfDownloaderComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

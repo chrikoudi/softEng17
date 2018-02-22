@@ -1,0 +1,46 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+#image {
+    width: 30%;
+}
+
+#title {
+    position: absolute;
+    right:210px; 
+}
+
+#text {
+    position: absolute;
+    left: 220px;
+    bottom: 40px;
+    font-size:13px;
+}
+
+#button {
+    position: absolute;
+    right: 225px;
+    bottom: 3px;
+    padding: 0px 7px;
+}
+
+.list_results {
+    position: absolute; 
+    right: 60px;
+    width:650px;
+    top:60px;
+    height:150px;
+}
+
+.background_image { 
+    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') no-repeat center center fixed; 
+    background-size: cover;
+    height: 150vh;
+
+  }
+
+  .tabs {
+    position: absolute;
+    right: 600px;
+  }
