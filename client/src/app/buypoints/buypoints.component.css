@@ -1,0 +1,35 @@
+.title {
+  background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+}
+#header {
+  position: relative;
+  min-height: 150px;
+}
+
+#header-content {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 530px;
+}
+div.fixed {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+}
