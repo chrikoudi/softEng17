@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Event } from '../modals/event';
+import { Event } from '../models/event';
 
 @Component({
   selector: 'app-results',
