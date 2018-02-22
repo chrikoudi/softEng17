@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { BrowserXhr } from '@angular/http';
 import { environment } from '../../environments/environment';
-import * as fileSaver from 'file-saver';
+//import * as fileSaver from 'file-saver';
 
 const BASEURL = environment.BASEURL;
 
@@ -51,7 +51,7 @@ const BASEURL = environment.BASEURL;
             // If we get an HTTP status OK (200), save the file using fileSaver
             if (xhr.readyState === 4 && xhr.status === 200) {
                 const blob = new Blob([this.response], {type: 'application/pdf'});
-                fileSaver.saveAs(blob, 'ticket.pdf');
+              //  fileSaver.saveAs(blob, 'ticket.pdf');
             }
         };
 
