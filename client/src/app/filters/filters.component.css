@@ -1,0 +1,33 @@
+.card {
+    position: absolute;
+    left: 1%;
+    width: 30%;
+    height: 60%;
+    top: 47%;
+    background-color: lightblue;
+}
+
+.card-title {
+    position: absolute;
+    left: 38%;
+}
+
+.filter {
+    position: absolute;
+    left: 7%;
+}
+
+#menu {
+    position: absolute;
+    left: 4%;
+    width: 85%;
+}
+
+#price {
+    position: absolute;
+    left: 14%;
+}
+
+#sex {
+    left: 27%;
+}
