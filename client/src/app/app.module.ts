@@ -16,6 +16,7 @@ import { PdfDownloaderComponent } from './pdf-downloader/pdf-downloader.componen
 import { ResultsComponent } from './search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
 import { SearchComponent } from './search/search.component';
+import { FiltersComponent } from './filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { SearchComponent } from './search/search.component';
     PdfDownloaderComponent,
     ResultsComponent,
     BuypointsComponent,
-    SearchComponent
+    SearchComponent,
+    FiltersComponent
   ],
   imports: [
     BrowserModule,

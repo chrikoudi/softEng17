@@ -17,8 +17,8 @@
 }
 
 #go {
-    font-size: 20px;
-    color: rgb(33, 172, 63);
+    font-size: 120%;
+    color: btn-info;
 }
 
 #go:hover {
