@@ -4,39 +4,40 @@
 
 #title {
     position: absolute;
-    right:210px; 
+    right:32%;
+    top: 5%;
 }
 
 #text {
     position: absolute;
-    left: 35%; /*220px*/
-    bottom: 40px;
-    font-size:13px;
+    left: 32%; 
+    bottom: 35%;
+    font-size:85%;
 }
 
 #button {
     position: absolute;
-    right: 225px;
-    bottom: 3px;
-    padding: 0px 7px;
+    right: 33%;
+    bottom: 3%;
+    padding: 0% 2%;
 }
 
 .list_results {
     position: absolute; 
-    right: 60px;
-    width:650px;
-    top:60px;
-    height:150px;
+    right: 4%;
+    width:60%;
+    top:10%;
+    height:20%;
 }
 
 .background_image { 
     background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') no-repeat center center fixed; 
     background-size: cover;
-    height: 150vh;
-
+    height: 170vh;
   }
 
   .tabs {
     position: absolute;
-    right: 600px;
+    right: 40%;
+    top: 1%;
   }
