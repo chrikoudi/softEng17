@@ -12,10 +12,11 @@ h1 {
   text-align: center;
   font-size: 2rem;
   font-weight: bold;
+  top:70%;
 }
 #header {
   position: relative;
-  min-height: 150px;
+  min-height: 170px;
 }
 
 #header-content {
@@ -25,7 +26,7 @@ h1 {
   position: absolute;
   text-align: center;
   bottom: 0;
-  left: 530px;
+  left: 47%;
 }
 div.fixed {
   position: fixed;
