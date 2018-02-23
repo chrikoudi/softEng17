@@ -9,7 +9,7 @@ import { Event } from '../models/event';
 })
 export class ResultsComponent implements OnInit {
   events: Event[] = [
-    new Event('Kidzland1','this is the first event.this is the first event.this is the first event.this is the first event.this is the first event.this is the first event.', '../../assets/images/img1.jpg'),
+    new Event('Kidzland1', 'this is the first event.this is the first event.this is the first event.this is the first event.this is the first event.this is the first event.', '../../assets/images/img1.jpg'),
     new Event('Kidzland2','this is the second event.this is the second event.this is the second event.this is the second event.this is the second event.this is the second event.', '../../assets/images/img2.jpeg'),
     new Event('Kidzland3','this is the third event.this is the third event.this is the third event.this is the third event.this is the third event.this is the third event.this is the third event.', '../../assets/images/img3.jpg'),
     new Event('Kidzland4','this is the fourth event.this is the fourth event.this is the fourth event.this is the fourth event.this is the fourth event.this is the fourth event.this is the fourth event.', '../../assets/images/img4.jpg'),
