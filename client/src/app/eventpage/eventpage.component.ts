@@ -12,6 +12,7 @@ export class EventpageComponent implements OnInit {
 
   event = {
     title: 'Τίτλος Δραστηριότητας',
+    short_description: '',
     description: `Le Lorem Ipsum est simplement du faux texte employé dans la
     composition et la mise en page avant impression. Le Lorem Ipsum est le faux texte standard de l imprimerie depuis les années
     1500, quand un peintre anonyme assembla ensemble des morceaux de texte pour
@@ -20,6 +21,7 @@ export class EventpageComponent implements OnInit {
     contenu nen soit modifié. Il a été popularisé dans les années 1960 grâce à la vente de feuilles
     Letraset contenant des passages du Lorem Ipsum, et, plus récemment, par son inclusion dans des applications
     de mise en page de texte, comme Aldus PageMaker.`,
+    image:'../../assets/images/img3.jpg',
     price: 99.00,
     // startDate: ,
     // endDate: ,
