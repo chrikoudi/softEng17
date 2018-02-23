@@ -26,18 +26,23 @@
     position: absolute; 
     right: 4%;
     width:60%;
-    top:10%;
+    top:15%;
     height:20%;
 }
 
 .background_image { 
-    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') no-repeat center center fixed; 
+    position:relative;
+    padding-top: 19rem;
+    height: 200vh;
+    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') repeat center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    height: 170vh;
   }
 
   .tabs {
     position: absolute;
     right: 40%;
-    top: 1%;
+    top: 11%;
   }
