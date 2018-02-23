@@ -15,6 +15,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { PdfDownloaderComponent } from './pdf-downloader/pdf-downloader.component';
 import { ResultsComponent } from './search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
+import { SearchComponent } from './search/search.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BuypointsComponent } from './buypoints/buypoints.component';
     FooterComponent,
     PdfDownloaderComponent,
     ResultsComponent,
-    BuypointsComponent
+    BuypointsComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,
