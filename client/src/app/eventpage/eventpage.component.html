@@ -1,7 +1,9 @@
-<div class="back_img"> 
+<div class="back_img" *ngIf="event"> <!-- *ngIf="event">  -->
     <app-header></app-header>   
     <div class="container">  
-        <div class="row mb-3"></div>   
+        <div class="row mb-3">
+            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="goBack()">Πίσω στα αποτελέσματα!</button>    
+        </div>   
         <div class="row">
             <!-- Event main info -->
             <div class="col-12 col-lg-8">
@@ -15,7 +17,7 @@
                                 <!-- <span class="badge badge-info">Είδος</span> -->
                         </div>
                         <!-- <a href="" data-toggle="modal" data-target="#productModal"> -->
-                        <img class="img" src="{{event.image}}" alt="Card image"/>
+                        <img class="img-fluid img" src="{{event.image}}" alt="Card image"/>
                         <!-- </a> -->
                     </div>
                 </div>
@@ -32,22 +34,21 @@
                         </span>
                         <span>
                             <div class="label_text">Διαθέσιμα εισιτήρια: </div>
-                            <p class="price_quant"> 150 </p>
+                            <p class="price_quant"> {{event.numberOfTickets | number}} </p>
                         </span>
-                        <!-- <p class="price_quant">Τιμή: 99.00 $</p> -->
-                        <!-- <p class="price_quant" >Διαθέσιμα: 150</p> -->
-                        <form method="get" action="cart.html">
+
+                        <form *ngIf="quantity"> 
                             <div class="form-group">
                                 <div class="label_text">Ποσότητα :</div>
-                                <div class="input-group mb-3">
+                                <div class="input-group justify-content-center mb-3">
                                     <div class="input-group-prepend">
-                                        <button type="button" class="quantity-left-minus btn btn-danger btn-number"  data-type="minus" data-field="">
+                                        <button type="button" class="btn btn-danger btn-number" data-field="quantity" (click)="minus()">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input type="text" class="form-control"  id="quantity" name="quantity" min="1" max="100" value="1">
+                                    <input class="form-control-static text-center"  id="quantity" name="quantity" value="{{quantity}}">
                                     <div class="input-group-append">
-                                        <button type="button" class="quantity-right-plus btn btn-success btn-number" data-type="plus" data-field="">
+                                        <button type="button" class="btn btn-success btn-number" data-field="quantity" (click)="plus()">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
@@ -57,6 +58,9 @@
                                 <i class="fa fa-shopping-cart"></i> Αγορα
                             </button>
                         </form>
+                        <div class="alert alert-dismissible alert-danger" *ngIf="!quantity">
+                            <strong>Τα εισιτήρια εξαντλήθηκαν!</strong>
+                        </div>
                     </div>
                 </div>
             </div>

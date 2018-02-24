@@ -8,7 +8,7 @@ import { BuypointsComponent } from './buypoints/buypoints.component';
 export const routes: Routes = [
     { path: 'login', component: LoginformComponent },
     { path: 'home', component: HomeComponent },
-    { path: 'events', component: EventpageComponent },
+    { path: 'results/:id', component: EventpageComponent },
     { path: 'results', component: ResultsComponent},
     { path: 'buypoints', component: BuypointsComponent },
     { path: '**', redirectTo: 'home' }

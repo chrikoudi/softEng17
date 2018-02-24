@@ -3,8 +3,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { RouterModule} from '@angular/router';
 import { FormsModule} from '@angular/forms';
-import { HttpModule} from '@angular/http';
-import { routes} from './routes';
+import { HttpClientModule} from '@angular/common/http';
+import { routes } from './routes';
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
 import { LoginformComponent } from './loginform/loginform.component';
@@ -17,6 +17,8 @@ import { ResultsComponent } from './search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
 import { SearchComponent } from './search/search.component';
 import { FiltersComponent } from './filters/filters.component';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; // memory-server
+import { InMemoryDataService } from './services/in-memory-data.service'; // memory server
 
 @NgModule({
   declarations: [
@@ -36,7 +38,11 @@ import { FiltersComponent } from './filters/filters.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule,
+    HttpClientModule,
+    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+    // and returns simulated server responses.
+    // Remove it when a real server is ready to receive requests.
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     RouterModule.forRoot(routes)
   ],
   providers: [AuthService, EventService],
