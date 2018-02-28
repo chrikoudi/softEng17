@@ -18,7 +18,8 @@ import { BuypointsComponent } from './buypoints/buypoints.component';
 import { SearchComponent } from './search/search.component';
 import { FiltersComponent } from './filters/filters.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; // memory-server
-import { InMemoryDataService } from './services/in-memory-data.service'; // memory server
+import { InMemoryDataService } from './services/in-memory-data.service';
+import { CreateeventComponent } from './createevent/createevent.component'; // memory server
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { InMemoryDataService } from './services/in-memory-data.service'; // memo
     ResultsComponent,
     BuypointsComponent,
     SearchComponent,
-    FiltersComponent
+    FiltersComponent,
+    CreateeventComponent
   ],
   imports: [
     BrowserModule,
