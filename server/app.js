@@ -11,6 +11,7 @@ const session      = require('express-session');
 const MongoStore   = require('connect-mongo')(session);
 const passport     = require('passport');
 const configure    = require('./config/passport.js');
+// var ejs = require('ejs');
 
 mongoose.connect('mongodb://localhost/kidzland');
 
@@ -30,6 +31,7 @@ configure(passport);
 app.use(passport.initialize());
 app.use(passport.session());
 
+// app.get('/', function(req, res) { res.render(path.join(__dirname + '/views/index.ejs')); });
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -46,6 +48,9 @@ app.use(layouts);
 
 const index = require('./routes/index');
 app.use('/', index);
+
+// basic server listen
+app.listen(3000);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {

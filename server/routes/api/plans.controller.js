@@ -2,7 +2,7 @@ const express       = require('express');
 const router        = express.Router();
 const Plan         = require('../../models/plan.model');
 
-router.get('/events', (req, res, next) => {
+router.get('/', (req, res, next) => {
   Plan.find({}, (err, events) => {
     if (err) { return res.json(err).status(500); }
 
@@ -10,7 +10,7 @@ router.get('/events', (req, res, next) => {
   });
 });
 
-router.get('/events/:id', (req, res, next) => {
+router.get('/:id', (req, res, next) => {
   Plan.findById(req.params.id, (err, event) => {
     if (err)    { return res.json(err).status(500); }
     if (!event) { return res.json(err).status(404); }
@@ -19,25 +19,27 @@ router.get('/events/:id', (req, res, next) => {
   });
 });
 
-router.post('/events', (req, res, next) => {
+router.post('/', (req, res, next) => {
   console.log('post')
-  const newPlan = new Plan({
+  let newPlan = new Plan({
     title: req.body.title,
-    description: req.body.description, 
-    price: req.body.price, 
+    shortDescription: req.body.shortDescription,
+    description: req.body.description,
+    price: req.body.price,
     startDate: req.body.startDate,
-    endDate: req.body.endDate,
+    // endDate: req.body.endDate,
     location: req.body.location,
-    type: req.body.type,
+    eventType: req.body.eventType,
     minAge: req.body.minAge,
     maxAge: req.body.maxAge,
-    sex: req.body.sex,
+    sex: req.body.sex
+    // req.body.image ??
   });
 
   newPlan.save( (err) => {
-    if (err)             { return res.status(500).json(err) }
+    if (err) { return res.status(500).json(err) }
     if (newPlan.errors) { return res.status(400).json(newPlan) }
-                           return res.json(newPlan);
+    return res.json(newPlan);
   });
 });
 
