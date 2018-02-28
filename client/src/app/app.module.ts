@@ -17,6 +17,7 @@ import { ResultsComponent } from './search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
+import { CreateeventComponent } from './createevent/createevent.component'; // memory server
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { InMemoryDataService } from './services/in-memory-data.service';
     FooterComponent,
     PdfDownloaderComponent,
     ResultsComponent,
-    BuypointsComponent
+    BuypointsComponent,
+    CreateeventComponent
   ],
   imports: [
     BrowserModule,

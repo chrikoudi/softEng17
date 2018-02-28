@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { EventpageComponent } from './eventpage/eventpage.component';
 import { ResultsComponent } from 'app/search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
+import { CreateeventComponent } from './createevent/createevent.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginformComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
     { path: 'results/:id', component: EventpageComponent },
     { path: 'results', component: ResultsComponent },
     { path: 'buypoints', component: BuypointsComponent },
+    { path: 'create', component: CreateeventComponent },
     { path: '**', redirectTo: 'home' }
 ];

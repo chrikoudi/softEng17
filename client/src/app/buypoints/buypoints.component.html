@@ -1,7 +1,7 @@
 <div class="title">
 <app-header></app-header>
 
-
+<div class="container">
 <div id="header">
   <h1></h1>
   <div id="header-content">Αγορά Πόντων</div>
@@ -13,7 +13,11 @@
       <div class="card-header">Πακέτο των €10</div>
       <h4 class="card-title">Προσθήκη 10(+1) Πόντων Αγοράς</h4>
       <p class="card-text">Με αγορά του Πακέτου των €10 επωφελείστε επιβράβευση 1 επιπλέον Πόντου Αγοράς.</p>
-      <div class="card-footer">Σύνολο Αγοράς: 11 Πόντοι</div>
+      <button type="button" class="btn btn-secondary" >Επιλογή Πακέτου</button>
+      <p class="card-text">Σύνολο Αγοράς: 11 Πόντοι</p>
+      <!--<div class="card-footer">
+        <button type="button" class="btn btn-danger" style="position:absolute;left:10%">Επιλογή Πακέτου</button>
+      </div>-->
     </div>
   </div>
   <div class="card text-white bg-success mb-3">
@@ -21,7 +25,8 @@
       <div class="card-header">Πακέτο των €20</div>
       <h4 class="card-title">Προσθήκη 20(+3) Πόντων Αγοράς</h4>
       <p class="card-text">Με αγορά του Πακέτου των €20 επωφελείστε επιβράβευση 3 επιπλέον Πόντων Αγοράς.</p>
-      <div class="card-footer">Σύνολο Αγοράς: 23 Πόντοι</div>
+      <button type="button" class="btn btn-secondary" >Επιλογή Πακέτου</button>
+      <p class="card-text">Σύνολο Αγοράς: 23 Πόντοι</p>
     </div>
   </div>
   <div class="card text-white bg-info mb-3">
@@ -29,7 +34,8 @@
       <div class="card-header">Πακέτο των €30</div>
       <h4 class="card-title">Προσθήκη 30(+5) Πόντων Αγοράς</h4>
       <p class="card-text">Με αγορά του Πακέτου των €30 επωφελείστε επιβράβευση 5 επιπλέον Πόντων Αγοράς.</p>
-      <div class="card-footer">Σύνολο Αγοράς: 35 Πόντοι</div>
+      <button type="button" class="btn btn-secondary" >Επιλογή Πακέτου</button>
+      <p class="card-text">Σύνολο Αγοράς: 35 Πόντοι</p>
     </div>
   </div>
 </div>
@@ -63,15 +69,14 @@
         </div>
       </div>  
     </div>-->
-    
+    <!--
     <br>
   
  
       <button type="button" class="btn btn-danger" style="position:absolute;left:10%">Επιλογή Πακέτου</button>
       <button type="button" class="btn btn-success" style="position:absolute;left:45%">Επιλογή Πακέτου</button>
       <button type="button" class="btn btn-info" style="position:absolute;left:80%">Επιλογή Πακέτου</button>
-
-    <br>
+    -->
   
     <!--<div class="row">-->
     <div class="alert alert-dismissible alert-danger" style="max-width:20rem;top:77%;z-index:9999;right:0%;position:fixed">
@@ -92,7 +97,7 @@
           <div class="card-body">
             <h4 class="card-title">Ή Εισαγωγή Επιθυμητού Ποσού Αγοράς Πόντων</h4>
             <p class="card-text">Αναλογία Πόντων Αγοράς:Ευρώ -> 1:1.</p>
-            <div class="card-footer">
+            <div class="card-text">
                 <div class="form-group" style="max-width:30rem">
                     <div class="input-group mb-3">
                       <div class="input-group-prepend">
@@ -105,6 +110,10 @@
                     </div>
                   </div>
             </div>
+            <p class="card-text">
+            <button type="button" class="btn btn-success">Υποβολή</button>
+            <button type="button" class="btn btn-danger">Ακύρωση</button>
+          </p>
           </div>
         </div>
       </div>
@@ -123,13 +132,14 @@
           <div class="card-footer">"ΠΟΝΤΟΙ"</div>        
         </div>
       </div>
-    </div>-->  
+    </div>
   
-    <!--</div>-->  
+    </div>  
       
     <div class="row">  
       <button type="button" class="btn btn-success" style="position:absolute;left:45%">Υποβολή</button>
       <button type="button" class="btn btn-danger" style="position:absolute;left:53%">Ακύρωση</button>
-    </div>
+    </div>-->
+  </div>
 </div>
 <app-footer></app-footer>
