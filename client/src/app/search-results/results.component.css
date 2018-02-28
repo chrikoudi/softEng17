@@ -32,13 +32,13 @@
 
 .background_image { 
     position:relative;
-    padding-top: 19rem;
     height: 200vh;
-    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') repeat center center;
+    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    background-attachment: fixed;
   }
 
   .tabs {
@@ -46,3 +46,84 @@
     right: 40%;
     top: 11%;
   }
+
+  #card_id {
+    position: absolute;
+    left: 1%;
+    width: 30%;
+    height: 23%;
+    top: 11%;
+    background-color: lightblue;
+}
+
+.card-title1 {
+    position: absolute;
+    left: 34%;
+}
+
+.form-control {
+    left: 3%;
+}
+
+#go {
+    font-size: 120%;
+    color: btn-info;
+}
+
+#go:hover {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.position {
+    position: absolute;
+    left: 35%;
+}
+
+#input {
+    left: 23%;
+}
+
+.distance {
+    position: absolute;
+    left: 35%;
+}
+
+#toolbar {
+    position: absolute;
+    left: 13%;
+}
+
+#card_id2 {
+    position: absolute;
+    left: 1%;
+    width: 30%;
+    height: 30%;
+    top: 35%;
+    background-color: lightblue;
+}
+
+.card-title2 {
+    position: absolute;
+    left: 38%;
+}
+
+.filter {
+    position: absolute;
+    left: 7%;
+}
+
+#menu {
+    position: absolute;
+    left: 4%;
+    width: 85%;
+}
+
+#price {
+    position: absolute;
+    left: 14%;
+}
+
+#sex {
+    left: 27%;
+}

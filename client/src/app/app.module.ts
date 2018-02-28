@@ -15,10 +15,8 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { PdfDownloaderComponent } from './pdf-downloader/pdf-downloader.component';
 import { ResultsComponent } from './search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
-import { SearchComponent } from './search/search.component';
-import { FiltersComponent } from './filters/filters.component';
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api'; // memory-server
-import { InMemoryDataService } from './services/in-memory-data.service'; // memory server
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './services/in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -31,9 +29,7 @@ import { InMemoryDataService } from './services/in-memory-data.service'; // memo
     FooterComponent,
     PdfDownloaderComponent,
     ResultsComponent,
-    BuypointsComponent,
-    SearchComponent,
-    FiltersComponent
+    BuypointsComponent
   ],
   imports: [
     BrowserModule,

@@ -2,41 +2,108 @@
   font-family: 'Roboto', sans-serif;
 }
 
-#searchBar {
-   height: 70px;
-   font-size: 30px;
-}
-
-#go {
+#search {
     font-size: 20px;
-    color: rgb(247, 186, 73);
+    color: rgb(0, 0, 0);
+    margin:auto;
+    display:block;
+    height: 30%;
+    width: 60%;
 }
 
-#go:hover {
-    text-decoration: none;
-    text-transform: uppercase; 
-}
-
-#space {
-    padding-top: 40vh;
+#quote {
+    padding-top: 10vh; 
 }
 
   
-  .title {
+.title {
     background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg');
     background-size: cover;
     height: 120vh;
-  }
+}
   
-  h1 {
+h1 {
     color: #fff;
     text-align: center;
     font-size: 2rem;
     font-weight: normal;
-  } 
-  
-  .main {
-    width: 80%;
-    margin: 0 auto;
-    padding-bottom: 12%;
+} 
+
+[class*='col-'] {
+    float: left;
+    padding-right: 20px;
+    padding-bottom: 20px;
   }
+  [class*='col-']:last-of-type {
+    padding-right: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  *, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  h3 {
+    text-align: center; 
+    margin-bottom: 2%;
+    margin-top: 5%;
+    color: whitesmoke;
+  }
+  h4 {
+    position: relative;
+    font-size: 100%;  
+  }
+  .grid {
+    margin: 0;
+  }
+  .col-1-4 {
+    width: 25%;
+  }
+  .module {
+    padding: 20px;
+    text-align: center;
+    color: #eee;
+    max-height: 130px;
+    min-width: 130px;
+    background-color: lightskyblue;
+    border-radius: 2px;
+  }
+  .module:hover {
+    background-color: #EEE;
+    cursor: pointer;
+    color: #607d8b;
+  }
+  .grid-pad {
+    padding: 10px 0;
+  }
+  .grid-pad > [class*='col-']:last-of-type {
+    padding-right: 20px;
+  }
+  @media (max-width: 600px) {
+    .module {
+      font-size: 10px;
+      max-height: 75px; }
+  }
+  @media (max-width: 1024px) {
+    .grid {
+      margin: 0;
+    }
+    .module {
+      min-width: 60px;
+    }
+  }
+
+#image {
+    width: 50%;
+}
+
+#button {
+    position: absolute;
+    right: 33%;
+    bottom: 3%;
+    padding: 0% 2%;
+}
+  
+  

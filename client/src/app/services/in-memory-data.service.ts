@@ -64,7 +64,7 @@ export class InMemoryDataService implements InMemoryDbService {
             sex: 'Κορίτσι'
         },
         {   id: 5,
-            title: 'Kidzland5',
+            title: 'Kindergarten1',
             // tslint:disable-next-line:max-line-length
             short_description: 'this is the fifth event.this is the first event.this is the first event.this is the first event.this is the first event.this is the first event.',
             // tslint:disable-next-line:max-line-length
@@ -79,7 +79,7 @@ export class InMemoryDataService implements InMemoryDbService {
             sex: 'Αγόρι'
         },
         {   id: 6,
-            title: 'Kidzland6',
+            title: 'Kindergarten2',
             // tslint:disable-next-line:max-line-length
             short_description: 'this is the sixth event.this is the first event.this is the first event.this is the first event.this is the first event.this is the first event.',
             // tslint:disable-next-line:max-line-length
@@ -94,7 +94,7 @@ export class InMemoryDataService implements InMemoryDbService {
             sex: 'Κορίτσι'
         },
         {   id: 7,
-            title: 'Kidzland7',
+            title: 'Kindergarten3',
             // tslint:disable-next-line:max-line-length
             short_description: 'this is the seventh event.this is the first event.this is the first event.this is the first event.this is the first event.this is the first event.',
             // tslint:disable-next-line:max-line-length

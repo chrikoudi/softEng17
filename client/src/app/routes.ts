@@ -9,7 +9,7 @@ export const routes: Routes = [
     { path: 'login', component: LoginformComponent },
     { path: 'home', component: HomeComponent },
     { path: 'results/:id', component: EventpageComponent },
-    { path: 'results', component: ResultsComponent},
+    { path: 'results', component: ResultsComponent },
     { path: 'buypoints', component: BuypointsComponent },
     { path: '**', redirectTo: 'home' }
 ];

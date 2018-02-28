@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; // import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
@@ -7,21 +7,14 @@ import { catchError } from 'rxjs/operators';
 import { Event } from '../models/event';
 
 @Injectable()
-export class EventService {
+export class EventService {  
+  
   BASE_URL = 'http://localhost:3000';
+  
   constructor(private http: HttpClient) {}
 
-  // getList() {
-  //   return this.http.get(`${this.BASE_URL}/api/events`)
-  //     .map((res) => res.json());
-  // }
-
-  // get(id) {
-  //   return this.http.get(`${this.BASE_URL}/api/events/${id}`)
-  //     .map((res) => res.json());
-  // }
-
   // GET Event by ID
+  
   getEvents (): Observable<Event[]> {
     return this.http.get<Event[]>(`${this.BASE_URL}/api/events`)
     .pipe(
@@ -42,6 +35,7 @@ export class EventService {
    * @param operation - name of the operation that failed
    * @param result - optional value to return as the observable result
    */
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
 
@@ -54,6 +48,17 @@ export class EventService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-  }
+  } 
 
+    /* GET heroes whose name contains search term */
+
+    searchEvents(term: string): Observable<Event[]> {
+      if (!term.trim()) {
+        // if not search term, return empty hero array.
+        return of([]);
+      }
+      return this.http.get<Event[]>(`api/events/?title=${term}`).pipe(
+        catchError(this.handleError<Event[]>('searchEvents', []))
+      );
+    }
 }
