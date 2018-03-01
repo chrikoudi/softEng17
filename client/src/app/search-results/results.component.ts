@@ -14,6 +14,8 @@ import { switchMap } from 'rxjs/operators';
 
 export class ResultsComponent implements OnInit {
 
+   p: number = 1;
+
    events: Event[];
 
    gl_events: Observable<Event[]>; 
