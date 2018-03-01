@@ -1,10 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-
-interface LoginForm {
-  username: string;
-  password: string;
-}
+import { NgForm } from '@angular/forms';
+import { RouterModule, Routes } from '@angular/router';
 
 @Component({
   selector: 'app-loginform',
@@ -12,17 +9,21 @@ interface LoginForm {
   styleUrls: ['./loginform.component.css']
 })
 export class LoginformComponent implements OnInit {
-  formInfo: LoginForm = {
-    username: '',
-    password: ''
-  };
 
-  constructor(public auth: AuthService) { }
+  formInfo=  {
+    username: 'user@test.com',
+    password: '12345'
+  }; 
+
+  onSubmit(form: NgForm) {
+    console.log(this.formInfo);
+  }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  login() {
+ /* login() {
     const {username, password} = this.formInfo;
     if (username !== '' && password !== '') {
       console.log(`Login with ${username} ${password}`);
@@ -32,5 +33,5 @@ export class LoginformComponent implements OnInit {
     } else {
       console.log('You must set a username and a password');
     }
-  }
+  }*/
 }

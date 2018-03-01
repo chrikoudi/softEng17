@@ -19,6 +19,7 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateeventComponent } from './createevent/createevent.component'; 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { SigninformComponent } from './signinform/signinform.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     PdfDownloaderComponent,
     ResultsComponent,
     BuypointsComponent,
-    CreateeventComponent
+    CreateeventComponent,
+    SigninformComponent
   ],
   imports: [
     BrowserModule,
