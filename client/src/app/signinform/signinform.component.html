@@ -1,193 +1,96 @@
 <div class="back">
-    <app-header></app-header>
-  
-    <div class="center">
-      <div class="card text-white bg-success mb-3">
-        <div class="center_some">
-            <div class="card-header">
-              <h3>Εγγραφή</h3>
-            </div>
-        </div>
-        <div class="card-body">
+  <app-header></app-header>
 
-            <div id="Home" class="tabcontent">
-                <h3>Home</h3>
-                <p>Home is where the heart is..</p>
-              </div>
-              
-              <div id="News" class="tabcontent">
-                <h3>News</h3>
-                <p>Some news this fine day!</p>
-              </div>
-              
-              <div id="Contact" class="tabcontent">
-                <h3>Contact</h3>
-                <p>Get in touch, or swing by for a cup of coffee.</p>
-              </div>
-              
-              <div id="About" class="tabcontent">
-                <h3>About</h3>
-                <p>Who we are and what we do.</p>
-              </div>
-              
-              <button class="tablink" onclick="openPage('Home', this, 'red')">Home</button>
-              <button class="tablink" onclick="openPage('News', this, 'green')" id="defaultOpen">News</button>
-              <button class="tablink" onclick="openPage('Contact', this, 'blue')">Contact</button>
-              <button class="tablink" onclick="openPage('About', this, 'orange')">About</button> 
-          
-<!--
-          <ul class="nav nav-tabs">
-            <li class="nav-item">
-              <a class="nav-link" data-toggle="tab" href="#parent">Εγγραφή Γονέα</a>
-            </li>
-            <li class="nav-item">    
-              <a class="nav-link active show" data-toggle="tab" href="#provider">Εγγραφή Παρόχου</a>
-            </li> 
-          </ul>  
-          <br>
-          <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade" id="parent">
-              <p>Παρακαλώ συμπληρώστε τα στοιχεία για τη δημιουργία λογαριασμού γονέα.</p>
-              <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                <div class="form-group">
-                  <label for="ufname"><b>Όνομα</b></label>
-                  <input type="text"
-                          class="form-control" 
-                          id="ufname"
-                          placeholder="Εισαγωγή Ονόματος" 
-                          name="ufname" 
-                          [(ngModel)]="formInfo.ufname"
-                          required>	                  
-                  <label for="ulname"><b>Επίθετο</b></label>	
-                  <input type="text"
-                          class="form-control" 
-                          id="ulname"
-                          placeholder="Εισαγωγή Επιθέτου" 
-                          name="ulname" 
-                          [(ngModel)]="formInfo.ulname"
-                          required>				
-                  <label for="uemail"><b>Διεύθυνση Ηλ. Ταχυδρομείου</b></label>
-                  <input  type="text" 
-                          class="form-control" 
-                          id="uemail" 
-                          placeholder="Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου" 
-                          type="email" 
-                          name="uemail"
-                          [(ngModel)]="formInfo.uemail"
-                          required
-                          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                          #username="ngModel">   
-                  <div *ngIf="!uemail.valid">
-                    <small>
-                      Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου
-                    </small>
-                  </div>      
-                  <label for="upassword"><b>Κωδικός Πρόσβασης</b></label>
-                  <input type="text"
-                          class="form-control" 
-                          id="upassword"
-                          placeholder="Εισαγωγή Κωδικού Πρόσβασης" 
-                          name="upassword" 
-                          [(ngModel)]="formInfo.upassword"
-                          required>
-                  <label for="upassword-repeat"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
-                  <input type="text"
-                          class="form-control" 
-                          id="upassword-repeat"
-                          placeholder="Επαναλάβετε τον Κωδικό Πρόσβασης" 
-                          name="upassword-repeat" 
-                          [(ngModel)]="formInfo.upassword-repeat"
-                          required> 
-                  <br>       
-                  <p>Δημιουργώντας Λογαριασμό συμφωνείτε με τους : 
-                      <a routerLink="/terms"> Όρους και την Πολιτική μας</a>
-                    </p>
-                  <div class="center_some">
-                      <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Δημιουργία Λογαριασμού</button>
-                  </div>
-                  <br>
-                  <div class="center_some">
-                      <button type="button"  class="btn btn-danger" >Ακύρωση
-                          <a routerLink="/home"></a>
-                      </button>
-                  </div>
-                </div>    
-              </form>        
-            </div>
-
-          
-            <div div class="tab-pane fade active show" id="provider">
-              <p>Παρακαλώ συμπληρώστε τα στοιχεία για τη δημιουργία λογαριασμού παρόχου.</p>
-              <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-                <div class="form-group">
-                  <label for="pfname"><b>Όνομα</b></label>
-                  <input type="text"
-                          class="form-control" 
-                          id="pfname"
-                          placeholder="Εισαγωγή Ονόματος" 
-                          name="pfname" 
-                          [(ngModel)]="formInfo.pfname"
-                          required>	                  
-                  <label for="plname"><b>Επίθετο</b></label>	
-                  <input type="text"
-                          class="form-control" 
-                          id="plname"
-                          placeholder="Εισαγωγή Επιθέτου" 
-                          name="plname" 
-                          [(ngModel)]="formInfo.plname"
-                          required>				
-                  <label for="pemail"><b>Διεύθυνση Ηλ. Ταχυδρομείου</b></label>
-                  <input  type="text" 
-                          class="form-control" 
-                          id="pemail" 
-                          placeholder="Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου" 
-                          type="email" 
-                          name="pemail"
-                          [(ngModel)]="formInfo.pemail"
-                          required
-                          pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                          #username="ngModel">   
-                  <div *ngIf="!pemail.valid">
-                    <small>
-                      Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου
-                    </small>
-                  </div>      
-                  <label for="ppassword"><b>Κωδικός Πρόσβασης</b></label>
-                  <input type="text"
-                          class="form-control" 
-                          id="ppassword"
-                          placeholder="Εισαγωγή Κωδικού Πρόσβασης" 
-                          name="ppassword" 
-                          [(ngModel)]="formInfo.ppassword"
-                          required>
-                  <label for="ppassword-repeat"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
-                  <input type="text"
-                          class="form-control" 
-                          id="ppassword-repeat"
-                          placeholder="Επαναλάβετε τον Κωδικό Πρόσβασης" 
-                          name="ppassword-repeat" 
-                          [(ngModel)]="formInfo.ppassword-repeat"
-                          required> 
-                  <br>       
-                  <p>Δημιουργώντας Λογαριασμό συμφωνείτε με τους : 
-                      <a routerLink="/terms"> Όρους και την Πολιτική μας</a>
-                    </p>
-                  <div class="center_some">
-                      <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Δημιουργία Λογαριασμού</button>
-                  </div>
-                  <br>
-                  <div class="center_some">
-                      <button type="button"  class="btn btn-danger" >Ακύρωση
-                          <a routerLink="/home"></a>
-                      </button>
-                  </div>
-                </div>      
-              </form> 
-            </div>         
+  <div class="center">
+    <div class="card text-white bg-success mb-3">
+      <div class="center_some">
+          <div class="card-header">
+            <h3>Εγγραφή</h3>
           </div>
-        -->          
+      </div>
+      <div class="card-body"> 
+        
+        <div class="center_some_more">
+          <a routerLink="/signin" class="btn btn-info" id="button">Εγγραφή Γονέα</a>        
+          &nbsp;
+          <a routerLink="/provider-signin" class="btn btn-info" id="button">Εγγραφή Παρόχου</a>
+          <br>
+          <p>Παρακαλώ εισάγετε στοιχεία για την Εγγραφή Γονέα:</p>
+          <br> 
         </div>
+        <form (ngSubmit)="onSubmituser(f)" #f="ngForm">
+          <div class="form-group">
+            <label for="ufname"><b>Όνομα</b></label>
+            <input type="text"
+                    class="form-control" 
+                    id="ufname"
+                    placeholder="Εισαγωγή Ονόματος" 
+                    name="ufname" 
+                    [(ngModel)]="userformInfo.ufname"
+                    required>	 
+          </div>
+          <div class="form-group">                           
+            <label for="ulname"><b>Επίθετο</b></label>	
+            <input type="text"
+                    class="form-control" 
+                    id="ulname"
+                    placeholder="Εισαγωγή Επιθέτου" 
+                    name="ulname" 
+                    [(ngModel)]="userformInfo.ulname"
+                    required>	
+          </div>
+          <div class="form-group">          			
+            <label for="uemail"><b>Διεύθυνση Ηλ. Ταχυδρομείου</b></label>
+            <input  type="text" 
+                    class="form-control" 
+                    id="uemail" 
+                    placeholder="Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com" 
+                    type="email" 
+                    name="uemail"
+                    [(ngModel)]="userformInfo.uemail"
+                    required
+                    pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                    #uemail="ngModel">   
+            <div *ngIf="!uemail.valid">
+              <small>
+                Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου
+              </small>
+            </div> 
+          </div>
+          <div class="form-group">       
+            <label for="upassword"><b>Κωδικός Πρόσβασης</b></label>
+            <input type="text"
+                    class="form-control" 
+                    id="upassword"
+                    placeholder="Εισαγωγή Κωδικού Πρόσβασης" 
+                    name="upassword" 
+                    [(ngModel)]="userformInfo.upassword"
+                    required>
+          </div>
+          <div class="form-group">          
+            <label for="upassword_repeat"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
+            <input type="text"
+                    class="form-control" 
+                    id="upassword_repeat"
+                    placeholder="Επαναλάβετε τον Κωδικό Πρόσβασης" 
+                    name="upassword_repeat" 
+                    [(ngModel)]="userformInfo.upassword_repeat"
+                    required> 
+          </div>          
+          <br>
+          <div class="center_some">       
+            <p>Δημιουργώντας Λογαριασμό συμφωνείτε με τους : 
+                <a routerLink="/home"> Όρους και την Πολιτική μας</a>
+            </p>
+            <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Δημιουργία Λογαριασμού</button>
+            <br>
+            <br>           
+            <a routerLink="/home" class="btn btn-danger" id="button">Ακύρωση</a>
+          </div>    
+        </form>        
+                
       </div>
     </div>
-    <app-footer></app-footer>  
   </div>
+  <app-footer></app-footer>  
+</div>

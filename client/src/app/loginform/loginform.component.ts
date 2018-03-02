@@ -11,8 +11,8 @@ import { RouterModule, Routes } from '@angular/router';
 export class LoginformComponent implements OnInit {
 
   formInfo=  {
-    username: 'user@test.com',
-    password: '12345'
+    username: '',
+    password: ''
   }; 
 
   onSubmit(form: NgForm) {

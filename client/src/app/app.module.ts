@@ -20,6 +20,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateeventComponent } from './createevent/createevent.component'; 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SigninformComponent } from './signinform/signinform.component';
+import { ProviderSigninformComponent } from './provider-signinform/provider-signinform.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SigninformComponent } from './signinform/signinform.component';
     ResultsComponent,
     BuypointsComponent,
     CreateeventComponent,
-    SigninformComponent
+    SigninformComponent,
+    ProviderSigninformComponent
   ],
   imports: [
     BrowserModule,

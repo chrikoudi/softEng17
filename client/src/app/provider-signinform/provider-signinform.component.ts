@@ -4,23 +4,25 @@ import { NgForm } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 @Component({
-  selector: 'app-signinform',
-  templateUrl: './signinform.component.html',
-  styleUrls: ['./signinform.component.css']
+  selector: 'app-provider-signinform',
+  templateUrl: './provider-signinform.component.html',
+  styleUrls: ['./provider-signinform.component.css']
 })
+export class ProviderSigninformComponent implements OnInit {
 
-export class SigninformComponent implements OnInit {
-
-  userformInfo=  {
-    ufname: '',
-    ulname: '',
-    uemail: '',
-    upassword: '',
-    upassword_repeat: ''
+  providerformInfo=  {
+    company_name: '',
+    afm: '',
+    phone: '',
+    pfname: '',
+    plname: '',
+    pemail: '',
+    ppassword: '',
+    ppassword_repeat: ''
   };
 
   onSubmituser(form: NgForm) {
-    console.log(this.userformInfo);
+    console.log(this.providerformInfo);
   }  
 
   constructor() { }
@@ -41,5 +43,3 @@ export class SigninformComponent implements OnInit {
   }*/
 
 }
-
-
