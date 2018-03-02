@@ -20,6 +20,8 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateeventComponent } from './createevent/createevent.component'; 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SigninformComponent } from './signinform/signinform.component';
+import { FilterPipe } from './filter.pipe';
+import { LocationService } from './services/location.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,8 @@ import { SigninformComponent } from './signinform/signinform.component';
     ResultsComponent,
     BuypointsComponent,
     CreateeventComponent,
-    SigninformComponent
+    SigninformComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,7 @@ import { SigninformComponent } from './signinform/signinform.component';
     RouterModule.forRoot(routes),
     NgxPaginationModule
   ],
-  providers: [AuthService, EventService],
+  providers: [AuthService, EventService, LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

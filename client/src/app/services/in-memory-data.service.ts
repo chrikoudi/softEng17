@@ -13,7 +13,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Αλκμήνης 8, Αθήνα, 118 54',
             type: ['Θέατρο', 'Μουσική', 'Χορός'],
             age: ['5-12', ' 12-18'],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-03-12'
         },
         {   id: 2,
             title: 'ΡΟΜΠΕΝ ΤΩΝ ΔΑΣΩΝ',
@@ -25,7 +26,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Φρυνίχου 14, Πλάκα',
             type: ['Θέατρο'],
             age: ['12-18'],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-04-16'
         },
         {   id: 3,
             title: 'ΚΑΛΟΚΑΙΡΙΝΗ ΝΥΧΤΑ',
@@ -37,7 +39,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Παπαδιαμαντοπούλου 4, Ιλίσια',
             type: ['Θέατρο'],
             age: ['5-12', ' 12-18'],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-04-02'
         },
         {   id: 4,
             title: 'Ο ΓΥΡΟΣ ΤΟΥ ΚΟΣΜΟΥ',
@@ -49,7 +52,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Πειραιώς 254, Αθήνα 177 78',
             type: ['Εκπαίδευση'],
             age: ['3-5'],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-03-21'
         },
         {   id: 5,
             title: 'ΛΙΟΝΤΑΡΙ ΚΑΙ ΠΟΝΤΙΚΙ',
@@ -61,7 +65,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Πειραιώς 254, Αθήνα 177 78',
             type: ['Εκπαίδευση'],
             age: ['3-5'],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-03-05'
         },
         {   id: 6,
             title: 'ΤΑΙΝΙΑ ΠΑΝΤΙΝΓΚΤΟΝ',
@@ -73,7 +78,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Ανδρέα Παπανδρέου 35, Μαρούσι 151 22',
             type: ['Κινηματοφράφος'],
             age: ['3-5', ' 5-12'],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-03-30'
         },
         {   id: 7,
             title: 'ΑΘΛΗΤΙΚΟ ΦΕΣΤΙΒΑΛ',
@@ -85,7 +91,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Νίκου Ζέρβα 56, Γλυφάδα',
             type: ['Αθλητισμός'],
             age: ['1-3'],
-            sex: ['Αγόρι']
+            sex: ['Αγόρι'],
+            date: '2018-03-21'
         },
         {   id: 8,
             title: 'ΤΑΙΝΙΑ ΤΟ ΓΑΤΟΞΟΡΚΙ',
@@ -97,7 +104,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Λεωφ. Βασιλίσσης Σοφίας 124, Αθήνα 115 26',
             type: ['Κινηματοφράφος'],
             age: ['3-5', ' 5-12'],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-04-19'
         },
         {   id: 9,
             title: 'ΠΡΩΤΑΘΛΗΜΑ ΤΕΝΙΣ',
@@ -109,7 +117,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Καστρίτσας 61, Νεά Ερυθραία',
             type: ['Αθλητισμός'],
             age: ['3-5', ' 5-12', ' 12-18'],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-03-15'
         },
         {   id: 10,
             title: 'ΝΕΟΣ ΠΑΙΔΟΤΟΠΟΣ',
@@ -121,7 +130,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Θεομήτορος 48, Άγιος Δημήτριος',
             type: ['Παιδότοποι', 'Ζωγραφική'],
             age: ['1-3',' 3-5', ' 5-12',],
-            sex: ['Αγόρι', ' Κορίτσι']
+            sex: ['Αγόρι', ' Κορίτσι'],
+            date: '2018-03-17'
         },
     ];
     return {events};

@@ -16,11 +16,20 @@ export class ResultsComponent implements OnInit {
 
    p: number = 1;
 
+   num = [5, 10, 15, 30, 50];
+   dis = [1, 5, 10, 25, 50, 100];
+   sex = ['Αγόρι', 'Κορίτσι'];
+   loc = ['Τρέχουσα', 'Ορισμός'];
+
+   types = ['Αθλητισμός', 'Ζωγραφική', 'Θέατρο', 'Κινηματογράφος', 'Παιδότοποι', 'Μουσική'];
+
    selectedType: string;
    selectedAge: number;
    selectedDate: number;
-
-   price: string = '';
+   selectedPrice: string;
+   selectedDistance: string;
+   selectedSex: string;
+   selectedLocation: string;
 
    events: Event[];
 
@@ -60,8 +69,20 @@ export class ResultsComponent implements OnInit {
     this.selectedDate = event.target.value;
   }
 
-  onClick(price: string) {
-    this.price = price;
+  onClickPrice(price) {
+    this.selectedPrice = price;
+  }
+
+  onClickSex(sex) {
+    this.selectedSex = sex;
+  }  
+
+  onClickDistance(distance) {
+    this.selectedDistance = distance;
+  }
+
+  onClickLocation(location) {
+    this.selectedLocation = location;
   }
 
 }

@@ -8,7 +8,7 @@ export class Event {
     numberOfTickets: number;
     location: string;
     type: [string];
-    minAge: number;
-    maxAge: number;
-    sex: String;
+    age: [number];
+    sex: [String];
+    date: Date;
 }
