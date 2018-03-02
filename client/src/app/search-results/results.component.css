@@ -1,6 +1,6 @@
 .background_image { 
     position:relative;
-    height: 250vh;
+    height: 180vh;
     background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -91,14 +91,15 @@
 
 #title {
     position: absolute;
-    right:32%;
+    right: 24%;
     top: 5%;
+    font-size: 140%;
 }
 
 #text {
     position: absolute;
-    left: 32%; 
-    bottom: 35%;
+    left: 31%; 
+    bottom: 20%;
     font-size:85%;
 }
 

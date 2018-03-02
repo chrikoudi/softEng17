@@ -16,6 +16,12 @@ export class ResultsComponent implements OnInit {
 
    p: number = 1;
 
+   selectedType: string;
+   selectedAge: number;
+   selectedDate: number;
+
+   price: string = '';
+
    events: Event[];
 
    gl_events: Observable<Event[]>; 
@@ -41,5 +47,21 @@ export class ResultsComponent implements OnInit {
      this.eventService.getEvents()
      .subscribe(events => this.events = events);
    }
+
+   selectTypeHandler (event: any) {
+     this.selectedType = event.target.value;
+   }
+
+   selectAgeHandler (event: any) {
+    this.selectedAge = event.target.value;
+  }
+
+  selectDateHandler (event: any) {
+    this.selectedDate = event.target.value;
+  }
+
+  onClick(price: string) {
+    this.price = price;
+  }
 
 }
