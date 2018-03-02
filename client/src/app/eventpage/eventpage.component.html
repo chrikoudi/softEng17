@@ -71,7 +71,7 @@
                     <div class="card border-light mb-3">
                         <div class="card-header bg-info text-white text-uppercase"><i class="fa fa-calendar-check-o"></i> Ημερομηνια</div>
                         <div class="card-body">
-                            <p class="card-text info_text">Ημερομηνία</p>
+                            <p class="card-text info_text">{{event.date}} <!--| date:'medium'--></p>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                         <div class="card border-light mb-3">
                             <div class="card-header text-white bg-info text-uppercase"><i class="fa fa-child"></i> Ηλικια</div>
                             <div class="card-body">
-                                <p class="card-text info_text"> {{event.minAge}} - {{event.maxAge}}</p>
+                                <p class="card-text info_text"> {{event.age}}</p>
                             </div>
                         </div>
                     </div>

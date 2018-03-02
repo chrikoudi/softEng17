@@ -19,6 +19,10 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateeventComponent } from './createevent/createevent.component'; 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { SigninformComponent } from './signinform/signinform.component';
+import { FilterPipe } from './filter.pipe';
+import { LocationService } from './services/location.service';
+import { ProviderSigninformComponent } from './provider-signinform/provider-signinform.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +36,10 @@ import {NgxPaginationModule} from 'ngx-pagination';
     PdfDownloaderComponent,
     ResultsComponent,
     BuypointsComponent,
-    CreateeventComponent
+    CreateeventComponent,
+    SigninformComponent,
+    FilterPipe,
+    ProviderSigninformComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +52,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
     RouterModule.forRoot(routes),
     NgxPaginationModule
   ],
-  providers: [AuthService, EventService],
+  providers: [AuthService, EventService, LocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

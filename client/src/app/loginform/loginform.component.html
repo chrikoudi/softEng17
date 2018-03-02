@@ -1,10 +1,57 @@
-<form *ngIf="!user">
-  <h2> Σύνδεση Γονέα </h2>
-  <label> E-mail </label>
-  <input type="text" [(ngModel)]="formInfo.username" name="username"/>
-  <br>
-  <label> Κωδικός πρόσβασης </label>
-  <input type="password" [(ngModel)]="formInfo.password" name="password"/>
+<div class="back">
+  <app-header></app-header>
 
-  <button (click)="login()"> Σύνδεση </button>
-</form>
+  <div class="center">
+    <div class="card text-white bg-info mb-3">
+      <div class="center_some">
+          <div class="card-header">
+            <h3>Σύνδεση</h3>
+          </div>
+      </div>
+      <div class="card-body">
+        <img src="../../assets/images/avatar.png" alt="Avatar" class="avatar">
+        <br>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <div class="form-group">
+            <label for="username">Όνομα Χρήστη</label>
+            <input  type="text" 
+                    class="form-control" 
+                    id="username" 
+                    placeholder="Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com" 
+                    type="email" 
+                    name="username"
+                    [(ngModel)]="formInfo.username"
+                    required
+                    pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
+                    #username="ngModel">
+             <div *ngIf="!username.valid">
+              <small>
+                Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου
+              </small>
+             </div>       
+          </div>
+          <div class="form-group">
+            <label for="password">Κωδικός Πρόσβασης</label>
+            <input type="text" 
+                   class="form-control" 
+                   id="password" 
+                   placeholder="Εισαγωγή Κωδικού Πρόσβασης" 
+                   type="password" 
+                   name="password"
+                   [(ngModel)]="formInfo.password"
+                   required>
+          </div>
+          <div class="center_some">
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Σύνδεση</button>
+            <br>
+            <br>
+            <p>Δεν έχετε ακόμα λογαριασμό; 
+              <a routerLink="/signin"> Εγγραφή</a>
+            </p>
+          </div>
+        </form>  
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>  
+</div>

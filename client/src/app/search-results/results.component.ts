@@ -16,6 +16,21 @@ export class ResultsComponent implements OnInit {
 
    p: number = 1;
 
+   num = [5, 10, 15, 30, 50];
+   dis = [1, 5, 10, 25, 50, 100];
+   sex = ['Αγόρι', 'Κορίτσι'];
+   loc = ['Τρέχουσα', 'Ορισμός'];
+
+   types = ['Αθλητισμός', 'Ζωγραφική', 'Θέατρο', 'Κινηματογράφος', 'Παιδότοποι', 'Μουσική'];
+
+   selectedType: string;
+   selectedAge: number;
+   selectedDate: number;
+   selectedPrice: string;
+   selectedDistance: string;
+   selectedSex: string;
+   selectedLocation: string;
+
    events: Event[];
 
    gl_events: Observable<Event[]>; 
@@ -41,5 +56,33 @@ export class ResultsComponent implements OnInit {
      this.eventService.getEvents()
      .subscribe(events => this.events = events);
    }
+
+   selectTypeHandler (event: any) {
+     this.selectedType = event.target.value;
+   }
+
+   selectAgeHandler (event: any) {
+    this.selectedAge = event.target.value;
+  }
+
+  selectDateHandler (event: any) {
+    this.selectedDate = event.target.value;
+  }
+
+  onClickPrice(price) {
+    this.selectedPrice = price;
+  }
+
+  onClickSex(sex) {
+    this.selectedSex = sex;
+  }  
+
+  onClickDistance(distance) {
+    this.selectedDistance = distance;
+  }
+
+  onClickLocation(location) {
+    this.selectedLocation = location;
+  }
 
 }
