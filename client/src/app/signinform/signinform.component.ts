@@ -11,7 +11,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 export class SigninformComponent implements OnInit {
 
-  userformInfo=  {
+  userformInfo =  {
     ufname: '',
     ulname: '',
     uemail: '',

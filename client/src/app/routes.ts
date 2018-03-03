@@ -10,8 +10,8 @@ import { CreateeventComponent } from './createevent/createevent.component';
 
 export const routes: Routes = [
     { path: 'login', component: LoginformComponent },
-    { path: 'signin', component: SigninformComponent},
-    { path: 'provider-signin', component: ProviderSigninformComponent},   
+    { path: 'signup', component: SigninformComponent},
+    { path: 'provider-signup', component: ProviderSigninformComponent},
     { path: 'home', component: HomeComponent },
     { path: 'results/:id', component: EventpageComponent },
     { path: 'results', component: ResultsComponent },
