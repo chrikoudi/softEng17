@@ -129,7 +129,7 @@ export class InMemoryDataService implements InMemoryDbService {
             numberOfTickets: 25,
             location: 'Θεομήτορος 48, Άγιος Δημήτριος',
             type: ['Παιδότοποι', 'Ζωγραφική'],
-            age: ['1-3',' 3-5', ' 5-12',],
+            age: ['1-3', ' 3-5', ' 5-12', ],
             sex: ['Αγόρι', ' Κορίτσι'],
             date: '2018-03-17'
         },

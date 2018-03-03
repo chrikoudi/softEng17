@@ -19,19 +19,26 @@
     font-size: 200%;
     /* margin-bottom: 0; */
 }
+#checkout {
+    color: #c01508;
+    font-weight: bold;
+    font-size: 150%;
+}
 .label_text {
     text-align: left;
 }
 .info_text{
     text-align: center;
 }
-.back_img {  
-    position:relative;
-    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') repeat center center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+.back_img {
+  position:relative;
+  height: 180vh;
+  background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .img {
