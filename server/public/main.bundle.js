@@ -158,7 +158,7 @@ var AppModule = /** @class */ (function () {
                 // and returns simulated server responses.
                 // Remove it when a real server is ready to receive requests.
                 __WEBPACK_IMPORTED_MODULE_17_angular_in_memory_web_api__["a" /* HttpClientInMemoryWebApiModule */].forRoot(__WEBPACK_IMPORTED_MODULE_18__services_in_memory_data_service__["a" /* InMemoryDataService */], { dataEncapsulation: false }),
-                __WEBPACK_IMPORTED_MODULE_3__angular_router__["b" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__routes__["a" /* routes */]),
+                __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__routes__["a" /* routes */]),
                 __WEBPACK_IMPORTED_MODULE_20_ngx_pagination__["a" /* NgxPaginationModule */]
             ],
             providers: [__WEBPACK_IMPORTED_MODULE_8__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_9__services_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_22__services_location_service__["a" /* LocationService */]],
@@ -655,7 +655,7 @@ module.exports = "* {\n    font-family: 'Roboto', sans-serif;\n}\n\n.back {\n   
 /***/ "./src/app/loginform/loginform.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"back\">\n  <app-header></app-header>\n\n  <div class=\"center\">\n    <div class=\"card text-white bg-info mb-3\">\n      <div class=\"center_some\">\n          <div class=\"card-header\">\n            <h3>Σύνδεση</h3>\n          </div>\n      </div>\n      <div class=\"card-body\">\n        <img src=\"../../assets/images/avatar.png\" alt=\"Avatar\" class=\"avatar\">\n        <br>\n        <form (ngSubmit)=\"login()\" #f=\"ngForm\">\n          <div class=\"form-group\">\n            <label for=\"username\">Όνομα Χρήστη</label>\n            <input  type=\"text\"\n                    class=\"form-control\"\n                    id=\"username\"\n                    placeholder=\"Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com\"\n                    type=\"email\"\n                    name=\"username\"\n                    [(ngModel)]=\"formInfo.username\"\n                    required\n                    pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n                    #username=\"ngModel\">\n             <div *ngIf=\"!username.valid\">\n              <small>\n                Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου\n              </small>\n             </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"password\">Κωδικός Πρόσβασης</label>\n            <input type=\"text\"\n                   class=\"form-control\"\n                   id=\"password\"\n                   placeholder=\"Εισαγωγή Κωδικού Πρόσβασης\"\n                   type=\"password\"\n                   name=\"password\"\n                   [(ngModel)]=\"formInfo.password\"\n                   required>\n          </div>\n          <div class=\"center_some\">\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!f.valid\">Σύνδεση</button>\n            <br>\n            <br>\n            <p>Δεν έχετε ακόμα λογαριασμό; \n              <a routerLink=\"/signup\"> Εγγραφή</a>\n            </p>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <app-footer></app-footer>\n</div>\n"
+module.exports = "<div class=\"back\">\n  <app-header></app-header>\n\n  <div class=\"center\">\n    <div class=\"card text-white bg-info mb-3\">\n      <div class=\"center_some\">\n          <div class=\"card-header\">\n            <h3>Σύνδεση</h3>\n          </div>\n      </div>\n      <div class=\"card-body\">\n        <img src=\"../../assets/images/avatar.png\" alt=\"Avatar\" class=\"avatar\">\n        <br>\n        <form (ngSubmit)=\"login()\" #f=\"ngForm\">\n          <div class=\"form-group\">\n            <label for=\"username\">Όνομα Χρήστη</label>\n            <input  type=\"text\"\n                    class=\"form-control\"\n                    id=\"username\"\n                    placeholder=\"Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com\"\n                    type=\"email\"\n                    name=\"username\"\n                    [(ngModel)]=\"formInfo.username\"\n                    required\n                    pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n                    #username=\"ngModel\">\n             <div *ngIf=\"!username.valid\">\n              <small>\n                Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου\n              </small>\n             </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"password\">Κωδικός Πρόσβασης</label>\n            <input type=\"text\"\n                   class=\"form-control\"\n                   id=\"password\"\n                   placeholder=\"Εισαγωγή Κωδικού Πρόσβασης\"\n                   type=\"password\"\n                   name=\"password\"\n                   [(ngModel)]=\"formInfo.password\"\n                   required>\n          </div>\n          <div class=\"center_some\">\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!f.valid\">Σύνδεση</button>\n            <div class=\"alert alert-dismissible alert-danger\" *ngIf=\"!f.valid\">\n              <strong>Λάθος στοιχεία! Προσπαθείστε ξανά!</strong>\n            </div>\n            <br>\n            <br>\n            <p>Δεν έχετε ακόμα λογαριασμό; \n              <a routerLink=\"/signup\"> Εγγραφή</a>\n            </p>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <app-footer></app-footer>\n</div>\n"
 
 /***/ }),
 
@@ -666,7 +666,8 @@ module.exports = "<div class=\"back\">\n  <app-header></app-header>\n\n  <div cl
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginformComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__("./node_modules/rxjs/_esm5/add/operator/map.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -679,9 +680,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var LoginformComponent = /** @class */ (function () {
-    function LoginformComponent(authService) {
+    function LoginformComponent(authService, router) {
         this.authService = authService;
+        this.router = router;
         this.formInfo = {
             username: '',
             password: ''
@@ -696,6 +699,7 @@ var LoginformComponent = /** @class */ (function () {
             this.authService.login(username, password)
                 .map(function (user) { return console.log(user); })
                 .subscribe();
+            this.router.navigate(['home']);
         }
         else {
             console.log('You must set a username and a password');
@@ -707,7 +711,7 @@ var LoginformComponent = /** @class */ (function () {
             template: __webpack_require__("./src/app/loginform/loginform.component.html"),
             styles: [__webpack_require__("./src/app/loginform/loginform.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* Router */]])
     ], LoginformComponent);
     return LoginformComponent;
 }());
