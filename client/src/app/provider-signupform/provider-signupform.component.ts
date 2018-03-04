@@ -4,11 +4,11 @@ import { NgForm } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 @Component({
-  selector: 'app-provider-signinform',
-  templateUrl: './provider-signinform.component.html',
-  styleUrls: ['./provider-signinform.component.css']
+  selector: 'app-provider-signupform',
+  templateUrl: './provider-signupform.component.html',
+  styleUrls: ['./provider-signupform.component.css']
 })
-export class ProviderSigninformComponent implements OnInit {
+export class ProviderSignupformComponent implements OnInit {
 
   providerformInfo=  {
     company_name: '',
