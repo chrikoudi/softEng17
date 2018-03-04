@@ -12,11 +12,10 @@ import { RouterModule, Routes } from '@angular/router';
 export class SignupformComponent implements OnInit {
 
   userformInfo =  {
-    ufname: '',
-    ulname: '',
-    uemail: '',
-    upassword: '',
-    upassword_repeat: ''
+    userfirstname: '',
+    userlastname: '',
+    username: '',
+    password: ''
   };
 
   onSubmituser(form: NgForm) {
