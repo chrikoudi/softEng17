@@ -655,7 +655,7 @@ module.exports = "* {\n    font-family: 'Roboto', sans-serif;\n}\n\n.back {\n   
 /***/ "./src/app/loginform/loginform.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"back\">\n  <app-header></app-header>\n\n  <div class=\"center\">\n    <div class=\"card text-white bg-info mb-3\">\n      <div class=\"center_some\">\n          <div class=\"card-header\">\n            <h3>Σύνδεση</h3>\n          </div>\n      </div>\n      <div class=\"card-body\">\n        <img src=\"../../assets/images/avatar.png\" alt=\"Avatar\" class=\"avatar\">\n        <br>\n        <form (ngSubmit)=\"login()\" #f=\"ngForm\">\n          <div class=\"form-group\">\n            <label for=\"username\">Όνομα Χρήστη</label>\n            <input  type=\"text\"\n                    class=\"form-control\"\n                    id=\"username\"\n                    placeholder=\"Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com\"\n                    type=\"email\"\n                    name=\"username\"\n                    [(ngModel)]=\"formInfo.username\"\n                    required\n                    pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n                    #username=\"ngModel\">\n             <div *ngIf=\"!username.valid\">\n              <small>\n                Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου\n              </small>\n             </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"password\">Κωδικός Πρόσβασης</label>\n            <input type=\"text\"\n                   class=\"form-control\"\n                   id=\"password\"\n                   placeholder=\"Εισαγωγή Κωδικού Πρόσβασης\"\n                   type=\"password\"\n                   name=\"password\"\n                   [(ngModel)]=\"formInfo.password\"\n                   required>\n          </div>\n          <div class=\"center_some\">\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!f.valid\">Σύνδεση</button>\n            <div class=\"alert alert-dismissible alert-danger\" *ngIf=\"!f.valid\">\n              <strong>Λάθος στοιχεία! Προσπαθείστε ξανά!</strong>\n            </div>\n            <br>\n            <br>\n            <p>Δεν έχετε ακόμα λογαριασμό; \n              <a routerLink=\"/signup\"> Εγγραφή</a>\n            </p>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <app-footer></app-footer>\n</div>\n"
+module.exports = "<div class=\"back\">\n  <app-header></app-header>\n\n  <div class=\"center\">\n    <div class=\"card text-white bg-info mb-3\">\n      <div class=\"center_some\">\n          <div class=\"card-header\">\n            <h3>Σύνδεση</h3>\n          </div>\n      </div>\n      <div class=\"card-body\">\n        <img src=\"../../assets/images/avatar.png\" alt=\"Avatar\" class=\"avatar\">\n        <br>\n        <form (ngSubmit)=\"login()\" #f=\"ngForm\">\n          <div class=\"form-group\">\n            <label for=\"username\">Όνομα Χρήστη</label>\n            <input  type=\"text\"\n                    class=\"form-control\"\n                    id=\"username\"\n                    placeholder=\"Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com\"\n                    type=\"email\"\n                    name=\"username\"\n                    [(ngModel)]=\"formInfo.username\"\n                    required\n                    pattern=\"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\"\n                    #username=\"ngModel\">\n             <div *ngIf=\"!username.valid\">\n              <small>\n                Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου\n              </small>\n             </div>\n          </div>\n          <div class=\"form-group\">\n            <label for=\"password\">Κωδικός Πρόσβασης</label>\n            <input type=\"text\"\n                   class=\"form-control\"\n                   id=\"password\"\n                   placeholder=\"Εισαγωγή Κωδικού Πρόσβασης\"\n                   type=\"password\"\n                   name=\"password\"\n                   [(ngModel)]=\"formInfo.password\"\n                   required>\n          </div>\n          <div class=\"center_some\">\n            <button type=\"submit\" class=\"btn btn-primary\" [disabled]=\"!f.valid\">Σύνδεση</button>\n            <br>\n            <br>\n            <p>Δεν έχετε ακόμα λογαριασμό; \n              <a routerLink=\"/signup\"> Εγγραφή</a>\n            </p>\n          </div>\n        </form>\n      </div>\n    </div>\n  </div>\n  <app-footer></app-footer>\n</div>\n"
 
 /***/ }),
 
@@ -682,8 +682,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var LoginformComponent = /** @class */ (function () {
-    function LoginformComponent(authService, router) {
-        this.authService = authService;
+    function LoginformComponent(auth, router) {
+        this.auth = auth;
         this.router = router;
         this.formInfo = {
             username: '',
@@ -696,10 +696,9 @@ var LoginformComponent = /** @class */ (function () {
         var _a = this.formInfo, username = _a.username, password = _a.password;
         if (username !== '' && password !== '') {
             // console.log(`Login with ${username} ${password}`);
-            this.authService.login(username, password)
+            this.auth.login(username, password)
                 .map(function (user) { return console.log(user); })
                 .subscribe();
-            this.router.navigate(['home']);
         }
         else {
             console.log('You must set a username and a password');
