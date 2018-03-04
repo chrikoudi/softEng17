@@ -20,11 +20,6 @@ const PlanSchema = new Schema({
     price:          { type: Number, required: [true, "Price is required"]},
     numberOfTickets: {type: Number, required: [true, "Number of tickers is required"]},
     startDate:      { type: Date, required: [true, "Date is required"] },
-    // geo: {
-    //         es_indexed: true,
-    //         type: String,
-    //         es_type: "geo_point"
-    //     },
     geo: {
       geo_point: {
           es_indexed: true,

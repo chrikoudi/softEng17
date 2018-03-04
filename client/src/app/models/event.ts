@@ -6,9 +6,12 @@ export class Event {
     image: string;
     price: number;
     numberOfTickets: number;
-    location: string;
+    location: {
+      lat: number;
+      lon: number;
+    };
     type: [string];
     age: [number];
-    sex: [String];
+    sex: [string];
     date: Date;
 }

@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { RouterModule} from '@angular/router';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { HttpModule} from '@angular/http';
 import { routes } from './routes';
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
@@ -17,7 +18,7 @@ import { ResultsComponent } from './search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
-import { CreateeventComponent } from './createevent/createevent.component'; 
+import { CreateeventComponent } from './createevent/createevent.component';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SigninformComponent } from './signinform/signinform.component';
 import { FilterPipe } from './filter.pipe';
@@ -45,6 +46,7 @@ import { ProviderSigninformComponent } from './provider-signinform/provider-sign
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.

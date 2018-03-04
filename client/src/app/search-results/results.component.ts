@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Event } from '../models/event';
 import { EventService } from '../services/event.service';
 import { Observable } from 'rxjs/Observable';
-import { Subject }    from 'rxjs/Subject';
+import { Subject } from 'rxjs/Subject';
 import { switchMap } from 'rxjs/operators';
 
 @Component({
@@ -14,7 +14,7 @@ import { switchMap } from 'rxjs/operators';
 
 export class ResultsComponent implements OnInit {
 
-   p: number = 1;
+   p = 1;
 
    num = [5, 10, 15, 30, 50];
    dis = [1, 5, 10, 25, 50, 100];
@@ -33,7 +33,7 @@ export class ResultsComponent implements OnInit {
 
    events: Event[];
 
-   gl_events: Observable<Event[]>; 
+   gl_events: Observable<Event[]>;
 
    constructor(private eventService: EventService) { }
 
@@ -47,7 +47,7 @@ export class ResultsComponent implements OnInit {
       this.gl_events = this.searchTerms.pipe(
       // switch to new search observable each time the term changes
       switchMap((term: string) => this.eventService.searchEvents(term)),
-      ); 
+      );
 
     this.getEvents();
   }
@@ -75,7 +75,7 @@ export class ResultsComponent implements OnInit {
 
   onClickSex(sex) {
     this.selectedSex = sex;
-  }  
+  }
 
   onClickDistance(distance) {
     this.selectedDistance = distance;
