@@ -10,7 +10,7 @@ import { RouterModule, Routes } from '@angular/router';
 })
 export class ProviderSignupformComponent implements OnInit {
 
-  providerformInfo =  {
+  providerformInfo=  {
     company_name: '',
     afm: '',
     phone: '',

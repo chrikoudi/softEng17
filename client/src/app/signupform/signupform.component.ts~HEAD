@@ -4,12 +4,12 @@ import { NgForm } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 
 @Component({
-  selector: 'app-signinform',
-  templateUrl: './signinform.component.html',
-  styleUrls: ['./signinform.component.css']
+  selector: 'app-signupform',
+  templateUrl: './signupform.component.html',
+  styleUrls: ['./signupform.component.css']
 })
 
-export class SigninformComponent implements OnInit {
+export class SignupformComponent implements OnInit {
 
   userformInfo =  {
     ufname: '',
@@ -21,7 +21,7 @@ export class SigninformComponent implements OnInit {
 
   onSubmituser(form: NgForm) {
     console.log(this.userformInfo);
-  }  
+  }
 
   constructor() { }
 

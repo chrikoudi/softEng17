@@ -21,7 +21,7 @@ export class SignupformComponent implements OnInit {
 
   onSubmituser(form: NgForm) {
     console.log(this.userformInfo);
-  }
+  }  
 
   constructor() { }
 

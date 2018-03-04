@@ -19,10 +19,9 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateeventComponent } from './createevent/createevent.component'; 
 import {NgxPaginationModule} from 'ngx-pagination';
-import { SigninformComponent } from './signinform/signinform.component';
-import { FilterPipe } from './filter.pipe';
+import { SignupformComponent } from './signupform/signupform.component';
 import { LocationService } from './services/location.service';
-import { ProviderSigninformComponent } from './provider-signinform/provider-signinform.component';
+import { ProviderSignupformComponent } from './provider-signupform/provider-signupform.component';
 
 @NgModule({
   declarations: [
@@ -37,9 +36,8 @@ import { ProviderSigninformComponent } from './provider-signinform/provider-sign
     ResultsComponent,
     BuypointsComponent,
     CreateeventComponent,
-    SigninformComponent,
-    FilterPipe,
-    ProviderSigninformComponent
+    SignupformComponent,
+    ProviderSignupformComponent
   ],
   imports: [
     BrowserModule,
