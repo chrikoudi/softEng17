@@ -21,6 +21,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { SignupformComponent } from './signupform/signupform.component';
 import { LocationService } from './services/location.service';
 import { ProviderSignupformComponent } from './provider-signupform/provider-signupform.component';
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ProviderSignupformComponent } from './provider-signupform/provider-sign
     BuypointsComponent,
     CreateeventComponent,
     SignupformComponent,
-    ProviderSignupformComponent
+    ProviderSignupformComponent,
+    FileSelectDirective
   ],
   imports: [
     BrowserModule,
