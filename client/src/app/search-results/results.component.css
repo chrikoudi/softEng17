@@ -33,6 +33,12 @@
 #back {
     position: absolute;
     width: 10%;
+    left: 55%; 
+}
+
+#back1 {
+    position: absolute;
+    width: 10%;
     left: 48%; 
 }
 

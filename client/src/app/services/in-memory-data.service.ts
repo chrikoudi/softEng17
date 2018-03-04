@@ -10,9 +10,13 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/jazz.jpg',
             price: 16,
             numberOfTickets: 100,
-            location: 'Αλκμήνης 8, Αθήνα, 118 54',
+            location: {
+                lat: 37.9746186,
+                lon: 23.7084009
+              },
+            //location: 'Αλκμήνης 8, Αθήνα, 118 54',
             type: ['Θέατρο', 'Μουσική'],
-            age: ['5-12 ετών', ' 12-18 ετών'],
+            age: ['5-12 ετών', '12-18 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
             date: '05/03/2018'
         },
@@ -23,7 +27,11 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/roben.jpg',
             price: 10,
             numberOfTickets: 120,
-            location: 'Φρυνίχου 14, Πλάκα',
+            location: {
+                lat: 37.9700818,
+                lon: 23.7284641
+              },
+            //location: 'Φρυνίχου 14, Πλάκα',
             type: ['Θέατρο'],
             age: ['12-18 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
@@ -41,11 +49,11 @@ export class InMemoryDataService implements InMemoryDbService {
               lon: 23.752676 // 'Παπαδιαμαντοπούλου 4, Ιλίσια',
             },
             type: ['Θέατρο'],
-            age: ['5-12 ετών', ' 12-18 ετών'],
+            age: ['5-12 ετών', '12-18 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
             date: '05/03/2018'
         },
-        {   id: 4,
+      /*  {   id: 4,
             title: 'ΤΑΙΝΙΑ ΤΟ ΓΑΤΟΞΟΡΚΙ',
             short_description: 'Ένας διασκεδαστής σε παιδικά πάρτι, που φοράει στολή γάτου, αποφασίζει να αλλάξει τη ζωή του με τη βοήθεια ενός μάγου. Εκείνος όμως τον μεταμορφώνει σε αληθινό γάτο και στη συνέχεια προσπαθεί να λύσει το ξόρκι του.',
             description: 'Πρόκειται για μια περιπέτεια κινουμένων σχεδίων που έρχεται από τη Βραζιλία, δια χειρός Rafael Ribas. Ο Λίνο είναι ένας διασκεδαστής σε παιδικά πάρτι που δεν αντέχει άλλο τη ρουτίνα του και το γάτο-κοστούμι του. Αποφασίζει έτσι να ζητήσει βοήθεια από έναν όχι και τόσο ταλαντούχο μάγο που τον μεταμορφώνει σε αυτό που μισεί περισσότερο: το κοστούμι του.',
@@ -54,7 +62,7 @@ export class InMemoryDataService implements InMemoryDbService {
             numberOfTickets: 70,
             location: 'Λεωφ. Βασιλίσσης Σοφίας 124, Αθήνα 115 26',
             type: ['Κινηματογράφος'],
-            age: ['3-5 ετών', ' 5-12 ετών'],
+            age: ['3-5 ετών', '5-12 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
             date: '07/03/2018'
         },
@@ -80,7 +88,7 @@ export class InMemoryDataService implements InMemoryDbService {
             numberOfTickets: 60,
             location: 'Ανδρέα Παπανδρέου 35, Μαρούσι 151 22',
             type: ['Κινηματογράφος'],
-            age: ['3-5 ετών', ' 5-12 ετών'],
+            age: ['3-5 ετών', '5-12 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
             date: '13/03/2018'
         },
@@ -119,7 +127,7 @@ export class InMemoryDataService implements InMemoryDbService {
             numberOfTickets: 100,
             location: 'Καστρίτσας 61, Νεά Ερυθραία',
             type: ['Αθλητισμός'],
-            age: ['3-5 ετών', ' 5-12 ετών', ' 12-18 ετών'],
+            age: ['3-5 ετών', '5-12 ετών', '12-18 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
             date: '09/03/2018'
         },
@@ -132,10 +140,10 @@ export class InMemoryDataService implements InMemoryDbService {
             numberOfTickets: 25,
             location: 'Θεομήτορος 48, Άγιος Δημήτριος',
             type: ['Παιδότοποι', 'Ζωγραφική'],
-            age: ['1-3', ' 3-5', ' 5-12', ],
+            age: ['1-3', '3-5', '5-12', ],
             sex: ['Αγόρι', 'Κορίτσι'],
             date: '05/03/2018'
-        },
+        },*/
     ];
 
     return { events };

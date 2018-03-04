@@ -15,13 +15,13 @@ export class LocationService {
     //   return this.http.get<any>('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback');
     // }
 
-  //   getLatLon(term: string): Promise<any> {
-  //     // tslint:disable-next-line:max-line-length
-  //     return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + term + ', ΕλλάδαCA&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback&language=el')
-  //          .toPromise()
-  //          .then((response) => Promise.resolve(response.json()))
-  //          .catch((error) => Promise.resolve(error.json()));
-  //  }
+    getLatLon(term: string): Promise<any> {
+      // tslint:disable-next-line:max-line-length
+      return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + term + ', ΕλλάδαCA&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback&language=el')
+           .toPromise()
+           .then((response) => Promise.resolve(response.json()))
+           .catch((error) => Promise.resolve(error.json()));
+   }
 
    getLοcation(location): Promise<any> {
     // tslint:disable-next-line:max-line-length

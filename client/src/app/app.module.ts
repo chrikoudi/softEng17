@@ -27,6 +27,7 @@ import { ProviderSignupformComponent } from './provider-signupform/provider-sign
 import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import { TermsComponent } from './terms/terms.component';
 import { AgmCoreModule } from '@agm/core';
+import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { AgmCoreModule } from '@agm/core';
     NgxPaginationModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM'
-    })
+    }),
+    AgmSnazzyInfoWindowModule
   ],
   providers: [AuthService, EventService, LocationService],
   bootstrap: [AppComponent]

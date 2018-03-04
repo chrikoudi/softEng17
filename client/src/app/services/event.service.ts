@@ -6,6 +6,11 @@ import { of } from 'rxjs/observable/of';
 import { catchError } from 'rxjs/operators';
 import { Event } from '../models/event';
 
+interface Loc {
+  lat: number;
+  lon: number
+}
+
 @Injectable()
 export class EventService {
 
@@ -52,12 +57,12 @@ export class EventService {
 
     /* GET heroes whose name contains search term */
 
-    searchEvents(term: string): Observable<Event[]> {
-      if (!term.trim()) {
+    searchEvents(searchTerms: string, location: Loc, distance: number): Observable<Event[]> {
+      if (!searchTerms.trim()) {
         // if not search term, return empty hero array.
         return of([]);
       }
-      return this.http.get<Event[]>(`api/events/?title=${term}`).pipe(
+      return this.http.get<Event[]>(`api/events/search?searchTerms=${searchTerms}&distance=${distance}&lat=${location.lat}&lon=${location.lon}`).pipe(
         catchError(this.handleError<Event[]>('searchEvents', []))
       );
     }

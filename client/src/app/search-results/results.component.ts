@@ -4,7 +4,17 @@ import { Event } from '../models/event';
 import { EventService } from '../services/event.service';
 import { Observable } from 'rxjs/Observable';
 import { dateFormatPipe } from '../dateFormatPipe';
+import { LocationService } from '../services/location.service';
 declare const google: any;
+
+interface SearchForm {
+   searchTerms: string;
+   location: {
+     lat: number;
+     lon: number;
+   } 
+   distance: number;
+}
 
 @Component({
   selector: 'app-results',
@@ -13,9 +23,6 @@ declare const google: any;
 })
 
 export class ResultsComponent implements OnInit {
-
-  lat: number = 37.983810;
-  lng: number = 23.727539;
 
   newDate : any;
 
@@ -29,11 +36,13 @@ export class ResultsComponent implements OnInit {
 
    p: number = 1;
 
+   event: Event;
+
    show: boolean;
    show_map: boolean;
 
    num = [5, 10, 15, 30, 50];
-   dis = [1, 5, 10, 25, 50, 100];
+   dis = [1, 5, 10];
    sex = ['Αγόρι', 'Κορίτσι'];
    loc = ['Τρέχουσα', 'Ορισμός'];
 
@@ -46,7 +55,16 @@ export class ResultsComponent implements OnInit {
    results: Observable<Event[]>; 
    temp_results: Observable<Event[]>;
 
-   constructor(private eventService: EventService) { 
+  searchQuery: SearchForm = {
+    searchTerms: '',
+    location: {
+      lat: 37.983810,
+      lon: 23.727539
+    },
+    distance: 5
+  };
+
+   constructor(private eventService: EventService, private locService: LocationService) { 
       this.show = false;
       this.show_map = false;
    }     
@@ -55,15 +73,22 @@ export class ResultsComponent implements OnInit {
     this.getEvents();
   }
   
-
-  search(term: string) {
-    this.results = this.eventService.searchEvents(term);
+  search() {
+    const { searchTerms , location , distance } = this.searchQuery;
+    this.results = this.eventService.searchEvents(searchTerms, location, distance);
     this.temp_results = this.results;
   }
 
-  location_search(location: string) {
-    this.results = this.eventService.searchEvents(location);
+  location_search(locationStr: string): void {
+    this.locService.getLatLon(locationStr)
+        .then((response) => this.searchQuery.location = { lat: response.results[0].geometry.location.lat, lon: response.results[0].geometry.location.lng})
+        .catch((error) => console.error(error));
   }
+
+  onClickDistanceHandler(dist: number) {
+    this.searchQuery.distance = dist;
+ }
+  
 
    getEvents(): void {
      this.results = this.eventService.getEvents();
@@ -159,36 +184,6 @@ export class ResultsComponent implements OnInit {
       this.results = this.results.map(results => results.filter(result => result.sex.some(check_type)));
     }
   }  
-
-
-  onClickDistanceHandler(distance) {
-    let selectedDistance = distance;
-
-    if(selectedDistance == this.dis[0])
-    {
-      //this.results
-    }
-    else if(selectedDistance == this.dis[1])
-    {
-      //this.results
-    }
-    else if(selectedDistance == this.dis[2])
-    {
-      //this.results
-    }
-    else if(selectedDistance == this.dis[3])
-    {
-      //this.results
-    }
-    else if(selectedDistance == this.dis[4])
-    {
-      //this.results
-    }
-    else if(selectedDistance == this.dis[5])
-    {
-      //this.results
-    }
-  }
 
   onClickLocationHandler(location) {
     this.selectedLocation = location;
