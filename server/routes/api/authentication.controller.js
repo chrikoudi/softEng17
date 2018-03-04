@@ -62,7 +62,7 @@ router.post("/signup", (req, res, next) => {
   });
 });
 
-router.post("/logout", function(req, res) {
+router.get("/logout", function(req, res) {
   req.logout();
   res.status(200).json({ message: 'Success' });
 });

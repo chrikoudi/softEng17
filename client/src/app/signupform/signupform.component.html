@@ -11,14 +11,14 @@
       <div class="card-body">
 
         <div class="center_some_more">
-          <a routerLink="/signin" class="btn btn-info" id="button">Εγγραφή Γονέα</a>
+          <a routerLink="/signup" class="btn btn-info" id="button">Εγγραφή Γονέα</a>
           &nbsp;
-          <a routerLink="/provider-signin" class="btn btn-info" id="button">Εγγραφή Παρόχου</a>
+          <a routerLink="/provider-signup" class="btn btn-info" id="button">Εγγραφή Παρόχου</a>
           <br>
-          <p>Παρακαλώ εισάγετε στοιχεία για την Εγγραφή Γονέα:</p>
           <br>
+          <p>Παρακαλώ εισάγετε στοιχεία για την Εγγραφή Γονέα:</p>        
         </div>
-        <form>
+        <form #f="ngForm">
           <div class="form-group">
             <label for="ufname"><b>Όνομα</b></label>
             <input type="text"
@@ -56,30 +56,38 @@
             </div>
           </div>
           <div class="form-group">
-            <label for="upassword"><b>Κωδικός Πρόσβασης</b></label>
-            <input type="text"
+            <label for="password"><b>Κωδικός Πρόσβασης</b></label>
+            <input type="password"
                     class="form-control"
-                    id="upassword"
+                    id="password"
                     placeholder="Εισαγωγή Κωδικού Πρόσβασης"
-                    name="upassword"
+                    name="password"
                     [(ngModel)]="formInfo.password"
-                    required>
+                    required
+                    #password="ngModel">
           </div>
           <div class="form-group">
-            <label for="upassword_repeat"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
-            <input type="text"
+            <label for="passwordrepeat"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
+            <input type="password"
                     class="form-control"
-                    id="upassword_repeat"
+                    id="passwordrepeat"
                     placeholder="Επαναλάβετε τον Κωδικό Πρόσβασης"
-                    name="upassword_repeat"
-                    required>
+                    name="passwordrepeat"
+                    [(ngModel)]="formInfo.password_repeat"
+                    required
+                    #passwordrepeat="ngModel">
+            <div *ngIf="password.value != passwordrepeat.value">
+              <small>
+                Οι δύο κωδικοί δεν είναι ίδιοι.
+              </small>
+            </div>                          
           </div>
           <br>
           <div class="center_some">
             <p>Δημιουργώντας Λογαριασμό συμφωνείτε με τους :
-                <a routerLink="/home"> Όρους και την Πολιτική μας</a>
+                <a routerLink="/terms"> Όρους και την Πολιτική μας</a>
             </p>
-            <button (click)="signup()" class="btn btn-warning">Δημιουργία Λογαριασμού</button>
+            <button (click)="signup()" class="btn btn-primary" [disabled]="(!f.valid) || (password.value != passwordrepeat.value)">Δημιουργία Λογαριασμού</button>
             <br>
             <br>
             <a routerLink="/home" class="btn btn-danger" id="button">Ακύρωση</a>

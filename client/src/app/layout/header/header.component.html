@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg justify-content-between">
+<nav class="navbar navbar-expand-lg justify-content-between" *ngIf="!user">
     <a class="navbar-brand" routerLink="/home">
       <img src="../../assets/images/logo.png" width="120" height="100" class="d-inline-block align-top">
     </a>
@@ -13,7 +13,7 @@
     </div>
   </nav>
 
-<!-- <nav class="navbar navbar-expand-lg justify-content-between">
+<nav class="navbar navbar-expand-lg justify-content-between" *ngIf="user">
     <a class="navbar-brand" routerLink="/home">
       <img src="../../assets/images/logo.png" width="120" height="100" class="d-inline-block align-top">
     </a>
@@ -23,7 +23,7 @@
         </a>
         &nbsp;
         <a routerLink="/home">
-          <button class="btn btn-danger my-2 my-sm-0" type="submit">Αποσύνδεση</button>
+          <button class="btn btn-danger my-2 my-sm-0" type="submit" (click)="auth.logout().subscribe()">Αποσύνδεση</button>
         </a>
     </div>
-  </nav> -->
+  </nav>

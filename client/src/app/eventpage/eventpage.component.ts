@@ -6,7 +6,7 @@ import { Location } from '@angular/common';
 import { Event } from '../models/event';
 import * as jsPDF from 'jspdf';
 import { ThrowStmt } from '@angular/compiler';
-// import { AuthService } from '../services/auth.service';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-eventpage',
@@ -22,13 +22,20 @@ export class EventpageComponent implements OnInit {
   show: boolean;
   quantity = 1;
   total: number;
+  user: object;
 
   constructor(
     private route: ActivatedRoute,
-   // private authService: AuthService,
+    public auth: AuthService,
     private eventService: EventService,
     private location: Location,
-    private locService: LocationService) { this.show = false; }
+    private locService: LocationService) {
+
+      this.user = this.auth.getUser();
+      this.auth.getLoginEventEmitter()
+        .subscribe( user => this.user = user );
+
+      this.show = false; }
 
   ngOnInit(): void {
     this.getEvent();

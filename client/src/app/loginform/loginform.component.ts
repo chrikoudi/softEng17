@@ -1,7 +1,8 @@
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, Router } from '@angular/router';
+
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 
@@ -18,7 +19,7 @@ interface LoginForm {
 
 export class LoginformComponent implements OnInit {
 
-  constructor(private authService: AuthService) { }
+  constructor(public auth: AuthService, private router: Router ) {}
 
   formInfo: LoginForm =  {
     username: '',
@@ -32,7 +33,7 @@ export class LoginformComponent implements OnInit {
     const {username, password} = this.formInfo;
     if (username !== '' && password !== '') {
       // console.log(`Login with ${username} ${password}`);
-      this.authService.login(username, password)
+      this.auth.login(username, password)
       .map(user => console.log(user))
       .subscribe();
     } else {
