@@ -35,7 +35,7 @@
                             <p class="price_quant"> {{event.numberOfTickets | number}} </p>
                         </span>
 
-                        <form *ngIf="event.numberOfTickets && !show">
+                        <form *ngIf="event.numberOfTickets && user">
                             <div class="form-group">
                                 <div class="label_text">Ποσότητα :</div>
                                 <div class="input-group justify-content-center mb-3">
@@ -57,7 +57,7 @@
                             </button>
                         </form>
                         <div class="alert alert-dismissible alert-danger" *ngIf="!user">
-                          <strong>Κάντε <a routerLink="/signin"> ΕΓΓΡΑΦΗ</a> για αγορά εισιτηρίων!</strong>
+                          <strong>Κάντε <a [routerLink] = "/signup"> ΕΓΓΡΑΦΗ</a> για αγορά εισιτηρίων!</strong>
                         </div>
                         <div class="alert alert-dismissible alert-danger" *ngIf="!event.numberOfTickets">
                             <strong>Τα εισιτήρια εξαντλήθηκαν!</strong>

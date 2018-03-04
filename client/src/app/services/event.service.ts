@@ -18,7 +18,7 @@ export class EventService {
   getEvents (): Observable<Event[]> {
     return this.http.get<Event[]>(`${this.BASE_URL}/api/events`)
     .pipe(
-      catchError(this.handleError('getHeroes', []))
+      catchError(this.handleError('getEvents', []))
     );
   }
 
