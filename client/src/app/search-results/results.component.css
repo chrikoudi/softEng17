@@ -78,6 +78,10 @@
     left: 21%;
 }
 
+#submit {
+    left: 34%;
+}
+
 .list_results {
     position: absolute; 
     right: 4%;

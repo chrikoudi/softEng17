@@ -20,7 +20,6 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateeventComponent } from './createevent/createevent.component'; 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SigninformComponent } from './signinform/signinform.component';
-import { FilterPipe } from './filter.pipe';
 import { LocationService } from './services/location.service';
 import { ProviderSigninformComponent } from './provider-signinform/provider-signinform.component';
 
@@ -38,7 +37,6 @@ import { ProviderSigninformComponent } from './provider-signinform/provider-sign
     BuypointsComponent,
     CreateeventComponent,
     SigninformComponent,
-    FilterPipe,
     ProviderSigninformComponent
   ],
   imports: [
