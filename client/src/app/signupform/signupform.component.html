@@ -11,78 +11,75 @@
       <div class="card-body">
 
         <div class="center_some_more">
-          <a routerLink="/signup" class="btn btn-info" id="button">Εγγραφή Γονέα</a>        
+          <a routerLink="/signin" class="btn btn-info" id="button">Εγγραφή Γονέα</a>
           &nbsp;
-          <a routerLink="/provider-signup" class="btn btn-info" id="button">Εγγραφή Παρόχου</a>
+          <a routerLink="/provider-signin" class="btn btn-info" id="button">Εγγραφή Παρόχου</a>
           <br>
-          <br>           
           <p>Παρακαλώ εισάγετε στοιχεία για την Εγγραφή Γονέα:</p>
+          <br>
         </div>
         <form>
           <div class="form-group">
-            <label for="userfirstname"><b>Όνομα</b></label>
+            <label for="ufname"><b>Όνομα</b></label>
             <input type="text"
-                    class="form-control" 
-                    id="userfirstname"
-                    placeholder="Εισαγωγή Ονόματος" 
-                    name="userfirstname" 
-                    [(ngModel)]="userformInfo.userfirstname"
-                    required>	 
+                    class="form-control"
+                    id="ufname"
+                    placeholder="Εισαγωγή Ονόματος"
+                    name="ufname"
+                    required>
           </div>
-          <div class="form-group">                           
-            <label for="userlastname"><b>Επίθετο</b></label>	
+          <div class="form-group">
+            <label for="ulname"><b>Επίθετο</b></label>
             <input type="text"
-                    class="form-control" 
-                    id="userlastname"
-                    placeholder="Εισαγωγή Επιθέτου" 
-                    name="userlastname" 
-                    [(ngModel)]="userformInfo.userlastname"
-                    required>	
+                    class="form-control"
+                    id="ulname"
+                    placeholder="Εισαγωγή Επιθέτου"
+                    name="ulname"
+                    required>
           </div>
-          <div class="form-group">          			
-            <label for="username"><b>Διεύθυνση Ηλ. Ταχυδρομείου</b></label>
-            <input  type="text" 
-                    class="form-control" 
-                    id="username" 
-                    placeholder="Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com" 
-                    type="email" 
-                    name="username"
-                    [(ngModel)]="userformInfo.username"
+          <div class="form-group">
+            <label for="uemail"><b>Διεύθυνση Ηλ. Ταχυδρομείου</b></label>
+            <input  type="text"
+                    class="form-control"
+                    id="uemail"
+                    placeholder="Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com"
+                    type="email"
+                    name="uemail"
+                    [(ngModel)]="formInfo.username"
                     required
                     pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                    #username="ngModel">   
-            <div *ngIf="!username.valid">
+                    #uemail="ngModel">
+            <div *ngIf="!uemail.valid">
               <small>
                 Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου
               </small>
             </div>
           </div>
-          <div class="form-group">       
-            <label for="password"><b>Κωδικός Πρόσβασης</b></label>
-            <input type="password"
-                    class="form-control" 
-                    id="password"
-                    placeholder="Εισαγωγή Κωδικού Πρόσβασης" 
-                    name="password" 
-                    [(ngModel)]="userformInfo.password"
+          <div class="form-group">
+            <label for="upassword"><b>Κωδικός Πρόσβασης</b></label>
+            <input type="text"
+                    class="form-control"
+                    id="upassword"
+                    placeholder="Εισαγωγή Κωδικού Πρόσβασης"
+                    name="upassword"
+                    [(ngModel)]="formInfo.password"
                     required>
           </div>
-          <div class="form-group">          
-            <label for="password"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
-            <input type="password"
-                    class="form-control" 
-                    id="password"
-                    placeholder="Επαναλάβετε τον Κωδικό Πρόσβασης" 
-                    name="password" 
-                    [(ngModel)]="userformInfo.password"
-                    required> 
-          </div>          
+          <div class="form-group">
+            <label for="upassword_repeat"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
+            <input type="text"
+                    class="form-control"
+                    id="upassword_repeat"
+                    placeholder="Επαναλάβετε τον Κωδικό Πρόσβασης"
+                    name="upassword_repeat"
+                    required>
+          </div>
           <br>
-          <div class="center_some">       
-            <p>*Δημιουργώντας Λογαριασμό συμφωνείτε με τους : 
-                <a routerLink="/terms"> Όρους και την Πολιτική μας</a>
+          <div class="center_some">
+            <p>Δημιουργώντας Λογαριασμό συμφωνείτε με τους :
+                <a routerLink="/home"> Όρους και την Πολιτική μας</a>
             </p>
-            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Δημιουργία Λογαριασμού</button>
+            <button (click)="signup()" class="btn btn-warning">Δημιουργία Λογαριασμού</button>
             <br>
             <br>
             <a routerLink="/home" class="btn btn-danger" id="button">Ακύρωση</a>
