@@ -1,9 +1,9 @@
-<div class="back_img" *ngIf="event">
-    <app-header></app-header>   
-    <div class="container">  
+<div class="back_img">
+    <app-header></app-header>
+    <div class="container" *ngIf="event">
         <div class="row mb-3">
-            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="goBack()">Πίσω στα αποτελέσματα!</button>    
-        </div>   
+            <button type="button" class="btn btn-primary btn-lg btn-block" (click)="goBack()">Πίσω στα αποτελέσματα!</button>
+        </div>
         <div class="row">
             <!-- Event main info -->
             <div class="col-12 col-lg-8">
@@ -13,8 +13,6 @@
                                 <span *ngFor="let ev of event.type">
                                     <span class="badge badge-info">{{ev}}</span>
                                 </span>
-                                <!-- <span class="badge badge-info">Είδος</span> -->
-                                <!-- <span class="badge badge-info">Είδος</span> -->
                         </div>
                         <!-- <a href="" data-toggle="modal" data-target="#productModal"> -->
                         <img class="img-fluid img" src="{{event.image}}" alt="Card image"/>
@@ -37,7 +35,7 @@
                             <p class="price_quant"> {{event.numberOfTickets | number}} </p>
                         </span>
 
-                        <form *ngIf="quantity"> 
+                        <form *ngIf="event.numberOfTickets && !show">
                             <div class="form-group">
                                 <div class="label_text">Ποσότητα :</div>
                                 <div class="input-group justify-content-center mb-3">
@@ -54,15 +52,32 @@
                                     </div>
                                 </div>
                             </div>
-                            <button (click)="buy_ticket()" type="button" class="btn btn-success btn-lg btn-block text-uppercase">
+                            <button type="button" (click)="buy_tickets()" class="btn btn-success btn-lg btn-block text-uppercase">
                                 <i class="fa fa-shopping-cart"></i> Αγορα
                             </button>
                         </form>
-                        <div class="alert alert-dismissible alert-danger" *ngIf="!quantity">
+                        <div class="alert alert-dismissible alert-danger" *ngIf="!user">
+                          <strong>Κάντε <a routerLink="/signin"> ΕΓΓΡΑΦΗ</a> για αγορά εισιτηρίων!</strong>
+                        </div>
+                        <div class="alert alert-dismissible alert-danger" *ngIf="!event.numberOfTickets">
                             <strong>Τα εισιτήρια εξαντλήθηκαν!</strong>
+                        </div>
+                        <div class="row justify-content-center" *ngIf="show">
+                          <div class="card border-info">
+                              <div class="card-body">
+                                <h5 class="card-title">Επιβεβαίωση αγοράς</h5>
+                                <div class="card-text" id="checkout"> {{quantity}} εισιτήρια = {{total}} πόντοι</div>
+                              </div>
+                              <div class="card-footer justify-content-between">
+                                  <button type="button" (click)="checkout()" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left" class="btn btn-success btn-sm text-uppercase">Ολοκληρωση</button>
+                                  <button type="button" (click)="buy_close()" class="btn btn-danger btn-sm text-uppercase">Ακυρο</button>
+                              </div>
+                          </div>
+
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
         <div class="row">

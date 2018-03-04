@@ -3,6 +3,7 @@ import { EventService } from '../services/event.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { Event } from '../models/event';
+// import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-eventpage',
@@ -12,13 +13,15 @@ import { Event } from '../models/event';
 
 export class EventpageComponent implements OnInit {
   @Input() event: Event;
-
+  show: boolean;
   quantity = 1;
+  total: number;
 
   constructor(
     private route: ActivatedRoute,
+   // private authService: AuthService,
     private eventService: EventService,
-    private location: Location) { }
+    private location: Location) { this.show = false; }
 
   ngOnInit(): void {
     this.getEvent();
@@ -47,4 +50,25 @@ export class EventpageComponent implements OnInit {
     }
   }
 
+  buy_tickets() {
+    this.show = true;
+    this.total = this.quantity * this.event.price;
+  }
+
+  checkout(): void {
+    console.log('okey');
+    this.event.numberOfTickets = this.event.numberOfTickets - this.quantity;
+    if (this.event.numberOfTickets === 0) {
+      this.quantity = 0;
+    } else {
+      this.quantity = 1;
+    }
+    this.eventService.updateEvent(this.event).subscribe();
+    this.show = false;
+  }
+
+  buy_close() {
+    this.show = false;
+    this.quantity = 1;
+  }
 }

@@ -1,24 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { of } from 'rxjs/observable/of';
 import { catchError } from 'rxjs/operators';
 import { Event } from '../models/event';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
+
 @Injectable()
-export class EventService {  
-  
+export class EventService {
+
   BASE_URL = 'http://localhost:3000';
-  
+
   constructor(private http: HttpClient) {}
 
   // GET Event by ID
-  
+
   getEvents (): Observable<Event[]> {
     return this.http.get<Event[]>(`${this.BASE_URL}/api/events`)
     .pipe(
-      catchError(this.handleError('getHeroes', []))
+      catchError(this.handleError('getEvents', []))
     );
   }
 
@@ -29,6 +33,11 @@ export class EventService {
     );
   }
 
+  updateEvent (event: Event): Observable<any> {
+    return this.http.put(`${this.BASE_URL}/api/events`, event, httpOptions).pipe(
+      catchError(this.handleError<any>('updateHero'))
+    );
+  }
   /**
    * Handle Http operation that failed.
    * Let the app continue.
@@ -48,7 +57,7 @@ export class EventService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-  } 
+  }
 
     /* GET heroes whose name contains search term */
 

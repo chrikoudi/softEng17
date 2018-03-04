@@ -10,7 +10,8 @@ export class LocationService {
     constructor(private http: HttpClient) { }
 
     getLocation(): Observable<any> {
-      return this.http.get<any>('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback')  
+      // tslint:disable-next-line:max-line-length
+      return this.http.get<any>('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback');
     }
 
 }
