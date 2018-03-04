@@ -22,6 +22,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { SigninformComponent } from './signinform/signinform.component';
 import { LocationService } from './services/location.service';
 import { ProviderSigninformComponent } from './provider-signinform/provider-signinform.component';
+import {dateFormatPipe} from './dateFormatPipe';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { ProviderSigninformComponent } from './provider-signinform/provider-sign
     BuypointsComponent,
     CreateeventComponent,
     SigninformComponent,
-    ProviderSigninformComponent
+    ProviderSigninformComponent,
+    dateFormatPipe
   ],
   imports: [
     BrowserModule,

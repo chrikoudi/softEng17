@@ -3,8 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { Event } from '../models/event';
 import { EventService } from '../services/event.service';
 import { Observable } from 'rxjs/Observable';
-import { Subject }    from 'rxjs/Subject';
-import { switchMap } from 'rxjs/operators';
+import {dateFormatPipe} from '../dateFormatPipe';
 
 @Component({
   selector: 'app-results',
@@ -13,6 +12,8 @@ import { switchMap } from 'rxjs/operators';
 })
 
 export class ResultsComponent implements OnInit {
+
+  newDate : any;
 
   selectedType: [string];
   selectedAge: [string];
@@ -33,7 +34,7 @@ export class ResultsComponent implements OnInit {
 
    types = ['Κατηγορίες', 'Αθλητισμός', 'Ζωγραφική', 'Θέατρο', 'Κινηματογράφος', 'Παιδότοποι', 'Μουσική'];
    ages = ['Κατηγορίες', '1-3 ετών', '3-5 ετών', '5-12 ετών', '12-18 ετών'];
-   dates = ['Κατηγορίες', 'Σήμερα', 'Αύριο', 'Αυτή την εβδομάδα', 'Αυτό το μήνα'];
+   dates = ['Κατηγορίες', 'Αύριο', 'Αυτή την εβδομάδα', 'Επόμενο ένα μήνα'];
 
    events: Event[];
 
@@ -42,7 +43,7 @@ export class ResultsComponent implements OnInit {
 
    constructor(private eventService: EventService) { 
       this.show = false;
-   }
+   }     
 
   ngOnInit(): void {
     this.getEvents();
@@ -89,16 +90,31 @@ export class ResultsComponent implements OnInit {
     }
   }
 
-  selectDate (selectedDate) {
+  selectDate (selectedDate) { 
 
-    function check_type(element, index, array){ 
-      return element === selectedDate
-    }
-     
-    if(selectedDate == this.dates[1] || selectedDate == this.dates[2] 
-         || selectedDate == this.dates[3] || selectedDate == this.dates[4]) 
+    if(selectedDate === this.dates[1])
     {
-      //this.results = this.results.map(results => results.filter(result => result.date.some(check_type)));
+      selectedDate = new Date(); 
+      selectedDate = selectedDate.setDate(selectedDate.getDate() + 1);
+      let dateFormatPipeFilter = new dateFormatPipe();
+      this.newDate = dateFormatPipeFilter.transform(selectedDate);
+      this.results = this.results.map(results => results.filter(result => result.date === this.newDate));
+    } 
+    else if(selectedDate == this.dates[2])
+    {
+      selectedDate = new Date(); 
+      selectedDate = selectedDate.setDate(selectedDate.getDate() + 7);
+      let dateFormatPipeFilter = new dateFormatPipe();
+      this.newDate = dateFormatPipeFilter.transform(selectedDate);
+      this.results = this.results.map(results => results.filter(result => result.date < this.newDate));
+    } 
+    else if(selectedDate == this.dates[3])
+    {
+      selectedDate = new Date(); 
+      selectedDate = selectedDate.setDate(selectedDate.getDate() + 14);
+      let dateFormatPipeFilter = new dateFormatPipe();
+      this.newDate = dateFormatPipeFilter.transform(selectedDate);
+      this.results = this.results.map(results => results.filter(result => result.date < this.newDate));
     }
   }
 
