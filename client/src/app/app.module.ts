@@ -12,18 +12,18 @@ import { HomeComponent } from './home/home.component';
 import { EventpageComponent } from './eventpage/eventpage.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { PdfDownloaderComponent } from './pdf-downloader/pdf-downloader.component';
 import { ResultsComponent } from './search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
-import { CreateeventComponent } from './createevent/createevent.component'; 
-import {NgxPaginationModule} from 'ngx-pagination';
-import { SigninformComponent } from './signinform/signinform.component';
+import { CreateeventComponent } from './createevent/createevent.component';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { SignupformComponent } from './signupform/signupform.component';
 import { LocationService } from './services/location.service';
-import { ProviderSigninformComponent } from './provider-signinform/provider-signinform.component';
-import {dateFormatPipe} from './dateFormatPipe';
+import { dateFormatPipe } from './dateFormatPipe';
 import { DatePipe } from '@angular/common';
+import { ProviderSignupformComponent } from './provider-signupform/provider-signupform.component';
+import { TermsComponent } from './terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -34,13 +34,13 @@ import { DatePipe } from '@angular/common';
     EventpageComponent,
     HeaderComponent,
     FooterComponent,
-    PdfDownloaderComponent,
     ResultsComponent,
     BuypointsComponent,
     CreateeventComponent,
-    SigninformComponent,
-    ProviderSigninformComponent,
-    dateFormatPipe
+    dateFormatPipe,
+    SignupformComponent,
+    ProviderSignupformComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,

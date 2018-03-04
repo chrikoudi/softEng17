@@ -50,7 +50,7 @@ const index = require('./routes/index');
 app.use('/', index);
 
 // basic server listen
-app.listen(3000);
+// app.listen(3000);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
