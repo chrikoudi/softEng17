@@ -21,6 +21,7 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { SignupformComponent } from './signupform/signupform.component';
 import { LocationService } from './services/location.service';
 import { ProviderSignupformComponent } from './provider-signupform/provider-signupform.component';
+import { TermsComponent } from './terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { ProviderSignupformComponent } from './provider-signupform/provider-sign
     BuypointsComponent,
     CreateeventComponent,
     SignupformComponent,
-    ProviderSignupformComponent
+    ProviderSignupformComponent,
+    TermsComponent
   ],
   imports: [
     BrowserModule,

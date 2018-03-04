@@ -15,8 +15,8 @@
           &nbsp;
           <a routerLink="/provider-signup" class="btn btn-info" id="button">Εγγραφή Παρόχου</a>
           <br>
+          <br>           
           <p>Παρακαλώ εισάγετε στοιχεία για την Εγγραφή Γονέα:</p>
-          <br> 
         </div>
         <form (ngSubmit)="onSubmituser(f)" #f="ngForm">
           <div class="form-group">
@@ -80,9 +80,9 @@
           <br>
           <div class="center_some">       
             <p>*Δημιουργώντας Λογαριασμό συμφωνείτε με τους : 
-                <a routerLink="/home"> Όρους και την Πολιτική μας</a>
+                <a routerLink="/terms"> Όρους και την Πολιτική μας</a>
             </p>
-            <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Δημιουργία Λογαριασμού</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Δημιουργία Λογαριασμού</button>
             <br>
             <br>           
             <a routerLink="/home" class="btn btn-danger" id="button">Ακύρωση</a>
