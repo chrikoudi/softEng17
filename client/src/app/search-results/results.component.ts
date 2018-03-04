@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { Event } from '../models/event';
 import { EventService } from '../services/event.service';
 import { Observable } from 'rxjs/Observable';
-import {dateFormatPipe} from '../dateFormatPipe';
+import { dateFormatPipe } from '../dateFormatPipe';
+declare const google: any;
 
 @Component({
   selector: 'app-results',
@@ -12,6 +13,9 @@ import {dateFormatPipe} from '../dateFormatPipe';
 })
 
 export class ResultsComponent implements OnInit {
+
+  lat: number = 37.983810;
+  lng: number = 23.727539;
 
   newDate : any;
 
@@ -26,6 +30,7 @@ export class ResultsComponent implements OnInit {
    p: number = 1;
 
    show: boolean;
+   show_map: boolean;
 
    num = [5, 10, 15, 30, 50];
    dis = [1, 5, 10, 25, 50, 100];
@@ -34,7 +39,7 @@ export class ResultsComponent implements OnInit {
 
    types = ['Κατηγορίες', 'Αθλητισμός', 'Ζωγραφική', 'Θέατρο', 'Κινηματογράφος', 'Παιδότοποι', 'Μουσική'];
    ages = ['Κατηγορίες', '1-3 ετών', '3-5 ετών', '5-12 ετών', '12-18 ετών'];
-   dates = ['Κατηγορίες', 'Αύριο', 'Αυτή την εβδομάδα', 'Επόμενο ένα μήνα'];
+   dates = ['Κατηγορίες', 'Αύριο', 'Αυτή την εβδομάδα', 'Επόμενες δύο εβδομάδες'];
 
    events: Event[];
 
@@ -43,11 +48,13 @@ export class ResultsComponent implements OnInit {
 
    constructor(private eventService: EventService) { 
       this.show = false;
+      this.show_map = false;
    }     
 
   ngOnInit(): void {
     this.getEvents();
   }
+  
 
   search(term: string) {
     this.results = this.eventService.searchEvents(term);
@@ -55,12 +62,11 @@ export class ResultsComponent implements OnInit {
   }
 
   location_search(location: string) {
-    //this.results = this.eventService.searchEvents(location);
+    this.results = this.eventService.searchEvents(location);
   }
 
    getEvents(): void {
-     this.eventService.getEvents()
-     .subscribe(events => this.events = events);
+     this.results = this.eventService.getEvents();
    }
 
    selectType (selectedType) {
@@ -221,6 +227,14 @@ export class ResultsComponent implements OnInit {
 
   back() {
     this.show = false;
+  }
+
+  map() {
+    this.show_map = true;
+  }
+
+  list() {
+    this.show_map = false;
   }
 
 }

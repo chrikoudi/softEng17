@@ -50,10 +50,10 @@
               <div class="row mb-3"></div>
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
-                        <a class="nav-link active show" data-toggle="tab" routerLink="/results" style="background-color:White;">Λίστα</a>
+                        <a class="btn btn-info" type="button" (click)="list()" style="background-color:White;">Λίστα</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active show" data-toggle="tab" routerLink="/map" style="background-color:lightblue;">Χάρτης</a>
+                        <a class="btn btn-info" type="button" (click)="map()" style="background-color:lightblue;">Χάρτης</a>
                     </li>
                 </ul>
                 <div class="row mb-3"></div>
@@ -129,13 +129,20 @@
           </div>
 
           <div class="col-12 col-lg-9 list_results">
-             <li *ngFor="let ev of results | async | paginate: { itemsPerPage: 4, currentPage: p }" class="row card">
-                <img class="card-img-top" id="image" src="{{ev.image}}" alt="Card image">
-                <h4 class="card-title" id="title">{{ev.title}}</h4>
-                <p class="card-text" id="text">{{ev.short_description}}</p>
-                <a routerLink="/results/{{ev.id}}" class="btn btn-primary btn-sm" id="button">Προβολή</a>
-             </li>
-             <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            <form *ngIf="!show_map">
+                <li *ngFor="let ev of results | async | paginate: { itemsPerPage: 4, currentPage: p }" class="row card">
+                    <img class="card-img-top" id="image" src="{{ev.image}}" alt="Card image">
+                    <h4 class="card-title" id="title">{{ev.title}}</h4>
+                    <p class="card-text" id="text">{{ev.short_description}}</p>
+                    <a routerLink="/results/{{ev.id}}" class="btn btn-primary btn-sm" id="button">Προβολή</a>
+                </li>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+            </form>
+            <form *ngIf="show_map">
+                <agm-map [latitude]="lat" [longitude]="lng">
+                    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+                </agm-map>
+            </form>
           </div>
         </div>
     </div>

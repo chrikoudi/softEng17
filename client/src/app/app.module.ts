@@ -24,6 +24,7 @@ import { dateFormatPipe } from './dateFormatPipe';
 import { DatePipe } from '@angular/common';
 import { ProviderSignupformComponent } from './provider-signupform/provider-signupform.component';
 import { TermsComponent } from './terms/terms.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,10 @@ import { TermsComponent } from './terms/terms.component';
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     RouterModule.forRoot(routes),
-    NgxPaginationModule
+    NgxPaginationModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM'
+    })
   ],
   providers: [AuthService, EventService, LocationService],
   bootstrap: [AppComponent]
