@@ -13,8 +13,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Αλκμήνης 8, Αθήνα, 118 54',
             type: ['Θέατρο', 'Μουσική'],
             age: ['5-12 ετών', ' 12-18 ετών'],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-03-12'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '05/03/2018'
         },
         {   id: 2,
             title: 'ΡΟΜΠΕΝ ΤΩΝ ΔΑΣΩΝ',
@@ -26,8 +26,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Φρυνίχου 14, Πλάκα',
             type: ['Θέατρο'],
             age: ['12-18 ετών'],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-04-16'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '08/03/2018'
         },
         {   id: 3,
             title: 'ΚΑΛΟΚΑΙΡΙΝΗ ΝΥΧΤΑ',
@@ -39,8 +39,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Παπαδιαμαντοπούλου 4, Ιλίσια',
             type: ['Θέατρο'],
             age: ['5-12 ετών', ' 12-18 ετών'],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-04-02'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '05/03/2018'
         },
         {   id: 4,
             title: 'ΤΑΙΝΙΑ ΤΟ ΓΑΤΟΞΟΡΚΙ',
@@ -52,8 +52,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Λεωφ. Βασιλίσσης Σοφίας 124, Αθήνα 115 26',
             type: ['Κινηματογράφος'],
             age: ['3-5 ετών', ' 5-12 ετών'],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-04-19'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '07/03/2018'
         },
         {   id: 5,
             title: 'ΛΙΟΝΤΑΡΙ ΚΑΙ ΠΟΝΤΙΚΙ',
@@ -65,8 +65,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Πειραιώς 254, Αθήνα 177 78',
             type: ['Εκπαίδευση'],
             age: ['3-5 ετών'],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-03-05'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '15/03/2018'
         },
         {   id: 6,
             title: 'ΤΑΙΝΙΑ ΠΑΝΤΙΝΓΚΤΟΝ',
@@ -78,8 +78,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Ανδρέα Παπανδρέου 35, Μαρούσι 151 22',
             type: ['Κινηματογράφος'],
             age: ['3-5 ετών', ' 5-12 ετών'],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-03-30'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '13/03/2018'
         },
         {   id: 7,
             title: 'Ο ΓΥΡΟΣ ΤΟΥ ΚΟΣΜΟΥ',
@@ -91,8 +91,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Πειραιώς 254, Αθήνα 177 78',
             type: ['Εκπαίδευση'],
             age: ['3-5 ετών'],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-03-21'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '14/03/2018'
         },
         {   id: 8,
             title: 'ΑΘΛΗΤΙΚΟ ΦΕΣΤΙΒΑΛ',
@@ -105,7 +105,7 @@ export class InMemoryDataService implements InMemoryDbService {
             type: ['Αθλητισμός'],
             age: ['1-3 ετών'],
             sex: ['Αγόρι'],
-            date: '2018-03-21'
+            date: '16/03/2018'
         },
         {   id: 9,
             title: 'ΠΡΩΤΑΘΛΗΜΑ ΤΕΝΙΣ',
@@ -117,8 +117,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Καστρίτσας 61, Νεά Ερυθραία',
             type: ['Αθλητισμός'],
             age: ['3-5 ετών', ' 5-12 ετών', ' 12-18 ετών'],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-03-15'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '09/03/2018'
         },
         {   id: 10,
             title: 'ΝΕΟΣ ΠΑΙΔΟΤΟΠΟΣ',
@@ -130,8 +130,8 @@ export class InMemoryDataService implements InMemoryDbService {
             location: 'Θεομήτορος 48, Άγιος Δημήτριος',
             type: ['Παιδότοποι', 'Ζωγραφική'],
             age: ['1-3', ' 3-5', ' 5-12', ],
-            sex: ['Αγόρι', ' Κορίτσι'],
-            date: '2018-03-17'
+            sex: ['Αγόρι', 'Κορίτσι'],
+            date: '05/03/2018'
         },
     ];
     return {events};

@@ -12,21 +12,7 @@
 }
 
 .center {
+    text-align: center;
     margin: auto;
     width: 50%;
 }
-
-.center_some {
-    text-align: center;
-}
-
-.center_some_more{
-    margin: auto; 
-    text-align: center;  
-}
-
-
-/*.ng-invalid {
-    border: 2px solid red;
-}
-*/

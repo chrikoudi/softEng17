@@ -17,11 +17,14 @@ import { BuypointsComponent } from './buypoints/buypoints.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateeventComponent } from './createevent/createevent.component';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { SignupformComponent } from './signupform/signupform.component';
 import { LocationService } from './services/location.service';
+import { dateFormatPipe } from './dateFormatPipe';
+import { DatePipe } from '@angular/common';
 import { ProviderSignupformComponent } from './provider-signupform/provider-signupform.component';
 import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
+import { TermsComponent } from './terms/terms.component';
 
 @NgModule({
   declarations: [
@@ -35,9 +38,11 @@ import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
     ResultsComponent,
     BuypointsComponent,
     CreateeventComponent,
+    dateFormatPipe,
     SignupformComponent,
     ProviderSignupformComponent,
-    FileSelectDirective
+    FileSelectDirective,
+    TermsComponent
   ],
   imports: [
     BrowserModule,

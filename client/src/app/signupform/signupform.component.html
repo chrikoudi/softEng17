@@ -15,74 +15,74 @@
           &nbsp;
           <a routerLink="/provider-signup" class="btn btn-info" id="button">Εγγραφή Παρόχου</a>
           <br>
+          <br>           
           <p>Παρακαλώ εισάγετε στοιχεία για την Εγγραφή Γονέα:</p>
-          <br> 
         </div>
         <form (ngSubmit)="onSubmituser(f)" #f="ngForm">
           <div class="form-group">
-            <label for="ufname"><b>Όνομα</b></label>
+            <label for="userfirstname"><b>Όνομα</b></label>
             <input type="text"
                     class="form-control" 
-                    id="ufname"
+                    id="userfirstname"
                     placeholder="Εισαγωγή Ονόματος" 
-                    name="ufname" 
-                    [(ngModel)]="userformInfo.ufname"
+                    name="userfirstname" 
+                    [(ngModel)]="userformInfo.userfirstname"
                     required>	 
           </div>
           <div class="form-group">                           
-            <label for="ulname"><b>Επίθετο</b></label>	
+            <label for="userlastname"><b>Επίθετο</b></label>	
             <input type="text"
                     class="form-control" 
-                    id="ulname"
+                    id="userlastname"
                     placeholder="Εισαγωγή Επιθέτου" 
-                    name="ulname" 
-                    [(ngModel)]="userformInfo.ulname"
+                    name="userlastname" 
+                    [(ngModel)]="userformInfo.userlastname"
                     required>	
           </div>
           <div class="form-group">          			
-            <label for="uemail"><b>Διεύθυνση Ηλ. Ταχυδρομείου</b></label>
+            <label for="username"><b>Διεύθυνση Ηλ. Ταχυδρομείου</b></label>
             <input  type="text" 
                     class="form-control" 
-                    id="uemail" 
+                    id="username" 
                     placeholder="Εισαγωγή Διεύθυνσης Ηλ. Ταχυδρομείου example@example.com" 
                     type="email" 
-                    name="uemail"
-                    [(ngModel)]="userformInfo.uemail"
+                    name="username"
+                    [(ngModel)]="userformInfo.username"
                     required
                     pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?"
-                    #uemail="ngModel">   
-            <div *ngIf="!uemail.valid">
+                    #username="ngModel">   
+            <div *ngIf="!username.valid">
               <small>
                 Μη Έγκυρη Διεύθυνση Ηλ. Ταχυδρομείου
               </small>
             </div> 
           </div>
           <div class="form-group">       
-            <label for="upassword"><b>Κωδικός Πρόσβασης</b></label>
-            <input type="text"
+            <label for="password"><b>Κωδικός Πρόσβασης</b></label>
+            <input type="password"
                     class="form-control" 
-                    id="upassword"
+                    id="password"
                     placeholder="Εισαγωγή Κωδικού Πρόσβασης" 
-                    name="upassword" 
-                    [(ngModel)]="userformInfo.upassword"
+                    name="password" 
+                    [(ngModel)]="userformInfo.password"
                     required>
           </div>
           <div class="form-group">          
-            <label for="upassword_repeat"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
-            <input type="text"
+            <label for="password"><b>Επανάληψη Κωδικού Πρόσβασης</b></label>
+            <input type="password"
                     class="form-control" 
-                    id="upassword_repeat"
+                    id="password"
                     placeholder="Επαναλάβετε τον Κωδικό Πρόσβασης" 
-                    name="upassword_repeat" 
-                    [(ngModel)]="userformInfo.upassword_repeat"
+                    name="password" 
+                    [(ngModel)]="userformInfo.password"
                     required> 
           </div>          
           <br>
           <div class="center_some">       
             <p>*Δημιουργώντας Λογαριασμό συμφωνείτε με τους : 
-                <a routerLink="/home"> Όρους και την Πολιτική μας</a>
+                <a routerLink="/terms"> Όρους και την Πολιτική μας</a>
             </p>
-            <button type="submit" class="btn btn-warning" [disabled]="!f.valid">Δημιουργία Λογαριασμού</button>
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Δημιουργία Λογαριασμού</button>
             <br>
             <br>           
             <a routerLink="/home" class="btn btn-danger" id="button">Ακύρωση</a>
