@@ -24,6 +24,8 @@ export class ResultsComponent implements OnInit {
 
    p: number = 1;
 
+   show: boolean;
+
    num = [5, 10, 15, 30, 50];
    dis = [1, 5, 10, 25, 50, 100];
    sex = ['Αγόρι', 'Κορίτσι'];
@@ -39,6 +41,7 @@ export class ResultsComponent implements OnInit {
    temp_results: Observable<Event[]>;
 
    constructor(private eventService: EventService) { 
+      this.show = false;
    }
 
   ngOnInit(): void {
@@ -48,6 +51,10 @@ export class ResultsComponent implements OnInit {
   search(term: string) {
     this.results = this.eventService.searchEvents(term);
     this.temp_results = this.results;
+  }
+
+  location_search(location: string) {
+    //this.results = this.eventService.searchEvents(location);
   }
 
    getEvents(): void {
@@ -163,8 +170,7 @@ export class ResultsComponent implements OnInit {
 
   onClickLocationHandler(location) {
     this.selectedLocation = location;
-
-    //this.results
+    this.show = true;
   }
 
   selectTypeHandler(event: any) {
@@ -195,6 +201,10 @@ export class ResultsComponent implements OnInit {
     this.selectDate(this.selectedDate);
     this.onClickPrice(this.selectedPrice);
     this.onClickSex(this.selectedSex);
+  }
+
+  back() {
+    this.show = false;
   }
 
 }
