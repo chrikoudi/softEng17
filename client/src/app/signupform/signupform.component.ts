@@ -1,7 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
-import { NgForm } from '@angular/forms';
+// import { NgForm } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
+
+
+interface SignUpForm {
+  username: string;
+  password: string;
+}
 
 @Component({
   selector: 'app-signupform',
@@ -11,33 +19,23 @@ import { RouterModule, Routes } from '@angular/router';
 
 export class SignupformComponent implements OnInit {
 
-  userformInfo =  {
-    userfirstname: '',
-    userlastname: '',
+  formInfo: SignUpForm =  {
     username: '',
     password: ''
   };
 
-  onSubmituser(form: NgForm) {
-    console.log(this.userformInfo);
-  }  
+   constructor(private authService: AuthService) { }
 
-  constructor() { }
+  signup() {
+     // console.log(this.formInfo);
+    const {username, password} = this.formInfo;
+    this.authService.signup(username, password)
+    .map(user => console.log(user))
+    .subscribe();
+  }
 
   ngOnInit() {
   }
-
- /* login() {
-    const {username, password} = this.formInfo;
-    if (username !== '' && password !== '') {
-      console.log(`Login with ${username} ${password}`);
-      this.auth.login(username, password)
-      .map(user => console.log(user))
-      .subscribe();
-    } else {
-      console.log('You must set a username and a password');
-    }
-  }*/
 
 }
 

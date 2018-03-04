@@ -1,9 +1,6 @@
 export class User {
-    id: number;
-    userfirstname: string;
-    userlastname: string;    
+    id: string;
     username: string;
-    password: string;
-    pointsdeposit: number;
-    pointsspent: number;
-}
+    points: number;
+    bonusPoints: number;
+  }

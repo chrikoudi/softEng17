@@ -1,18 +1,17 @@
 <div class="title">
-  <app-header></app-header> 
-    <div class="container">   
-      <div class="row">  
+  <app-header></app-header>
+    <div class="container">
+      <div class="row">
         <div class="col-lg-12">
-          <h1 id="quote">Οι καλύτερες εκδηλώσεις στη πόλη!</h1> 
+          <h1 id="quote">Οι καλύτερες εκδηλώσεις στη πόλη!</h1>
           <a routerLink="/results">
               <button class="btn btn-warning" type="button" id="search">Αναζήτηση</button>
           </a>
         </div>
-      </div>  
+      </div>
       <div class="row">
           <div class="col-lg-12">
             <h3>Πρόσφατες Εκδηλώσεις</h3>
-            {{result}}
             <div class="grid grid-pad">
               <a *ngFor="let event of events" class="col-1-4">
                 <div class="module event">
@@ -24,8 +23,7 @@
               </a>
             </div>
           </div>
-      </div> 
-    </div> 
-</div>  
-
+      </div>
+    </div>
+</div>
 <app-footer></app-footer>

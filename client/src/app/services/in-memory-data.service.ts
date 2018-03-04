@@ -36,7 +36,10 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/summer.jpg',
             price: 6,
             numberOfTickets: 50,
-            location: 'Παπαδιαμαντοπούλου 4, Ιλίσια',
+            location: {
+              lat: 37.978091,
+              lon: 23.752676 // 'Παπαδιαμαντοπούλου 4, Ιλίσια',
+            },
             type: ['Θέατρο'],
             age: ['5-12 ετών', ' 12-18 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
@@ -134,6 +137,7 @@ export class InMemoryDataService implements InMemoryDbService {
             date: '05/03/2018'
         },
     ];
-    return {events};
+
+    return { events };
   }
 }

@@ -2,10 +2,11 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Http } from '@angular/http';
 // tslint:disable-next-line:import-blacklist
-import 'rxjs';
+import 'rxjs/Rx';
 import { environment } from '../../environments/environment';
+// import { User } from '../models/user';
 
-const BASEURL = environment.BASEURL + '/auth';
+const BASEURL = environment.BASEURL + '/api';
 
 @Injectable()
 export class AuthService {
@@ -38,10 +39,11 @@ export class AuthService {
     }
 
     signup(username, password) {
-      return this.http.post(`${BASEURL}/signup`, {username, password}, this.options)
-        .map(res => res.json())
-        .map(user => this.emitUserLoginEvent(user))
-        .catch(this.handleError);
+      // console.log({username, password});
+      return this.http.post(`${BASEURL}/users`, {username, password}, this.options)
+      .map(res => res.json())
+      .map(user => this.emitUserLoginEvent(user))
+      .catch(this.handleError);
     }
 
     login(username, password) {

@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { RouterModule} from '@angular/router';
 import { FormsModule} from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
+import { HttpModule} from '@angular/http';
 import { routes } from './routes';
 import { AuthService } from './services/auth.service';
 import { EventService } from './services/event.service';
@@ -23,6 +24,7 @@ import { LocationService } from './services/location.service';
 import { dateFormatPipe } from './dateFormatPipe';
 import { DatePipe } from '@angular/common';
 import { ProviderSignupformComponent } from './provider-signupform/provider-signupform.component';
+import { FileSelectDirective, FileDropDirective } from 'ng2-file-upload';
 import { TermsComponent } from './terms/terms.component';
 import { AgmCoreModule } from '@agm/core';
 
@@ -41,12 +43,14 @@ import { AgmCoreModule } from '@agm/core';
     dateFormatPipe,
     SignupformComponent,
     ProviderSignupformComponent,
+    FileSelectDirective,
     TermsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
+    HttpModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.

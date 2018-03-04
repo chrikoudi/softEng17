@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, ViewChild, ElementRef } from '@angular/core';
+import { LocationService } from './../services/location.service';
 import { EventService } from '../services/event.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
@@ -26,7 +27,8 @@ export class EventpageComponent implements OnInit {
     private route: ActivatedRoute,
    // private authService: AuthService,
     private eventService: EventService,
-    private location: Location) { this.show = false; }
+    private location: Location,
+    private locService: LocationService) { this.show = false; }
 
   ngOnInit(): void {
     this.getEvent();
@@ -35,7 +37,11 @@ export class EventpageComponent implements OnInit {
   getEvent(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.eventService.getEvent(id)
-      .subscribe(event => this.event = event);
+    .subscribe( (event) => {
+      this.event = event;
+      this.locService.getLοcation(this.event.location)
+      .then((response) => this.event.location = response.results[0].formatted_address);
+    });
   }
 
   goBack(): void {
@@ -102,5 +108,6 @@ export class EventpageComponent implements OnInit {
     doc.deletePage(this.quantity + 1);
     // Save the PDF
     doc.save(this.event.title + '.pdf');
+
 }
 }

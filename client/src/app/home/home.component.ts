@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { Event } from '../models/event';
 import { EventService } from '../services/event.service';
-import { LocationService } from '../services/location.service';
+// import { LocationService } from '../services/location.service';
 
 
 @Component({
@@ -13,11 +13,14 @@ import { LocationService } from '../services/location.service';
 export class HomeComponent implements OnInit {
 
   events: Event[] = [];
+  event: Event;
 
-  constructor(private eventService: EventService, private locService: LocationService) { }
+  // location = 'Λεωφόρος Καλαμακίου 33';
+  constructor(private eventService: EventService) { }
 
   ngOnInit() {
     this.getEvents();
+    // this.findLatLon(this.location);
   }
 
   getEvents(): void {
@@ -25,13 +28,14 @@ export class HomeComponent implements OnInit {
       .subscribe(events => this.events = events.slice(0, 4));
   }
 
-  location: string = 'Athens';
+  // tslint:disable-next-line:member-ordering
 
-  result = {};
+  // findLatLon(location: string): void {
+  //   this.locService.getLatLon(location)
+  //       // tslint:disable-next-line:max-line-length
+  //       .then((response) => this.event.location = { lat: response.results[0].geometry.location.lat, lon: response.results[0].geometry.location.lng})
+  //       .catch((error) => console.error(error));
+  // }
 
-  findLocation(): void {
-    this.locService.getLocation().subscribe(result => this.result = JSON.stringify(result));
-      //  .then((response) => this.result = response.results[0])
-}
-  
+
 }
