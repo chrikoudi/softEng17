@@ -14,21 +14,29 @@
                 <div class="row">
                     <div class="col-12 col-lg-7 position">
                         <h5>Τοποθεσία</h5>
-                        <button type="button" class="btn btn-info btn-sm" (click) = "onClickLocation(loc[0])">{{loc[0]}}</button>
-                        &nbsp;
-                        <button type="button" class="btn btn-info btn-sm" (click) = "onClickLocation(loc[1])">{{loc[1]}}</button>
+                        <form *ngIf="!show">
+                            <button type="button" class="btn btn-info btn-sm" (click) = "onClickLocationHandler(loc[0])">{{loc[0]}}</button>
+                            &nbsp;
+                            <button type="button" class="btn btn-info btn-sm" (click) = "onClickLocationHandler(loc[1])">{{loc[1]}}</button>
+                        </form>
+                        <form *ngIf="show">
+                            <div class="input-group">
+                                <input #searchBox type="text" class="form-control" id="define" placeholder="Ορισμός τοποθεσίας" (keyup.enter)="location_search(searchBox.value)"/>
+                                <button class="btn btn-link" type="button" id="back" (click)="back()">Πίσω</button>
+                            </div>
+                        </form>
                     </div>
 
                     <div class="col-12 col-lg-5 distance">
                         <h5>Απόσταση</h5>
                         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                             <div class="btn-group mr-2" role="group" aria-label="First group">
-                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistance(dis[0])">< {{dis[0]}}</button>
-                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistance(dis[1])">< {{dis[1]}}</button>
-                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistance(dis[2])">< {{dis[2]}}</button>
-                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistance(dis[3])">< {{dis[3]}}</button>
-                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistance(dis[4])">< {{dis[4]}}</button>
-                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistance(dis[5])">< {{dis[5]}}</button>
+                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[0])">< {{dis[0]}}</button>
+                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[1])">< {{dis[1]}}</button>
+                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[2])">< {{dis[2]}}</button>
+                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[3])">< {{dis[3]}}</button>
+                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[4])">< {{dis[4]}}</button>
+                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[5])">< {{dis[5]}}</button>
                             </div>
                         </div>
                     </div>
@@ -60,7 +68,7 @@
             <h5 class="filter">Είδος</h5>
             <br>
             <div class="form-group" id="menu">
-                <select class="custom-select" [(ngModel)]="ngtype" (change)="selectTypeHandler($event)">
+                <select class="custom-select" (change)="selectTypeHandler($event)">
                     <option *ngFor="let option of types" 
                         [value]="option"> 
                         {{ option }}
@@ -73,11 +81,10 @@
             <br>
             <div class="form-group" id="menu">
                 <select class="custom-select" (change)="selectAgeHandler($event)">
-                    <option selected="">Κατηγορίες</option>
-                    <option value="1-3">1-3 ετών</option>
-                    <option value="3-5">3-5 ετών</option>
-                    <option value="5-12">5-12 ετών</option>
-                    <option value="12-18">12-18 ετών</option>
+                    <option *ngFor="let option of ages" 
+                        [value]="option"> 
+                        {{ option }}
+                     </option>
                 </select>
             </div>
             <br>
@@ -86,11 +93,10 @@
             <br>
             <div class="form-group" id="menu">
                 <select class="custom-select" (change)="selectDateHandler($event)">
-                    <option selected="">Κατηγορίες</option>
-                    <option value="Σήμερα">Σήμερα</option>
-                    <option value="Αύριο">Αύριο</option>
-                    <option value="Αυτή την εβδομάδα">Αυτή την εβδομάδα</option>
-                    <option value="Αυτό το μήνα">Αυτό το μήνα</option>
+                    <option *ngFor="let option of dates" 
+                        [value]="option"> 
+                        {{ option }}
+                     </option>
                 </select>
             </div>
             <br>
@@ -99,11 +105,11 @@
             <br>
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" id="price">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
-                    <button type="button" class="btn btn-info" (click) = "onClickPrice(num[0])">< {{num[0]}}</button>
-                    <button type="button" class="btn btn-info" (click) = "onClickPrice(num[1])">< {{num[1]}}</button>
-                    <button type="button" class="btn btn-info" (click) = "onClickPrice(num[2])">< {{num[2]}}</button>
-                    <button type="button" class="btn btn-info" (click) = "onClickPrice(num[3])">< {{num[3]}}</button>
-                    <button type="button" class="btn btn-info" (click) = "onClickPrice(num[4])">< {{num[4]}}</button>
+                    <button type="button" class="btn btn-info" (click) = "onClickPriceHandler(num[0])">< {{num[0]}}</button>
+                    <button type="button" class="btn btn-info" (click) = "onClickPriceHandler(num[1])">< {{num[1]}}</button>
+                    <button type="button" class="btn btn-info" (click) = "onClickPriceHandler(num[2])">< {{num[2]}}</button>
+                    <button type="button" class="btn btn-info" (click) = "onClickPriceHandler(num[3])">< {{num[3]}}</button>
+                    <button type="button" class="btn btn-info" (click) = "onClickPriceHandler(num[4])">< {{num[4]}}</button>
                 </div>
             </div>
             <br>
@@ -111,15 +117,19 @@
             <h5 class="filter">Φύλο</h5>
             <br>
             <div class="input-group" id="sex">
-                <button type="button" class="btn btn-info" (click) = "onClickSex(sex[0])">{{sex[0]}}</button>
+                <button type="button" class="btn btn-info" (click) = "onClickSexHandler(sex[0])">{{sex[0]}}</button>
                 &nbsp; &nbsp;
-                <button type="button" class="btn btn-info" (click) = "onClickSex(sex[1])">{{sex[1]}}</button>
+                <button type="button" class="btn btn-info" (click) = "onClickSexHandler(sex[1])">{{sex[1]}}</button>
             </div>
-            <br>
+            <div class="row mb-2"></div>
+            <div class="input-group" id="submit">
+                <button type="button" class="btn btn-secondary" (click) = "onClick()">Επιλογή</button>
+            </div>
+            <div class="row mb-2"></div>
           </div>
 
           <div class="col-12 col-lg-9 list_results">
-             <li *ngFor="let ev of gl_events | async | paginate: { itemsPerPage: 4, currentPage: p } | type_filter" class="row card">
+             <li *ngFor="let ev of results | async | paginate: { itemsPerPage: 4, currentPage: p }" class="row card">
                 <img class="card-img-top" id="image" src="{{ev.image}}" alt="Card image">
                 <h4 class="card-title" id="title">{{ev.title}}</h4>
                 <p class="card-text" id="text">{{ev.short_description}}</p>

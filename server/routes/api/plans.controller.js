@@ -1,6 +1,11 @@
-const express       = require('express');
-const router        = express.Router();
+const express      = require('express');
+const router       = express.Router();
 const Plan         = require('../../models/plan.model');
+const Image        = require('../../models/image.model');
+const multer       = require('multer');
+const watermark    = require('dynamic-watermark');
+const upload       = multer({ dest: '../../public/uploads' });
+
 
 // find and sort 10 events - order -> created descending
 router.get('/', (req, res, next) => {
@@ -65,11 +70,46 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
+router.post('/create', upload.single('image'), (req, res) => {
+  image = new Image({
+      imagePath: `../../public/uploads/${req.file.filename}`,
+      imageName: req.file.originalname
+});
+
+const optionsTextWatermark = {
+  type: "text",
+  text: "Kidzland", // text watermark
+  destination: `../../public/uploads/${req.file.filename}`,
+  source: `../../public/uploads/${req.file.filename}`,
+  position: {
+      logoX : 200,
+      logoY : 200,
+      logoHeight: 200,
+      logoWidth: 200
+  },
+  textOption: {
+      fontSize: 100, //In px default : 20
+      color: '#AAF122' // Text color in hex default: #000000
+  }
+};
+
+watermark.embed(optionsTextWatermark, function(status) {
+  //Do what you want to do here
+  console.log(status);
+});
+
+  image.save((err) => {
+    if (err) { return res.status(500).json(err) }
+  });
+
+});
+
 // create new event - provider
-router.post('/', (req, res, next) => {
+router.post('/create', (req, res, next) => {
   console.log('post')
   let newPlan = new Plan({
     title: req.body.title,
+    image: `../../public/uploads/${req.file.filename}`,
     shortDescription: req.body.shortDescription,
     description: req.body.description,
     price: req.body.price,

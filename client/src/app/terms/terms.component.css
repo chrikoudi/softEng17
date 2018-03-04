@@ -1,0 +1,18 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.back {
+    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('../../assets/images/landing.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.center {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}

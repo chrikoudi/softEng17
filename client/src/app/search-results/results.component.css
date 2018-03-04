@@ -24,6 +24,18 @@
     left: 1%;
 }
 
+#define {
+    position: absolute;
+    width: 50%;
+    left: 0%;
+}
+
+#back {
+    position: absolute;
+    width: 10%;
+    left: 48%; 
+}
+
 #go {
     font-size: 120%;
     color: btn-info;
@@ -76,6 +88,10 @@
 
 #sex {
     left: 21%;
+}
+
+#submit {
+    left: 34%;
 }
 
 .list_results {

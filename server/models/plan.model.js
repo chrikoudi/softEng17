@@ -13,7 +13,7 @@ var client = new elasticsearch.Client({
 
 const PlanSchema = new Schema({
     // _creator: [ ProviderSchema ],
-    // image: [ ImageSchema ],
+    image:          { type: String },
     title:          { type: String, required: [true, "Title is required"], es_indexed: true, es_type: "text", es_boost: 2.0},
     shortDescription: {type: String, required: [true, "Short description is required"], es_indexed:true, es_type: "text"},
     description:    { type: String, required: [true, "Description is required"], es_indexed:true, es_type: "text"},

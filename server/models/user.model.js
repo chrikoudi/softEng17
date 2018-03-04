@@ -8,11 +8,11 @@ const UserSchema = new Schema({
   password:            { type: String, required: [true, "Password is required"] }, 
   firstName:           { type: String }, 
   lastName:            { type: String }, 
-  points:              { type: Number }, 
-  bonusPoints:         { type: Number }, 
+  points:              { type: Number, default: 0 }, 
+  bonusPoints:         { type: Number, default: 0 }, 
 //   eventsBought: [ PlanSchema ],
-  locked:              { type: Boolean }, 
-  admin:               { type: Boolean }
+  locked:              { type: Boolean, default: false }, 
+  admin:               { type: Boolean, default: false }
 });
 
 UserSchema.methods.generateHash = function(password) {
