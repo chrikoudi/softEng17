@@ -8,7 +8,7 @@ import { Event } from '../models/event';
 
 interface Loc {
   lat: number;
-  lon: number
+  lon: number;
 }
 
 @Injectable()
@@ -53,7 +53,7 @@ export class EventService {
       // Let the app keep running by returning an empty result.
       return of(result as T);
     };
-  } 
+  }
 
     /* GET heroes whose name contains search term */
 
@@ -62,7 +62,8 @@ export class EventService {
         // if not search term, return empty hero array.
         return of([]);
       }
-      return this.http.get<Event[]>(`api/events/search?searchTerms=${searchTerms}&distance=${distance}&lat=${location.lat}&lon=${location.lon}`).pipe(
+      // tslint:disable-next-line:max-line-length
+      return this.http.get<Event[]>(`${this.BASE_URL}/api/events/search?searchTerms=${searchTerms}&distance=${distance}&lat=${location.lat}&lon=${location.lon}`).pipe(
         catchError(this.handleError<Event[]>('searchEvents', []))
       );
     }
