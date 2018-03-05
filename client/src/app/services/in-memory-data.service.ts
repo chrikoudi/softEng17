@@ -46,21 +46,26 @@ export class InMemoryDataService implements InMemoryDbService {
             numberOfTickets: 50,
             location: {
               lat: 37.978091,
-              lon: 23.752676 // 'Παπαδιαμαντοπούλου 4, Ιλίσια',
+              lon: 23.752676 
             },
+            // 'Παπαδιαμαντοπούλου 4, Ιλίσια'
             type: ['Θέατρο'],
             age: ['5-12 ετών', '12-18 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
             date: '05/03/2018'
         },
-      /*  {   id: 4,
+        {   id: 4,
             title: 'ΤΑΙΝΙΑ ΤΟ ΓΑΤΟΞΟΡΚΙ',
             short_description: 'Ένας διασκεδαστής σε παιδικά πάρτι, που φοράει στολή γάτου, αποφασίζει να αλλάξει τη ζωή του με τη βοήθεια ενός μάγου. Εκείνος όμως τον μεταμορφώνει σε αληθινό γάτο και στη συνέχεια προσπαθεί να λύσει το ξόρκι του.',
             description: 'Πρόκειται για μια περιπέτεια κινουμένων σχεδίων που έρχεται από τη Βραζιλία, δια χειρός Rafael Ribas. Ο Λίνο είναι ένας διασκεδαστής σε παιδικά πάρτι που δεν αντέχει άλλο τη ρουτίνα του και το γάτο-κοστούμι του. Αποφασίζει έτσι να ζητήσει βοήθεια από έναν όχι και τόσο ταλαντούχο μάγο που τον μεταμορφώνει σε αυτό που μισεί περισσότερο: το κοστούμι του.',
             image: '../../assets/images/cat.jpg',
             price: 6,
             numberOfTickets: 70,
-            location: 'Λεωφ. Βασιλίσσης Σοφίας 124, Αθήνα 115 26',
+            location: {
+                lat: 37.9861393,
+                lon: 23.7592438 
+              },
+            //location: 'Λεωφ. Βασιλίσσης Σοφίας 124, Αθήνα 115 26',
             type: ['Κινηματογράφος'],
             age: ['3-5 ετών', '5-12 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
@@ -73,7 +78,11 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/lion.jpg',
             price: 4,
             numberOfTickets: 50,
-            location: 'Πειραιώς 254, Αθήνα 177 78',
+            location: {
+                lat: 37.9630106,
+                lon: 23.6880787 
+              },
+            //location: 'Πειραιώς 254, Αθήνα 177 78',
             type: ['Εκπαίδευση'],
             age: ['3-5 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
@@ -86,7 +95,11 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/bear.jpg',
             price: 8,
             numberOfTickets: 60,
-            location: 'Ανδρέα Παπανδρέου 35, Μαρούσι 151 22',
+            location: {
+                lat: 38.0452264,
+                lon: 23.7879584 
+              },
+            //location: 'Ανδρέα Παπανδρέου 35, Μαρούσι 151 22',
             type: ['Κινηματογράφος'],
             age: ['3-5 ετών', '5-12 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
@@ -99,7 +112,11 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/world.jpg',
             price: 35,
             numberOfTickets: 30,
-            location: 'Πειραιώς 254, Αθήνα 177 78',
+            location: {
+                lat: 37.9826557,
+                lon: 23.7228978 
+              },
+            //location: 'Πειραιώς 254, Αθήνα 177 78',
             type: ['Εκπαίδευση'],
             age: ['3-5 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
@@ -112,7 +129,11 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/race.jpg',
             price: 3,
             numberOfTickets: 150,
-            location: 'Νίκου Ζέρβα 56, Γλυφάδα',
+            location: {
+                lat: 37.8805306,
+                lon: 23.7238158 
+              },
+            //location: 'Νίκου Ζέρβα 56, Γλυφάδα',
             type: ['Αθλητισμός'],
             age: ['1-3 ετών'],
             sex: ['Αγόρι'],
@@ -125,7 +146,11 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/tennis.jpg',
             price: 10,
             numberOfTickets: 100,
-            location: 'Καστρίτσας 61, Νεά Ερυθραία',
+            location: {
+                lat: 38.1048408,
+                lon: 23.8239824 
+              }, 
+            //location: 'Καστρίτσας 61, Νεά Ερυθραία',
             type: ['Αθλητισμός'],
             age: ['3-5 ετών', '5-12 ετών', '12-18 ετών'],
             sex: ['Αγόρι', 'Κορίτσι'],
@@ -138,12 +163,16 @@ export class InMemoryDataService implements InMemoryDbService {
             image: '../../assets/images/draw.jpg',
             price: 7,
             numberOfTickets: 25,
-            location: 'Θεομήτορος 48, Άγιος Δημήτριος',
+            location: {
+                lat: 37.9187568,
+                lon: 23.7257321 
+              }, 
+            //location: 'Θεομήτορος 48, Άγιος Δημήτριος',
             type: ['Παιδότοποι', 'Ζωγραφική'],
             age: ['1-3', '3-5', '5-12', ],
             sex: ['Αγόρι', 'Κορίτσι'],
             date: '05/03/2018'
-        },*/
+        },
     ];
 
     return { events };
