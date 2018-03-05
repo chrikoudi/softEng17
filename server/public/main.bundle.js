@@ -890,7 +890,7 @@ var ResultsComponent = /** @class */ (function () {
     ResultsComponent.prototype.location_search = function (locationStr) {
         var _this = this;
         this.locService.getLatLon(locationStr)
-            .then(function (response) { return _this.searchQuery.geo = { lat: response.results[0].geometry.geo.lat, lon: response.results[0].geometry.geo.lng }; })
+            .then(function (response) { return _this.searchQuery.geo = { lat: response.results[0].geometry.location.lat, lon: response.results[0].geometry.location.lng }; })
             .catch(function (error) { return console.error(error); });
     };
     ResultsComponent.prototype.onClickDistanceHandler = function (dist) {

@@ -80,7 +80,7 @@ export class ResultsComponent implements OnInit {
 
   location_search(locationStr: string): void {
     this.locService.getLatLon(locationStr)
-        .then((response) => this.searchQuery.geo = { lat: response.results[0].geometry.geo.lat, lon: response.results[0].geometry.geo.lng})
+        .then((response) => this.searchQuery.geo = { lat: response.results[0].geometry.location.lat, lon: response.results[0].geometry.location.lng})
         .catch((error) => console.error(error));
   }
 
