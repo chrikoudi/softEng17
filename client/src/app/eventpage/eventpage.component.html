@@ -10,7 +10,7 @@
                 <div class="card border-light mb-3 card_height">
                         <div class="card-body">
                                 <h3 class="card-title" id="title_font">{{event.title}}</h3>
-                                <span *ngFor="let ev of event.type">
+                                <span *ngFor="let ev of event.eventType">
                                     <span class="badge badge-info">{{ev}}</span>
                                 </span>
                         </div>
@@ -40,13 +40,13 @@
                                 <div class="label_text">Ποσότητα :</div>
                                 <div class="input-group justify-content-center mb-3">
                                     <div class="input-group-prepend">
-                                        <button type="button" class="btn btn-danger btn-number" data-field="quantity" (click)="minus()">
+                                        <button type="button" class="btn btn-danger btn-number" data-field="numberOfTickets" (click)="minus()">
                                             <i class="fa fa-minus"></i>
                                         </button>
                                     </div>
-                                    <input class="form-control-static text-center"  id="quantity" name="quantity" value="{{quantity}}">
+                                    <input class="form-control-static text-center"  id="numberOfTickets" name="numberOfTickets" value="{{numberOfTickets}}">
                                     <div class="input-group-append">
-                                        <button type="button" class="btn btn-success btn-number" data-field="quantity" (click)="plus()">
+                                        <button type="button" class="btn btn-success btn-number" data-field="numberOfTickets" (click)="plus()">
                                             <i class="fa fa-plus"></i>
                                         </button>
                                     </div>
@@ -66,7 +66,7 @@
                           <div class="card border-info">
                               <div class="card-body">
                                 <h5 class="card-title">Επιβεβαίωση αγοράς</h5>
-                                <div class="card-text" id="checkout"> {{quantity}} εισιτήρια = {{total}} πόντοι</div>
+                                <div class="card-text" id="checkout"> {{numberOfTickets}} εισιτήρια = {{total}} πόντοι</div>
                               </div>
                               <div class="card-footer justify-content-between">
                                   <button type="button" (click)="checkout()" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left" class="btn btn-success btn-sm text-uppercase">Ολοκληρωση</button>
@@ -87,7 +87,7 @@
                     <div class="card border-light mb-3">
                         <div class="card-header bg-info text-white text-uppercase"><i class="fa fa-calendar-check-o"></i> Ημερομηνια</div>
                         <div class="card-body">
-                            <p class="card-text info_text">{{event.date}} <!--| date:'medium'--></p>
+                            <p class="card-text info_text">{{event.startDate | date: 'shortDate'}} </p>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@
                     <div class="card border-light mb-3">
                         <div class="card-header text-white bg-info text-uppercase"><i class="fa fa-location-arrow"></i> Τοποθεσια</div>
                         <div class="card-body">
-                            <p class="card-text info_text">{{event.location}}</p>
+                            <p class="card-text info_text">{{event.geo}}</p>
                         </div>
                     </div>
                 </div>

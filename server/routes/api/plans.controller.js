@@ -70,46 +70,46 @@ router.get('/:id', (req, res, next) => {
   });
 });
 
-router.post('/create', upload.single('image'), (req, res) => {
-  image = new Image({
-      imagePath: `../../public/uploads/${req.file.filename}`,
-      imageName: req.file.originalname
-});
+// router.post('/create', upload.single('image'), (req, res) => {
+//   image = new Image({
+//       imagePath: `../../public/uploads/${req.file.filename}`,
+//       imageName: req.file.originalname
+// });
 
-const optionsTextWatermark = {
-  type: "text",
-  text: "Kidzland", // text watermark
-  destination: `../../public/uploads/${req.file.filename}`,
-  source: `../../public/uploads/${req.file.filename}`,
-  position: {
-      logoX : 200,
-      logoY : 200,
-      logoHeight: 200,
-      logoWidth: 200
-  },
-  textOption: {
-      fontSize: 100, //In px default : 20
-      color: '#AAF122' // Text color in hex default: #000000
-  }
-};
+// const optionsTextWatermark = {
+//   type: "text",
+//   text: "Kidzland", // text watermark
+//   destination: `../../public/uploads/${req.file.filename}`,
+//   source: `../../public/uploads/${req.file.filename}`,
+//   position: {
+//       logoX : 200,
+//       logoY : 200,
+//       logoHeight: 200,
+//       logoWidth: 200
+//   },
+//   textOption: {
+//       fontSize: 100, //In px default : 20
+//       color: '#AAF122' // Text color in hex default: #000000
+//   }
+// };
 
-watermark.embed(optionsTextWatermark, function(status) {
-  //Do what you want to do here
-  console.log(status);
-});
+// watermark.embed(optionsTextWatermark, function(status) {
+//   //Do what you want to do here
+//   console.log(status);
+// });
 
-  image.save((err) => {
-    if (err) { return res.status(500).json(err) }
-  });
+//   image.save((err) => {
+//     if (err) { return res.status(500).json(err) }
+//   });
 
-});
+// });
 
 // create new event - provider
 router.post('/create', (req, res, next) => {
   console.log('post')
   let newPlan = new Plan({
     title: req.body.title,
-    image: `../../public/uploads/${req.file.filename}`,
+    image: './assets/images/' + req.body.image,
     shortDescription: req.body.shortDescription,
     description: req.body.description,
     price: req.body.price,
@@ -122,7 +122,6 @@ router.post('/create', (req, res, next) => {
     eventType: req.body.eventType,
     age: req.body.age,
     sex: req.body.sex
-    // req.body.image ??
   });
 
   newPlan.save( (err) => {

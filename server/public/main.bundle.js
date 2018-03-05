@@ -83,17 +83,17 @@ var AppComponent = /** @class */ (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__layout_footer_footer_component__ = __webpack_require__("./src/app/layout/footer/footer.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__search_results_results_component__ = __webpack_require__("./src/app/search-results/results.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__buypoints_buypoints_component__ = __webpack_require__("./src/app/buypoints/buypoints.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17_angular_in_memory_web_api__ = __webpack_require__("./node_modules/angular-in-memory-web-api/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_in_memory_data_service__ = __webpack_require__("./src/app/services/in-memory-data.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__createevent_createevent_component__ = __webpack_require__("./src/app/createevent/createevent.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_ngx_pagination__ = __webpack_require__("./node_modules/ngx-pagination/dist/ngx-pagination.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__signupform_signupform_component__ = __webpack_require__("./src/app/signupform/signupform.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__services_location_service__ = __webpack_require__("./src/app/services/location.service.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23__dateFormatPipe__ = __webpack_require__("./src/app/dateFormatPipe.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__provider_signupform_provider_signupform_component__ = __webpack_require__("./src/app/provider-signupform/provider-signupform.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ng2_file_upload__ = __webpack_require__("./node_modules/ng2-file-upload/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_25_ng2_file_upload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__terms_terms_component__ = __webpack_require__("./src/app/terms/terms.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__createevent_createevent_component__ = __webpack_require__("./src/app/createevent/createevent.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18_ngx_pagination__ = __webpack_require__("./node_modules/ngx-pagination/dist/ngx-pagination.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__signupform_signupform_component__ = __webpack_require__("./src/app/signupform/signupform.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_location_service__ = __webpack_require__("./src/app/services/location.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__dateFormatPipe__ = __webpack_require__("./src/app/dateFormatPipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_22__provider_signupform_provider_signupform_component__ = __webpack_require__("./src/app/provider-signupform/provider-signupform.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng2_file_upload__ = __webpack_require__("./node_modules/ng2-file-upload/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_23_ng2_file_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24__terms_terms_component__ = __webpack_require__("./src/app/terms/terms.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25__agm_core__ = __webpack_require__("./node_modules/@agm/core/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26__agm_snazzy_info_window__ = __webpack_require__("./node_modules/@agm/snazzy-info-window/index.js");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -117,6 +117,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+// import { InMemoryDataService } from './services/in-memory-data.service';
 
 
 
@@ -142,26 +143,30 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_14__layout_footer_footer_component__["a" /* FooterComponent */],
                 __WEBPACK_IMPORTED_MODULE_15__search_results_results_component__["a" /* ResultsComponent */],
                 __WEBPACK_IMPORTED_MODULE_16__buypoints_buypoints_component__["a" /* BuypointsComponent */],
-                __WEBPACK_IMPORTED_MODULE_19__createevent_createevent_component__["a" /* CreateeventComponent */],
-                __WEBPACK_IMPORTED_MODULE_23__dateFormatPipe__["a" /* dateFormatPipe */],
-                __WEBPACK_IMPORTED_MODULE_21__signupform_signupform_component__["a" /* SignupformComponent */],
-                __WEBPACK_IMPORTED_MODULE_24__provider_signupform_provider_signupform_component__["a" /* ProviderSignupformComponent */],
-                __WEBPACK_IMPORTED_MODULE_25_ng2_file_upload__["FileSelectDirective"],
-                __WEBPACK_IMPORTED_MODULE_26__terms_terms_component__["a" /* TermsComponent */]
+                __WEBPACK_IMPORTED_MODULE_17__createevent_createevent_component__["a" /* CreateeventComponent */],
+                __WEBPACK_IMPORTED_MODULE_21__dateFormatPipe__["a" /* dateFormatPipe */],
+                __WEBPACK_IMPORTED_MODULE_19__signupform_signupform_component__["a" /* SignupformComponent */],
+                __WEBPACK_IMPORTED_MODULE_22__provider_signupform_provider_signupform_component__["a" /* ProviderSignupformComponent */],
+                __WEBPACK_IMPORTED_MODULE_23_ng2_file_upload__["FileSelectDirective"],
+                __WEBPACK_IMPORTED_MODULE_24__terms_terms_component__["a" /* TermsComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormsModule */],
-                __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["c" /* HttpClientModule */],
-                __WEBPACK_IMPORTED_MODULE_6__angular_http__["d" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_5__angular_common_http__["b" /* HttpClientModule */],
+                __WEBPACK_IMPORTED_MODULE_6__angular_http__["b" /* HttpModule */],
                 // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
                 // and returns simulated server responses.
                 // Remove it when a real server is ready to receive requests.
-                __WEBPACK_IMPORTED_MODULE_17_angular_in_memory_web_api__["a" /* HttpClientInMemoryWebApiModule */].forRoot(__WEBPACK_IMPORTED_MODULE_18__services_in_memory_data_service__["a" /* InMemoryDataService */], { dataEncapsulation: false }),
+                // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
                 __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__routes__["a" /* routes */]),
-                __WEBPACK_IMPORTED_MODULE_20_ngx_pagination__["a" /* NgxPaginationModule */]
+                __WEBPACK_IMPORTED_MODULE_18_ngx_pagination__["a" /* NgxPaginationModule */],
+                __WEBPACK_IMPORTED_MODULE_25__agm_core__["a" /* AgmCoreModule */].forRoot({
+                    apiKey: 'AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM'
+                }),
+                __WEBPACK_IMPORTED_MODULE_26__agm_snazzy_info_window__["a" /* AgmSnazzyInfoWindowModule */]
             ],
-            providers: [__WEBPACK_IMPORTED_MODULE_8__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_9__services_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_22__services_location_service__["a" /* LocationService */]],
+            providers: [__WEBPACK_IMPORTED_MODULE_8__services_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_9__services_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_20__services_location_service__["a" /* LocationService */]],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
@@ -321,7 +326,7 @@ module.exports = "* {\n    font-family: 'Roboto', sans-serif;\n}\n\n#title_font 
 /***/ "./src/app/eventpage/eventpage.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"back_img\">\n    <app-header></app-header>\n    <div class=\"container\" *ngIf=\"event\">\n        <div class=\"row mb-3\">\n            <button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"goBack()\">Πίσω στα αποτελέσματα!</button>\n        </div>\n        <div class=\"row\">\n            <!-- Event main info -->\n            <div class=\"col-12 col-lg-8\">\n                <div class=\"card border-light mb-3 card_height\">\n                        <div class=\"card-body\">\n                                <h3 class=\"card-title\" id=\"title_font\">{{event.title}}</h3>\n                                <span *ngFor=\"let ev of event.type\">\n                                    <span class=\"badge badge-info\">{{ev}}</span>\n                                </span>\n                        </div>\n                        <!-- <a href=\"\" data-toggle=\"modal\" data-target=\"#productModal\"> -->\n                        <img class=\"img-fluid img\" src=\"{{event.image}}\" alt=\"Card image\"/>\n                        <!-- </a> -->\n                    </div>\n                </div>\n\n            <!-- Buy ticket -->\n            <div class=\"col-12 col-lg-4 buy_ticket_block\">\n                <div class=\"card bg-light mb-3 card_height\">\n                    <div class=\"card-body\">\n                        <h3 class=\"card-title\">Αγορά Εισιτηρίου</h3>\n                        <hr class=\"my-4\">\n                        <span>\n                            <div class=\"label_text\">Τιμή : </div>\n                            <p class=\"price_quant\"> {{event.price | number}} </p>\n                        </span>\n                        <span>\n                            <div class=\"label_text\">Διαθέσιμα εισιτήρια: </div>\n                            <p class=\"price_quant\"> {{event.numberOfTickets | number}} </p>\n                        </span>\n\n                        <form *ngIf=\"event.numberOfTickets && user\">\n                            <div class=\"form-group\">\n                                <div class=\"label_text\">Ποσότητα :</div>\n                                <div class=\"input-group justify-content-center mb-3\">\n                                    <div class=\"input-group-prepend\">\n                                        <button type=\"button\" class=\"btn btn-danger btn-number\" data-field=\"quantity\" (click)=\"minus()\">\n                                            <i class=\"fa fa-minus\"></i>\n                                        </button>\n                                    </div>\n                                    <input class=\"form-control-static text-center\"  id=\"quantity\" name=\"quantity\" value=\"{{quantity}}\">\n                                    <div class=\"input-group-append\">\n                                        <button type=\"button\" class=\"btn btn-success btn-number\" data-field=\"quantity\" (click)=\"plus()\">\n                                            <i class=\"fa fa-plus\"></i>\n                                        </button>\n                                    </div>\n                                </div>\n                            </div>\n                            <button type=\"button\" (click)=\"buy_tickets()\" class=\"btn btn-success btn-lg btn-block text-uppercase\">\n                                <i class=\"fa fa-shopping-cart\"></i> Αγορα\n                            </button>\n                        </form>\n                        <div class=\"alert alert-dismissible alert-danger\" *ngIf=\"!user\">\n                          <strong>Κάντε <a routerLink= \"/login\"> ΣΥΝΔΕΣΗ </a> για αγορά εισιτηρίων!</strong>\n                        </div>\n                        <div class=\"alert alert-dismissible alert-danger\" *ngIf=\"!event.numberOfTickets\">\n                            <strong>Τα εισιτήρια εξαντλήθηκαν!</strong>\n                        </div>\n                        <div class=\"row justify-content-center\" *ngIf=\"show\">\n                          <div class=\"card border-info\">\n                              <div class=\"card-body\">\n                                <h5 class=\"card-title\">Επιβεβαίωση αγοράς</h5>\n                                <div class=\"card-text\" id=\"checkout\"> {{quantity}} εισιτήρια = {{total}} πόντοι</div>\n                              </div>\n                              <div class=\"card-footer justify-content-between\">\n                                  <button type=\"button\" (click)=\"checkout()\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Tooltip on left\" class=\"btn btn-success btn-sm text-uppercase\">Ολοκληρωση</button>\n                                  <button type=\"button\" (click)=\"buy_close()\" class=\"btn btn-danger btn-sm text-uppercase\">Ακυρο</button>\n                              </div>\n                          </div>\n\n                        </div>\n                    </div>\n                </div>\n\n            </div>\n        </div>\n        <div id=\"content\" #content>\n        <div class=\"row\">\n                <!-- Event Date -->\n                <div class=\"col-lg-3\">\n                    <div class=\"card border-light mb-3\">\n                        <div class=\"card-header bg-info text-white text-uppercase\"><i class=\"fa fa-calendar-check-o\"></i> Ημερομηνια</div>\n                        <div class=\"card-body\">\n                            <p class=\"card-text info_text\">{{event.date}} <!--| date:'medium'--></p>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-lg-3\">\n                    <div class=\"card border-light mb-3\">\n                        <div class=\"card-header text-white bg-info text-uppercase\"><i class=\"fa fa-location-arrow\"></i> Τοποθεσια</div>\n                        <div class=\"card-body\">\n                            <p class=\"card-text info_text\">{{event.location}}</p>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-lg-3\">\n                        <div class=\"card border-light mb-3\">\n                            <div class=\"card-header text-white bg-info text-uppercase\"><i class=\"fa fa-child\"></i> Ηλικια</div>\n                            <div class=\"card-body\">\n                                <p class=\"card-text info_text\"> {{event.age}}</p>\n                            </div>\n                        </div>\n                    </div>\n                <div class=\"col-lg-3\">\n                        <div class=\"card border-light mb-3\">\n                            <div class=\"card-header text-white bg-info text-uppercase\"><i class=\"fa fa-venus-mars\"></i> Φυλο</div>\n                            <div class=\"card-body\">\n                                <p class=\"card-text info_text\">{{event.sex}}</p>\n                            </div>\n                        </div>\n                    </div>\n        </div>\n\n        <div class=\"row\">\n            <!-- Event Description -->\n            <div class=\"col-12\">\n                <div class=\"card border-light mb-3\">\n                    <div class=\"card-header bg-info text-white text-uppercase\"><i class=\"fa fa-align-justify\"></i> Περιγραφη</div>\n                    <div class=\"card-body\">\n                        <p class=\"card-text\">{{ event.description }}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n        </div>\n    </div>\n</div>\n<app-footer></app-footer>\n"
+module.exports = "<div class=\"back_img\">\n    <app-header></app-header>\n    <div class=\"container\" *ngIf=\"event\">\n        <div class=\"row mb-3\">\n            <button type=\"button\" class=\"btn btn-primary btn-lg btn-block\" (click)=\"goBack()\">Πίσω στα αποτελέσματα!</button>\n        </div>\n        <div class=\"row\">\n            <!-- Event main info -->\n            <div class=\"col-12 col-lg-8\">\n                <div class=\"card border-light mb-3 card_height\">\n                        <div class=\"card-body\">\n                                <h3 class=\"card-title\" id=\"title_font\">{{event.title}}</h3>\n                                <span *ngFor=\"let ev of event.eventType\">\n                                    <span class=\"badge badge-info\">{{ev}}</span>\n                                </span>\n                        </div>\n                        <!-- <a href=\"\" data-toggle=\"modal\" data-target=\"#productModal\"> -->\n                        <img class=\"img-fluid img\" src=\"{{event.image}}\" alt=\"Card image\"/>\n                        <!-- </a> -->\n                    </div>\n                </div>\n\n            <!-- Buy ticket -->\n            <div class=\"col-12 col-lg-4 buy_ticket_block\">\n                <div class=\"card bg-light mb-3 card_height\">\n                    <div class=\"card-body\">\n                        <h3 class=\"card-title\">Αγορά Εισιτηρίου</h3>\n                        <hr class=\"my-4\">\n                        <span>\n                            <div class=\"label_text\">Τιμή : </div>\n                            <p class=\"price_quant\"> {{event.price | number}} </p>\n                        </span>\n                        <span>\n                            <div class=\"label_text\">Διαθέσιμα εισιτήρια: </div>\n                            <p class=\"price_quant\"> {{event.numberOfTickets | number}} </p>\n                        </span>\n\n                        <form *ngIf=\"event.numberOfTickets && user\">\n                            <div class=\"form-group\">\n                                <div class=\"label_text\">Ποσότητα :</div>\n                                <div class=\"input-group justify-content-center mb-3\">\n                                    <div class=\"input-group-prepend\">\n                                        <button type=\"button\" class=\"btn btn-danger btn-number\" data-field=\"numberOfTickets\" (click)=\"minus()\">\n                                            <i class=\"fa fa-minus\"></i>\n                                        </button>\n                                    </div>\n                                    <input class=\"form-control-static text-center\"  id=\"numberOfTickets\" name=\"numberOfTickets\" value=\"{{numberOfTickets}}\">\n                                    <div class=\"input-group-append\">\n                                        <button type=\"button\" class=\"btn btn-success btn-number\" data-field=\"numberOfTickets\" (click)=\"plus()\">\n                                            <i class=\"fa fa-plus\"></i>\n                                        </button>\n                                    </div>\n                                </div>\n                            </div>\n                            <button type=\"button\" (click)=\"buy_tickets()\" class=\"btn btn-success btn-lg btn-block text-uppercase\">\n                                <i class=\"fa fa-shopping-cart\"></i> Αγορα\n                            </button>\n                        </form>\n                        <div class=\"alert alert-dismissible alert-danger\" *ngIf=\"!user\">\n                          <strong>Κάντε <a routerLink= \"/login\"> ΣΥΝΔΕΣΗ </a> για αγορά εισιτηρίων!</strong>\n                        </div>\n                        <div class=\"alert alert-dismissible alert-danger\" *ngIf=\"!event.numberOfTickets\">\n                            <strong>Τα εισιτήρια εξαντλήθηκαν!</strong>\n                        </div>\n                        <div class=\"row justify-content-center\" *ngIf=\"show\">\n                          <div class=\"card border-info\">\n                              <div class=\"card-body\">\n                                <h5 class=\"card-title\">Επιβεβαίωση αγοράς</h5>\n                                <div class=\"card-text\" id=\"checkout\"> {{numberOfTickets}} εισιτήρια = {{total}} πόντοι</div>\n                              </div>\n                              <div class=\"card-footer justify-content-between\">\n                                  <button type=\"button\" (click)=\"checkout()\" data-toggle=\"tooltip\" data-placement=\"left\" title=\"\" data-original-title=\"Tooltip on left\" class=\"btn btn-success btn-sm text-uppercase\">Ολοκληρωση</button>\n                                  <button type=\"button\" (click)=\"buy_close()\" class=\"btn btn-danger btn-sm text-uppercase\">Ακυρο</button>\n                              </div>\n                          </div>\n\n                        </div>\n                    </div>\n                </div>\n\n            </div>\n        </div>\n        <div id=\"content\" #content>\n        <div class=\"row\">\n                <!-- Event Date -->\n                <div class=\"col-lg-3\">\n                    <div class=\"card border-light mb-3\">\n                        <div class=\"card-header bg-info text-white text-uppercase\"><i class=\"fa fa-calendar-check-o\"></i> Ημερομηνια</div>\n                        <div class=\"card-body\">\n                            <p class=\"card-text info_text\">{{event.startDate | date: 'shortDate'}} </p>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-lg-3\">\n                    <div class=\"card border-light mb-3\">\n                        <div class=\"card-header text-white bg-info text-uppercase\"><i class=\"fa fa-location-arrow\"></i> Τοποθεσια</div>\n                        <div class=\"card-body\">\n                            <p class=\"card-text info_text\">{{event.geo}}</p>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"col-lg-3\">\n                        <div class=\"card border-light mb-3\">\n                            <div class=\"card-header text-white bg-info text-uppercase\"><i class=\"fa fa-child\"></i> Ηλικια</div>\n                            <div class=\"card-body\">\n                                <p class=\"card-text info_text\"> {{event.age}}</p>\n                            </div>\n                        </div>\n                    </div>\n                <div class=\"col-lg-3\">\n                        <div class=\"card border-light mb-3\">\n                            <div class=\"card-header text-white bg-info text-uppercase\"><i class=\"fa fa-venus-mars\"></i> Φυλο</div>\n                            <div class=\"card-body\">\n                                <p class=\"card-text info_text\">{{event.sex}}</p>\n                            </div>\n                        </div>\n                    </div>\n        </div>\n\n        <div class=\"row\">\n            <!-- Event Description -->\n            <div class=\"col-12\">\n                <div class=\"card border-light mb-3\">\n                    <div class=\"card-header bg-info text-white text-uppercase\"><i class=\"fa fa-align-justify\"></i> Περιγραφη</div>\n                    <div class=\"card-body\">\n                        <p class=\"card-text\">{{ event.description }}</p>\n                    </div>\n                </div>\n            </div>\n        </div>\n        </div>\n    </div>\n</div>\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -335,10 +340,9 @@ module.exports = "<div class=\"back_img\">\n    <app-header></app-header>\n    <
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_event_service__ = __webpack_require__("./src/app/services/event.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("./node_modules/@angular/router/esm5/router.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_common__ = __webpack_require__("./node_modules/@angular/common/esm5/common.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__models_event__ = __webpack_require__("./src/app/models/event.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf__ = __webpack_require__("./node_modules/jspdf/dist/jspdf.min.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_jspdf__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jspdf__ = __webpack_require__("./node_modules/jspdf/dist/jspdf.min.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_jspdf___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_jspdf__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__services_auth_service__ = __webpack_require__("./src/app/services/auth.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -355,16 +359,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 var EventpageComponent = /** @class */ (function () {
-    function EventpageComponent(route, auth, eventService, location, locService) {
+    function EventpageComponent(route, auth, eventService, geo, locService) {
         var _this = this;
         this.route = route;
         this.auth = auth;
         this.eventService = eventService;
-        this.location = location;
+        this.geo = geo;
         this.locService = locService;
-        this.quantity = 1;
+        this.numberOfTickets = 1;
         this.user = this.auth.getUser();
         this.auth.getLoginEventEmitter()
             .subscribe(function (user) { return _this.user = user; });
@@ -375,57 +378,57 @@ var EventpageComponent = /** @class */ (function () {
     };
     EventpageComponent.prototype.getEvent = function () {
         var _this = this;
-        var id = +this.route.snapshot.paramMap.get('id');
+        var id = this.route.snapshot.paramMap.get('id');
         this.eventService.getEvent(id)
             .subscribe(function (event) {
             _this.event = event;
-            _this.locService.getLοcation(_this.event.location)
-                .then(function (response) { return _this.event.location = response.results[0].formatted_address; });
+            _this.locService.getLοcation(_this.event.geo)
+                .then(function (response) { return _this.event.geo = response.results[0].formatted_address; });
         });
     };
     EventpageComponent.prototype.goBack = function () {
-        this.location.back();
+        this.geo.back();
     };
     EventpageComponent.prototype.minus = function () {
-        if (this.quantity === 1) {
-            this.quantity = 1;
+        if (this.numberOfTickets === 1) {
+            this.numberOfTickets = 1;
         }
         else {
-            this.quantity = this.quantity - 1;
+            this.numberOfTickets = this.numberOfTickets - 1;
         }
     };
     EventpageComponent.prototype.plus = function () {
-        if (this.quantity === this.event.numberOfTickets) {
-            this.quantity = this.quantity;
+        if (this.numberOfTickets === this.event.numberOfTickets) {
+            this.numberOfTickets = this.numberOfTickets;
         }
         else {
-            this.quantity = this.quantity + 1;
+            this.numberOfTickets = this.numberOfTickets + 1;
         }
     };
     EventpageComponent.prototype.buy_tickets = function () {
         this.show = true;
-        this.total = this.quantity * this.event.price;
+        this.total = this.numberOfTickets * this.event.price;
     };
     EventpageComponent.prototype.checkout = function () {
         console.log('okey');
         this.download();
-        this.event.numberOfTickets = this.event.numberOfTickets - this.quantity;
+        this.event.numberOfTickets = this.event.numberOfTickets - this.numberOfTickets;
         if (this.event.numberOfTickets === 0) {
-            this.quantity = 0;
+            this.numberOfTickets = 0;
         }
         else {
-            this.quantity = 1;
+            this.numberOfTickets = 1;
         }
         // this.eventService.updateEvent(this.event).subscribe();
         this.show = false;
     };
     EventpageComponent.prototype.buy_close = function () {
         this.show = false;
-        this.quantity = 1;
+        this.numberOfTickets = 1;
     };
     EventpageComponent.prototype.download = function () {
-        var doc = new __WEBPACK_IMPORTED_MODULE_6_jspdf__();
-        for (var i = 0; i < this.quantity; i++) {
+        var doc = new __WEBPACK_IMPORTED_MODULE_5_jspdf__();
+        for (var i = 0; i < this.numberOfTickets; i++) {
             var specialElementHandlers = {
                 '#editor': function (element, renderer) {
                     return true;
@@ -439,7 +442,7 @@ var EventpageComponent = /** @class */ (function () {
             doc.addPage();
             // i = i + 1 ;
         }
-        doc.deletePage(this.quantity + 1);
+        doc.deletePage(this.numberOfTickets + 1);
         // Save the PDF
         doc.save(this.event.title + '.pdf');
     };
@@ -447,10 +450,6 @@ var EventpageComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])('content'),
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_0__angular_core__["ElementRef"])
     ], EventpageComponent.prototype, "content", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Input"])(),
-        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_5__models_event__["a" /* Event */])
-    ], EventpageComponent.prototype, "event", void 0);
     EventpageComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-eventpage',
@@ -458,7 +457,7 @@ var EventpageComponent = /** @class */ (function () {
             styles: [__webpack_require__("./src/app/eventpage/eventpage.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__angular_router__["a" /* ActivatedRoute */],
-            __WEBPACK_IMPORTED_MODULE_7__services_auth_service__["a" /* AuthService */],
+            __WEBPACK_IMPORTED_MODULE_6__services_auth_service__["a" /* AuthService */],
             __WEBPACK_IMPORTED_MODULE_2__services_event_service__["a" /* EventService */],
             __WEBPACK_IMPORTED_MODULE_4__angular_common__["Location"],
             __WEBPACK_IMPORTED_MODULE_1__services_location_service__["a" /* LocationService */]])
@@ -480,7 +479,7 @@ module.exports = "* {\n  font-family: 'Roboto', sans-serif;\n}\n\n#search {\n   
 /***/ "./src/app/home/home.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"title\">\n  <app-header></app-header>\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-lg-12\">\n          <h1 id=\"quote\">Οι καλύτερες εκδηλώσεις στη πόλη!</h1>\n          <a routerLink=\"/results\">\n              <button class=\"btn btn-warning\" type=\"button\" id=\"search\">Αναζήτηση</button>\n          </a>\n        </div>\n      </div>\n      <div class=\"row\">\n          <div class=\"col-lg-12\">\n            <h3>Πρόσφατες Εκδηλώσεις</h3>\n            <div class=\"grid grid-pad\">\n              <a *ngFor=\"let event of events\" class=\"col-1-4\">\n                <div class=\"module event\">\n                  <a routerLink=\"/results/{{event.id}}\">\n                    <h4>{{event.title}}</h4>\n                    <img class=\"card-img-top\" id=\"image\" src=\"{{event.image}}\" alt=\"Card image\">\n                  </a>\n                </div>\n              </a>\n            </div>\n          </div>\n      </div>\n    </div>\n</div>\n<app-footer></app-footer>\n"
+module.exports = "<div class=\"title\">\n  <app-header></app-header>\n    <div class=\"container\">\n      <div class=\"row\">\n        <div class=\"col-lg-12\">\n          <h1 id=\"quote\">Οι καλύτερες εκδηλώσεις στη πόλη!</h1>\n          <a routerLink=\"/results\">\n              <button class=\"btn btn-warning\" type=\"button\" id=\"search\">Αναζήτηση</button>\n          </a>\n        </div>\n      </div>\n      <div class=\"row\">\n          <div class=\"col-lg-12\">\n            <h3>Πρόσφατες Εκδηλώσεις</h3>\n            <div class=\"grid grid-pad\">\n              <a *ngFor=\"let event of events\" class=\"col-1-4\">\n                <div class=\"module event\">\n                  <a routerLink=\"/results/{{event._id}}\">\n                    <h4>{{event.title}}</h4>\n                    <img class=\"card-img-top\" id=\"image\" src=\"{{event.image}}\" alt=\"Card image\">\n                  </a>\n                </div>\n              </a>\n            </div>\n          </div>\n      </div>\n    </div>\n</div>\n<app-footer></app-footer>\n"
 
 /***/ }),
 
@@ -719,21 +718,6 @@ var LoginformComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/app/models/event.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Event; });
-var Event = /** @class */ (function () {
-    function Event() {
-    }
-    return Event;
-}());
-
-
-
-/***/ }),
-
 /***/ "./src/app/provider-signupform/provider-signupform.component.css":
 /***/ (function(module, exports) {
 
@@ -839,14 +823,14 @@ var routes = [
 /***/ "./src/app/search-results/results.component.css":
 /***/ (function(module, exports) {
 
-module.exports = ".background_image { \n    position:relative;\n    height: 180vh;\n    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.75)), to(rgba(0, 0, 0, 0.5)) ), url('landing.1185f47be9b89954776d.jpg');\n    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('landing.1185f47be9b89954776d.jpg');\n    background-size: cover;\n    background-attachment: fixed;\n  }\n\n#search_id {   \n    margin: auto;\n    width: 78%;\n    background-color: lightblue;\n}\n\n.search-title {\n    margin: auto;\n}\n\n.form-control {\n    margin: auto;\n    left: 1%;\n}\n\n#define {\n    position: absolute;\n    width: 50%;\n    left: 0%;\n}\n\n#back {\n    position: absolute;\n    width: 10%;\n    left: 48%; \n}\n\n#go {\n    font-size: 120%;\n    color: btn-info;\n}\n\n#go:hover {\n    text-decoration: none;\n    text-transform: uppercase;\n}\n\n.position {\n    left: 20%;\n}\n\n.distance {\n    right: 0%;\n}\n\n.tabs {\n    margin: auto;\n}\n\n#filters_id {\n    position: absolute;\n    left: 1%;\n    width: 30%;\n    background-color: lightblue;\n}\n\n.filters-title {\n    position: absolute;\n    left: 38%;\n}\n\n.filter {\n    position: absolute;\n    left: 7%;\n}\n\n#menu {\n    position: absolute;\n    left: 4%;\n    width: 85%;\n}\n\n#price {\n    position: absolute;\n    left: 6%;\n}\n\n#sex {\n    left: 21%;\n}\n\n#submit {\n    left: 34%;\n}\n\n.list_results {\n    position: absolute; \n    right: 4%;\n    width: 65%;\n    height:20%;\n}\n\n#image {\n    width: 30%;\n}\n\n#title {\n    position: absolute;\n    right: 24%;\n    top: 5%;\n    font-size: 140%;\n}\n\n#text {\n    position: absolute;\n    left: 31%; \n    bottom: 20%;\n    font-size:85%;\n}\n\n#button {\n    position: absolute;\n    right: 33%;\n    bottom: 3%;\n    padding: 0% 2%;\n}\n\n"
+module.exports = ".background_image { \n    position:relative;\n    height: 180vh;\n    background: -webkit-gradient( linear, left top, left bottom, from(rgba(0, 0, 0, 0.75)), to(rgba(0, 0, 0, 0.5)) ), url('landing.1185f47be9b89954776d.jpg');\n    background: linear-gradient( rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.5) ), url('landing.1185f47be9b89954776d.jpg');\n    background-size: cover;\n    background-attachment: fixed;\n  }\n\n#search_id {   \n    margin: auto;\n    width: 78%;\n    background-color: lightblue;\n}\n\n.search-title {\n    margin: auto;\n}\n\n.form-control {\n    margin: auto;\n    left: 1%;\n}\n\n#define {\n    position: absolute;\n    width: 50%;\n    left: 0%;\n}\n\n#back {\n    position: absolute;\n    width: 10%;\n    left: 55%; \n}\n\n#back1 {\n    position: absolute;\n    width: 10%;\n    left: 48%; \n}\n\n#go {\n    font-size: 120%;\n    color: btn-info;\n}\n\n#go:hover {\n    text-decoration: none;\n    text-transform: uppercase;\n}\n\n.position {\n    left: 20%;\n}\n\n.distance {\n    right: 0%;\n}\n\n.tabs {\n    margin: auto;\n}\n\n#filters_id {\n    position: absolute;\n    left: 1%;\n    width: 30%;\n    background-color: lightblue;\n}\n\n.filters-title {\n    position: absolute;\n    left: 38%;\n}\n\n.filter {\n    position: absolute;\n    left: 7%;\n}\n\n#menu {\n    position: absolute;\n    left: 4%;\n    width: 85%;\n}\n\n#price {\n    position: absolute;\n    left: 6%;\n}\n\n#sex {\n    left: 21%;\n}\n\n#submit {\n    left: 34%;\n}\n\n.list_results {\n    position: absolute; \n    right: 4%;\n    width: 65%;\n    height:20%;\n}\n\n#image {\n    width: 30%;\n}\n\n#title {\n    position: absolute;\n    right: 24%;\n    top: 5%;\n    font-size: 140%;\n}\n\n#text {\n    position: absolute;\n    left: 31%; \n    bottom: 20%;\n    font-size:85%;\n}\n\n#button {\n    position: absolute;\n    right: 33%;\n    bottom: 3%;\n    padding: 0% 2%;\n}\n\nagm-map {\n    height: 600px;\n  }\n\n"
 
 /***/ }),
 
 /***/ "./src/app/search-results/results.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"background_image\">\n    <app-header></app-header>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"card\" id=\"search_id\">\n                <div class=\"row mb-1\"></div>\n                <h4 class=\"search-title\">Αναζήτηση</h4>\n                <div class=\"row mb-2\"></div>\n                <div class=\"input-group\">\n                    <input #searchBox type=\"text\" class=\"form-control\" autocomplete=\"on\" placeholder=\"Είδος, περιοχή, ηλικία\" (keyup.enter)=\"search(searchBox.value)\"/>\n                    <button class=\"btn btn-link\" type=\"button\" id=\"go\" (click)=\"search(searchBox.value)\">Βρες!</button>\n                </div>\n                <div class=\"row mb-2\"></div>\n                <div class=\"row\">\n                    <div class=\"col-12 col-lg-7 position\">\n                        <h5>Τοποθεσία</h5>\n                        <form *ngIf=\"!show\">\n                            <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickLocationHandler(loc[0])\">{{loc[0]}}</button>\n                            &nbsp;\n                            <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickLocationHandler(loc[1])\">{{loc[1]}}</button>\n                        </form>\n                        <form *ngIf=\"show\">\n                            <div class=\"input-group\">\n                                <input #searchBox type=\"text\" class=\"form-control\" id=\"define\" placeholder=\"Ορισμός τοποθεσίας\" (keyup.enter)=\"location_search(searchBox.value)\"/>\n                                <button class=\"btn btn-link\" type=\"button\" id=\"back\" (click)=\"back()\">Πίσω</button>\n                            </div>\n                        </form>\n                    </div>\n\n                    <div class=\"col-12 col-lg-5 distance\">\n                        <h5>Απόσταση</h5>\n                        <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Toolbar with button groups\">\n                            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"First group\">\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[0])\">< {{dis[0]}}</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[1])\">< {{dis[1]}}</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[2])\">< {{dis[2]}}</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[3])\">< {{dis[3]}}</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[4])\">< {{dis[4]}}</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[5])\">< {{dis[5]}}</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row mb-2\"></div>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"tabs\">\n              <div class=\"row mb-3\"></div>\n                <ul class=\"nav nav-tabs\">\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link active show\" data-toggle=\"tab\" routerLink=\"/results\" style=\"background-color:White;\">Λίστα</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"nav-link active show\" data-toggle=\"tab\" routerLink=\"/map\" style=\"background-color:lightblue;\">Χάρτης</a>\n                    </li>\n                </ul>\n                <div class=\"row mb-3\"></div>\n            </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"card col-12 col-lg-3\" id=\"filters_id\">\n            <div class=\"row mb-2\"></div>\n            <h4 class=\"filters-title\">Φίλτρα</h4>\n            <br>\n            <h5 class=\"filter\">Είδος</h5>\n            <br>\n            <div class=\"form-group\" id=\"menu\">\n                <select class=\"custom-select\" (change)=\"selectTypeHandler($event)\">\n                    <option *ngFor=\"let option of types\" \n                        [value]=\"option\"> \n                        {{ option }}\n                     </option>\n                </select>\n            </div>\n            <br>\n            <br>\n            <h5 class=\"filter\">Ηλικία</h5>\n            <br>\n            <div class=\"form-group\" id=\"menu\">\n                <select class=\"custom-select\" (change)=\"selectAgeHandler($event)\">\n                    <option *ngFor=\"let option of ages\" \n                        [value]=\"option\"> \n                        {{ option }}\n                     </option>\n                </select>\n            </div>\n            <br>\n            <br>\n            <h5 class=\"filter\">Ημερομηνία</h5>\n            <br>\n            <div class=\"form-group\" id=\"menu\">\n                <select class=\"custom-select\" (change)=\"selectDateHandler($event)\">\n                    <option *ngFor=\"let option of dates\" \n                        [value]=\"option\"> \n                        {{ option }}\n                     </option>\n                </select>\n            </div>\n            <br>\n            <br>\n            <h5 class=\"filter\">Τιμή</h5>\n            <br>\n            <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Toolbar with button groups\" id=\"price\">\n                <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"First group\">\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[0])\">< {{num[0]}}</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[1])\">< {{num[1]}}</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[2])\">< {{num[2]}}</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[3])\">< {{num[3]}}</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[4])\">< {{num[4]}}</button>\n                </div>\n            </div>\n            <br>\n            <br>\n            <h5 class=\"filter\">Φύλο</h5>\n            <br>\n            <div class=\"input-group\" id=\"sex\">\n                <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickSexHandler(sex[0])\">{{sex[0]}}</button>\n                &nbsp; &nbsp;\n                <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickSexHandler(sex[1])\">{{sex[1]}}</button>\n            </div>\n            <div class=\"row mb-2\"></div>\n            <div class=\"input-group\" id=\"submit\">\n                <button type=\"button\" class=\"btn btn-secondary\" (click) = \"onClick()\">Επιλογή</button>\n            </div>\n            <div class=\"row mb-2\"></div>\n          </div>\n\n          <div class=\"col-12 col-lg-9 list_results\">\n             <li *ngFor=\"let ev of results | async | paginate: { itemsPerPage: 4, currentPage: p }\" class=\"row card\">\n                <img class=\"card-img-top\" id=\"image\" src=\"{{ev.image}}\" alt=\"Card image\">\n                <h4 class=\"card-title\" id=\"title\">{{ev.title}}</h4>\n                <p class=\"card-text\" id=\"text\">{{ev.short_description}}</p>\n                <a routerLink=\"/results/{{ev.id}}\" class=\"btn btn-primary btn-sm\" id=\"button\">Προβολή</a>\n             </li>\n             <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n          </div>\n        </div>\n    </div>\n</div>\n<app-footer></app-footer>"
+module.exports = "<div class=\"background_image\">\n    <app-header></app-header>\n    <div class=\"container\">\n        <div class=\"row\">\n            <div class=\"card\" id=\"search_id\">\n                <div class=\"row mb-1\"></div>\n                <h4 class=\"search-title\">Αναζήτηση</h4>\n                <div class=\"row mb-2\"></div>\n                <div class=\"input-group\">\n                    <input #searchBox type=\"text\" class=\"form-control\" autocomplete=\"on\" placeholder=\"Είδος, περιοχή, ηλικία\" [(ngModel)] = \"searchQuery.searchTerms\"/>\n                    <button class=\"btn btn-link\" type=\"button\" id=\"go\" (click)=\"search()\">Βρες!</button>\n                </div>\n                <div class=\"row mb-2\"></div>\n                <div class=\"row\">\n                    <div class=\"col-12 col-lg-7 position\">\n                        <h5>Τοποθεσία</h5>\n                        <form *ngIf=\"!show\">\n                            <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickLocationHandler(loc[0])\">{{loc[0]}}</button>\n                            &nbsp;\n                            <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickLocationH(loc[1])\">{{loc[1]}}</button>\n                        </form>\n                        <form *ngIf=\"show\">\n                            <div class=\"input-group\">\n                                <input #searchBox type=\"text\" class=\"form-control\" id=\"define\" placeholder=\"Ορισμός τοποθεσίας\" (keyup.enter)=\"location_search(searchBox.value)\"/>\n                                <button class=\"btn btn-link\" type=\"button\" id=\"back1\" (click)=\"location_search(searchBox.value)\">Enter</button>\n                                <button class=\"btn btn-link\" type=\"button\" id=\"back\" (click)=\"back()\">Πίσω</button>\n                            </div>\n                        </form>\n                    </div>\n\n                    <div class=\"col-12 col-lg-5 distance\">\n                        <h5>Απόσταση</h5>\n                        <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Toolbar with button groups\">\n                            <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"First group\">\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[0])\">< {{dis[0]}}</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[1])\">< {{dis[1]}}</button>\n                                <button type=\"button\" class=\"btn btn-info btn-sm\" (click) = \"onClickDistanceHandler(dis[2])\">< {{dis[2]}}</button>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n                <div class=\"row mb-2\"></div>\n            </div>\n        </div>\n\n        <div class=\"row\">\n            <div class=\"tabs\">\n              <div class=\"row mb-3\"></div>\n                <ul class=\"nav nav-tabs\">\n                    <li class=\"nav-item\">\n                        <a class=\"btn btn-info\" type=\"button\" (click)=\"list()\" style=\"background-color:White;\">Λίστα</a>\n                    </li>\n                    <li class=\"nav-item\">\n                        <a class=\"btn btn-info\" type=\"button\" (click)=\"map()\" style=\"background-color:lightblue;\">Χάρτης</a>\n                    </li>\n                </ul>\n                <div class=\"row mb-3\"></div>\n            </div>\n        </div>\n\n        <div class=\"row\">\n          <div class=\"card col-12 col-lg-3\" id=\"filters_id\">\n            <div class=\"row mb-2\"></div>\n            <h4 class=\"filters-title\">Φίλτρα</h4>\n            <br>\n            <h5 class=\"filter\">Είδος</h5>\n            <br>\n            <div class=\"form-group\" id=\"menu\">\n                <select class=\"custom-select\" (change)=\"selectTypeHandler($event)\">\n                    <option *ngFor=\"let option of types\" \n                        [value]=\"option\"> \n                        {{ option }}\n                     </option>\n                </select>\n            </div>\n            <br>\n            <br>\n            <h5 class=\"filter\">Ηλικία</h5>\n            <br>\n            <div class=\"form-group\" id=\"menu\">\n                <select class=\"custom-select\" (change)=\"selectAgeHandler($event)\">\n                    <option *ngFor=\"let option of ages\" \n                        [value]=\"option\"> \n                        {{ option }}\n                     </option>\n                </select>\n            </div>\n            <br>\n            <br>\n            <h5 class=\"filter\">Ημερομηνία</h5>\n            <br>\n            <div class=\"form-group\" id=\"menu\">\n                <select class=\"custom-select\" (change)=\"selectDateHandler($event)\">\n                    <option *ngFor=\"let option of dates\" \n                        [value]=\"option\"> \n                        {{ option }}\n                     </option>\n                </select>\n            </div>\n            <br>\n            <br>\n            <h5 class=\"filter\">Τιμή</h5>\n            <br>\n            <div class=\"btn-toolbar\" role=\"toolbar\" aria-label=\"Toolbar with button groups\" id=\"price\">\n                <div class=\"btn-group mr-2\" role=\"group\" aria-label=\"First group\">\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[0])\">< {{num[0]}}</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[1])\">< {{num[1]}}</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[2])\">< {{num[2]}}</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[3])\">< {{num[3]}}</button>\n                    <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickPriceHandler(num[4])\">< {{num[4]}}</button>\n                </div>\n            </div>\n            <br>\n            <br>\n            <h5 class=\"filter\">Φύλο</h5>\n            <br>\n            <div class=\"input-group\" id=\"sex\">\n                <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickSexHandler(sex[0])\">{{sex[0]}}</button>\n                &nbsp; &nbsp;\n                <button type=\"button\" class=\"btn btn-info\" (click) = \"onClickSexHandler(sex[1])\">{{sex[1]}}</button>\n            </div>\n            <div class=\"row mb-2\"></div>\n            <div class=\"input-group\" id=\"submit\">\n                <button type=\"button\" class=\"btn btn-secondary\" (click) = \"onClick()\">Επιλογή</button>\n            </div>\n            <div class=\"row mb-2\"></div>\n          </div>\n\n          <div class=\"col-12 col-lg-9 list_results\">\n            <form *ngIf=\"!show_map\">\n                <li *ngFor=\"let ev of results | async | paginate: { itemsPerPage: 4, currentPage: p }\" class=\"row card\">\n                    <img class=\"card-img-top\" id=\"image\" src=\"{{ev.image}}\" alt=\"Card image\">\n                    <h4 class=\"card-title\" id=\"title\">{{ev.title}}</h4>\n                    <p class=\"card-text\" id=\"text\">{{ev.shortDescription}}</p>\n                    <a routerLink=\"/results/{{ev._id}}\" class=\"btn btn-primary btn-sm\" id=\"button\">Προβολή</a>\n                </li>\n                <pagination-controls (pageChange)=\"p = $event\"></pagination-controls>\n            </form>\n            <form *ngIf=\"show_map\">\n                <agm-map [latitude]=\"searchQuery.geo.lat\" [longitude]=\"searchQuery.geo.lon\" [zoom]=\"(18 - searchQuery.distance * 0.4) \">\n                    <div *ngFor=\"let ev of results | async\">\n                        <agm-marker \n                            [latitude]=\"ev.geo.lat\" \n                            [longitude]=\"ev.geo.lon\" \n                            [label]=\"ev.title\">\n                        </agm-marker>\n                    </div> \n                </agm-map>\n            </form>\n          </div>\n        </div>\n    </div>\n</div>\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -858,6 +842,7 @@ module.exports = "<div class=\"background_image\">\n    <app-header></app-header
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("./node_modules/@angular/core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_event_service__ = __webpack_require__("./src/app/services/event.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__dateFormatPipe__ = __webpack_require__("./src/app/dateFormatPipe.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_location_service__ = __webpack_require__("./src/app/services/location.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -870,50 +855,66 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ResultsComponent = /** @class */ (function () {
-    function ResultsComponent(eventService) {
+    function ResultsComponent(eventService, locService) {
         this.eventService = eventService;
+        this.locService = locService;
         this.p = 1;
         this.num = [5, 10, 15, 30, 50];
-        this.dis = [1, 5, 10, 25, 50, 100];
+        this.dis = [1, 5, 10];
         this.sex = ['Αγόρι', 'Κορίτσι'];
         this.loc = ['Τρέχουσα', 'Ορισμός'];
         this.types = ['Κατηγορίες', 'Αθλητισμός', 'Ζωγραφική', 'Θέατρο', 'Κινηματογράφος', 'Παιδότοποι', 'Μουσική'];
         this.ages = ['Κατηγορίες', '1-3 ετών', '3-5 ετών', '5-12 ετών', '12-18 ετών'];
-        this.dates = ['Κατηγορίες', 'Αύριο', 'Αυτή την εβδομάδα', 'Επόμενο ένα μήνα'];
+        this.dates = ['Κατηγορίες', 'Αύριο', 'Αυτή την εβδομάδα', 'Επόμενες δύο εβδομάδες'];
+        this.searchQuery = {
+            searchTerms: '',
+            geo: {
+                lat: 37.983810,
+                lon: 23.727539
+            },
+            distance: 5
+        };
         this.show = false;
+        this.show_map = false;
     }
     ResultsComponent.prototype.ngOnInit = function () {
         this.getEvents();
     };
-    ResultsComponent.prototype.search = function (term) {
-        this.results = this.eventService.searchEvents(term);
+    ResultsComponent.prototype.search = function () {
+        var _a = this.searchQuery, searchTerms = _a.searchTerms, geo = _a.geo, distance = _a.distance;
+        this.results = this.eventService.searchEvents(searchTerms, geo, distance);
         this.temp_results = this.results;
     };
-    ResultsComponent.prototype.location_search = function (location) {
-        //this.results = this.eventService.searchEvents(location);
+    ResultsComponent.prototype.location_search = function (locationStr) {
+        var _this = this;
+        this.locService.getLatLon(locationStr)
+            .then(function (response) { return _this.searchQuery.geo = { lat: response.results[0].geometry.geo.lat, lon: response.results[0].geometry.geo.lng }; })
+            .catch(function (error) { return console.error(error); });
+    };
+    ResultsComponent.prototype.onClickDistanceHandler = function (dist) {
+        this.searchQuery.distance = dist;
     };
     ResultsComponent.prototype.getEvents = function () {
-        var _this = this;
-        this.eventService.getEvents()
-            .subscribe(function (events) { return _this.events = events; });
+        this.results = this.eventService.getEvents();
     };
     ResultsComponent.prototype.selectType = function (selectedType) {
         function check_type(element, index, array) {
             return element === selectedType;
         }
-        if (selectedType == this.types[1] || selectedType == this.types[2]
-            || selectedType == this.types[3] || selectedType == this.types[4]
-            || selectedType == this.types[5] || selectedType == this.types[6]) {
-            this.results = this.results.map(function (results) { return results.filter(function (result) { return result.type.some(check_type); }); });
+        if (selectedType === this.types[1] || selectedType === this.types[2]
+            || selectedType === this.types[3] || selectedType === this.types[4]
+            || selectedType === this.types[5] || selectedType === this.types[6]) {
+            this.results = this.results.map(function (results) { return results.filter(function (result) { return result.eventType.some(check_type); }); });
         }
     };
     ResultsComponent.prototype.selectAge = function (selectedAge) {
         function check_type(element, index, array) {
             return element === selectedAge;
         }
-        if (selectedAge == this.ages[1] || selectedAge == this.ages[2]
-            || selectedAge == this.ages[3] || selectedAge == this.ages[4]) {
+        if (selectedAge === this.ages[1] || selectedAge === this.ages[2]
+            || selectedAge === this.ages[3] || selectedAge === this.ages[4]) {
             this.results = this.results.map(function (results) { return results.filter(function (result) { return result.age.some(check_type); }); });
         }
     };
@@ -924,38 +925,38 @@ var ResultsComponent = /** @class */ (function () {
             selectedDate = selectedDate.setDate(selectedDate.getDate() + 1);
             var dateFormatPipeFilter = new __WEBPACK_IMPORTED_MODULE_2__dateFormatPipe__["a" /* dateFormatPipe */]();
             this.newDate = dateFormatPipeFilter.transform(selectedDate);
-            this.results = this.results.map(function (results) { return results.filter(function (result) { return result.date === _this.newDate; }); });
+            this.results = this.results.map(function (results) { return results.filter(function (result) { return result.startDate === _this.newDate; }); });
         }
-        else if (selectedDate == this.dates[2]) {
+        else if (selectedDate === this.dates[2]) {
             selectedDate = new Date();
             selectedDate = selectedDate.setDate(selectedDate.getDate() + 7);
             var dateFormatPipeFilter = new __WEBPACK_IMPORTED_MODULE_2__dateFormatPipe__["a" /* dateFormatPipe */]();
             this.newDate = dateFormatPipeFilter.transform(selectedDate);
-            this.results = this.results.map(function (results) { return results.filter(function (result) { return result.date < _this.newDate; }); });
+            this.results = this.results.map(function (results) { return results.filter(function (result) { return result.startDate < _this.newDate; }); });
         }
-        else if (selectedDate == this.dates[3]) {
+        else if (selectedDate === this.dates[3]) {
             selectedDate = new Date();
             selectedDate = selectedDate.setDate(selectedDate.getDate() + 14);
             var dateFormatPipeFilter = new __WEBPACK_IMPORTED_MODULE_2__dateFormatPipe__["a" /* dateFormatPipe */]();
             this.newDate = dateFormatPipeFilter.transform(selectedDate);
-            this.results = this.results.map(function (results) { return results.filter(function (result) { return result.date < _this.newDate; }); });
+            this.results = this.results.map(function (results) { return results.filter(function (result) { return result.startDate < _this.newDate; }); });
         }
     };
     ResultsComponent.prototype.onClickPrice = function (selectedPrice) {
         var _this = this;
-        if (selectedPrice == this.num[0]) {
+        if (selectedPrice === this.num[0]) {
             this.results = this.results.map(function (results) { return results.filter(function (result) { return result.price < _this.num[0]; }); });
         }
-        else if (selectedPrice == this.num[1]) {
+        else if (selectedPrice === this.num[1]) {
             this.results = this.results.map(function (results) { return results.filter(function (result) { return result.price < _this.num[1]; }); });
         }
-        else if (selectedPrice == this.num[2]) {
+        else if (selectedPrice === this.num[2]) {
             this.results = this.results.map(function (results) { return results.filter(function (result) { return result.price < _this.num[2]; }); });
         }
-        else if (selectedPrice == this.num[3]) {
+        else if (selectedPrice === this.num[3]) {
             this.results = this.results.map(function (results) { return results.filter(function (result) { return result.price < _this.num[3]; }); });
         }
-        else if (selectedPrice == this.num[4]) {
+        else if (selectedPrice === this.num[4]) {
             this.results = this.results.map(function (results) { return results.filter(function (result) { return result.price < _this.num[4]; }); });
         }
     };
@@ -963,33 +964,12 @@ var ResultsComponent = /** @class */ (function () {
         function check_type(element, index, array) {
             return element === selectedSex;
         }
-        if (selectedSex == this.sex[0] || selectedSex == this.sex[1]) {
+        if (selectedSex === this.sex[0] || selectedSex === this.sex[1]) {
             this.results = this.results.map(function (results) { return results.filter(function (result) { return result.sex.some(check_type); }); });
         }
     };
-    ResultsComponent.prototype.onClickDistanceHandler = function (distance) {
-        var selectedDistance = distance;
-        if (selectedDistance == this.dis[0]) {
-            //this.results
-        }
-        else if (selectedDistance == this.dis[1]) {
-            //this.results
-        }
-        else if (selectedDistance == this.dis[2]) {
-            //this.results
-        }
-        else if (selectedDistance == this.dis[3]) {
-            //this.results
-        }
-        else if (selectedDistance == this.dis[4]) {
-            //this.results
-        }
-        else if (selectedDistance == this.dis[5]) {
-            //this.results
-        }
-    };
-    ResultsComponent.prototype.onClickLocationHandler = function (location) {
-        this.selectedLocation = location;
+    ResultsComponent.prototype.onClickLocationHandler = function (geo) {
+        this.selectedLocation = geo;
         this.show = true;
     };
     ResultsComponent.prototype.selectTypeHandler = function (event) {
@@ -1018,13 +998,19 @@ var ResultsComponent = /** @class */ (function () {
     ResultsComponent.prototype.back = function () {
         this.show = false;
     };
+    ResultsComponent.prototype.map = function () {
+        this.show_map = true;
+    };
+    ResultsComponent.prototype.list = function () {
+        this.show_map = false;
+    };
     ResultsComponent = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
             selector: 'app-results',
             template: __webpack_require__("./src/app/search-results/results.component.html"),
             styles: [__webpack_require__("./src/app/search-results/results.component.css")]
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_event_service__["a" /* EventService */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__services_event_service__["a" /* EventService */], __WEBPACK_IMPORTED_MODULE_3__services_location_service__["a" /* LocationService */]])
     ], ResultsComponent);
     return ResultsComponent;
 }());
@@ -1113,7 +1099,7 @@ var AuthService = /** @class */ (function () {
     };
     AuthService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["c" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Http */]])
     ], AuthService);
     return AuthService;
 }());
@@ -1178,171 +1164,19 @@ var EventService = /** @class */ (function () {
         };
     };
     /* GET heroes whose name contains search term */
-    EventService.prototype.searchEvents = function (term) {
-        if (!term.trim()) {
+    EventService.prototype.searchEvents = function (searchTerms, geo, distance) {
+        if (!searchTerms.trim()) {
             // if not search term, return empty hero array.
             return Object(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_of__["a" /* of */])([]);
         }
-        return this.http.get("api/events/?title=" + term).pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["catchError"])(this.handleError('searchEvents', [])));
+        // tslint:disable-next-line:max-line-length
+        return this.http.get(this.BASE_URL + "/api/events/search?searchTerms=" + searchTerms + "&distance=" + distance + "&lat=" + geo.lat + "&lon=" + geo.lon).pipe(Object(__WEBPACK_IMPORTED_MODULE_4_rxjs_operators__["catchError"])(this.handleError('searchEvents', [])));
     };
     EventService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["b" /* HttpClient */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_common_http__["a" /* HttpClient */]])
     ], EventService);
     return EventService;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/services/in-memory-data.service.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return InMemoryDataService; });
-var InMemoryDataService = /** @class */ (function () {
-    function InMemoryDataService() {
-    }
-    InMemoryDataService.prototype.createDb = function () {
-        var events = [
-            { id: 1,
-                title: 'ΜΟΥΣΙΚΗ ΓΙΑ ΠΑΙΔΙΑ',
-                short_description: 'Το Jazz for kids είναι μια μοναδική μουσικοχορευτική παράσταση για παιδιά που έρχεται να ευαισθητοποιήσει και να ψυχαγωγήσει τους μικρούς μας φίλους, μέσα από ήχους της Jazz φέρνοντας τα σε επαφή με την ιστορία της και την εξέλιξη της μέχρι τις μέρες μας.',
-                description: 'Το Jazz for kids για παιδιά είναι μια μοναδική μουσικοχορευτική παράσταση για παιδιά που έρχεται να ευαισθητοποιήσει και να ψυχαγωγήσει  τους μικρούς μας φίλους,  μέσα από γνωστούς ήχους της Jazz φέρνοντας τα σε επαφή με την ιστορία της και την εξέλιξη της μέχρι τις μέρες μας. Οι ήχοι παρασύρουν τα παιδιά στον ρυθμό, προσκαλώντας τα παράλληλα σε μια σειρά μουσικών βιωματικών παιχνιδιών με τη χρήση απλών ανακυκλώσιμων  υλικών  με στόχο να απογειώσουν την ελεύθερη έκφραση και την φαντασία τους. Ένα παραμύθι του Δημήτρη Λέντζου, στο όποιο το «Τραγούδι»  μέσα την ιστορία της Jazz και των ανθρώπων της συναντά την «Χαρά» και τη «Λύπη».  Αλλάζει ρυθμό και ύφος, επηρεάζει και επηρεάζεται από τα συναισθήματα, που προσπαθούν να το «βάψουν» με τα δικά τους χρώματα. Όλη η ιστορία εξελίσσεται  μέσα από τους ήχους και το ρυθμό της Jazz μουσικής. Με ζωντανή ορχήστρα και χορευτική ομάδα επί σκηνής, το Jazz for kids μας ταξιδεύει με μελωδίες σε όλη την ιστορία της Jazzκαι προάγει την έννοια της δημιουργικότητας, της καινοτομίας και της αλληλεγγύης. Η μελωδία και ο ρυθμός είναι η αφορμή για να έρθουν τα παιδιά σε επαφή με την πολυπολιτισμικότητα και την παγκόσμια γλώσσα των συναισθημάτων.',
-                image: '../../assets/images/jazz.jpg',
-                price: 16,
-                numberOfTickets: 100,
-                location: 'Αλκμήνης 8, Αθήνα, 118 54',
-                type: ['Θέατρο', 'Μουσική'],
-                age: ['5-12 ετών', ' 12-18 ετών'],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '05/03/2018'
-            },
-            { id: 2,
-                title: 'ΡΟΜΠΕΝ ΤΩΝ ΔΑΣΩΝ',
-                short_description: 'Ο πασίγνωστος και αγαπημένος μύθος του «Ρομπέν των Δασών» σε μια διασκευή που γράφτηκε ειδικά για την παράσταση του Θέατρου Τέχνης. Μια περιπέτεια εποχής, γεμάτη χιούμορ και ανατροπές.',
-                description: 'Ο πασίγνωστος και αγαπημένος μύθος του «Ρομπέν των Δασών» σε μια διασκευή που γράφτηκε ειδικά για την παράσταση του Θέατρου Τέχνης. Μια περιπέτεια εποχής, γεμάτη χιούμορ και ανατροπές. Μια υπέροχη ιστορία που μιλά για τη δύναμη του καλού, τη δικαιοσύνη, τη φιλία, την αλληλεγγύη.',
-                image: '../../assets/images/roben.jpg',
-                price: 10,
-                numberOfTickets: 120,
-                location: 'Φρυνίχου 14, Πλάκα',
-                type: ['Θέατρο'],
-                age: ['12-18 ετών'],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '08/03/2018'
-            },
-            { id: 3,
-                title: 'ΚΑΛΟΚΑΙΡΙΝΗ ΝΥΧΤΑ',
-                short_description: 'Ο Πουκ, το λατρεμένο ξωτικό των παιδιών, ο γκαφατζής θίασος των μαστόρων, τα ζευγάρια των νέων ερωτευμένων, η Βασίλισσα των ξωτικών Τιτάνια με τον αγαπημένο της γάιδαρο, όλοι, άνθρωποι και ξωτικά, περιπλέκονται σε μια από τις πιο αστείες ιστορίες που έχουν γραφτεί ποτέ.',
-                description: 'Ο σκηνοθέτης Δημήτρης Αδάμης διασκευάζει για τα παιδιά, το πιο πολυπαιγμένο και αγαπημένο θεατρικό έργο σε όλο τον κόσμο για να φέρει στις καρδιές μικρών και μεγάλων τη δύναμη της νιότης , του αυθορμητισμού και της φαντασίας. Η παράσταση είναι ειδικά φτιαγμένη για τα παιδιά από το υλικό των ονείρων και με σύγχρονη , αθώα και δροσερή ματιά μαγεύει τους μικρούς θεατές και τους συστήνει τον σπουδαίο συγγραφέα μέσα από την ελαφρότητα ενός ψιθύρου. Ο Πουκ , το λατρεμένο ξωτικό των παιδιών, ο γκαφατζής θίασος των μαστόρων ,τα ζευγάρια των νέων ερωτευμένων ,η Βασίλισσα των ξωτικών Τιτάνια με τον αγαπημένο της γάιδαρο ,όλοι , άνθρωποι και ξωτικά , περιπλέκονται σε μια από τις πιο αστείες ιστορίες που έχουν γραφτεί ποτέ. Με μια ολοκαίνουρια διασκευή , καινούρια σκηνικά και κοστούμια, καινούριες χορογραφίες αλλά και τα μοναδικά τραγούδια που Ελισαβετιανοί συνθέτες επιστρατεύτηκαν την εποχή του Σαίξπηρ να συνθέσουν για τα έργα του, διασκευασμένα ειδικά για τις ανάγκες της παράστασης .Πάνω από όλα όμως με μια ομάδα εξαιρετικών ηθοποιών με πολλές εκπλήξεις στη διανομή των ρόλων .',
-                image: '../../assets/images/summer.jpg',
-                price: 6,
-                numberOfTickets: 50,
-                location: {
-                    lat: 37.978091,
-                    lon: 23.752676 // 'Παπαδιαμαντοπούλου 4, Ιλίσια',
-                },
-                type: ['Θέατρο'],
-                age: ['5-12 ετών', ' 12-18 ετών'],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '05/03/2018'
-            },
-            { id: 4,
-                title: 'ΤΑΙΝΙΑ ΤΟ ΓΑΤΟΞΟΡΚΙ',
-                short_description: 'Ένας διασκεδαστής σε παιδικά πάρτι, που φοράει στολή γάτου, αποφασίζει να αλλάξει τη ζωή του με τη βοήθεια ενός μάγου. Εκείνος όμως τον μεταμορφώνει σε αληθινό γάτο και στη συνέχεια προσπαθεί να λύσει το ξόρκι του.',
-                description: 'Πρόκειται για μια περιπέτεια κινουμένων σχεδίων που έρχεται από τη Βραζιλία, δια χειρός Rafael Ribas. Ο Λίνο είναι ένας διασκεδαστής σε παιδικά πάρτι που δεν αντέχει άλλο τη ρουτίνα του και το γάτο-κοστούμι του. Αποφασίζει έτσι να ζητήσει βοήθεια από έναν όχι και τόσο ταλαντούχο μάγο που τον μεταμορφώνει σε αυτό που μισεί περισσότερο: το κοστούμι του.',
-                image: '../../assets/images/cat.jpg',
-                price: 6,
-                numberOfTickets: 70,
-                location: 'Λεωφ. Βασιλίσσης Σοφίας 124, Αθήνα 115 26',
-                type: ['Κινηματογράφος'],
-                age: ['3-5 ετών', ' 5-12 ετών'],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '07/03/2018'
-            },
-            { id: 5,
-                title: 'ΛΙΟΝΤΑΡΙ ΚΑΙ ΠΟΝΤΙΚΙ',
-                short_description: 'Ο δυνατός και ο αδύναμος, ο μεγάλος και ο μικρός. Δύο ήρωες τόσο διαφορετικοί συναντιούνται σε έναν μύθο του Αισώπου και μας δείχνουν πόσο χρειάζεται ο ένας τον άλλο! Πώς κατάφερε ένας μικρούλης ποντικός να σώσει το δυνατό λιοντάρι; Ακριβώς έτσι κι εμείς, πότε μικροί και πότε μεγάλοι, ανακαλύπτουμε τη «δύναμή» μας μέσα από παιχνίδια έκφρασης και ρόλων.',
-                description: 'Ο δυνατός και ο αδύναμος, ο μεγάλος και ο μικρός. Δύο ήρωες τόσο διαφορετικοί συναντιούνται σε έναν μύθο του Αισώπου και μας δείχνουν πόσο χρειάζεται ο ένας τον άλλο! Πώς κατάφερε ένας μικρούλης ποντικός να σώσει το δυνατό λιοντάρι; Ακριβώς έτσι κι εμείς, πότε μικροί και πότε μεγάλοι, ανακαλύπτουμε τη «δύναμή» μας μέσα από παιχνίδια έκφρασης και ρόλων. Με ερέθισμα την αφήγηση του μύθου παιδιά και γονείς δημιουργούν και ξεκινούν ένα ταξίδι στο μύθο μέσω της δραματοποίησης του μύθου. Πώς ένιωθε το λιοντάρι και το ποντίκι στη σπηλιά; Πώς είναι το θυμωμένο λιοντάρι, και τι συμβαίνει όταν αυτό παγιδευτεί;',
-                image: '../../assets/images/lion.jpg',
-                price: 4,
-                numberOfTickets: 50,
-                location: 'Πειραιώς 254, Αθήνα 177 78',
-                type: ['Εκπαίδευση'],
-                age: ['3-5 ετών'],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '15/03/2018'
-            },
-            { id: 6,
-                title: 'ΤΑΙΝΙΑ ΠΑΝΤΙΝΓΚΤΟΝ',
-                short_description: 'Το αρκουδάκι Πάντινγκτον ταξιδεύει από τα βάθη της ζούγκλας του σκοτεινού Περού στο downtown του Λονδίνου. Την ίδια στιγμή όμως που το ατσούμπαλο τετράποδο δυσκολεύεται να προσαρμοστεί στους αστικούς κανόνες ζωής, μια σατανική ταριχεύτρια έχει βάλει σκοπό να παγώσει το αρκουδίσιο χαμόγελό του μια και καλή…',
-                description: 'Ο Πάντινγκτον, ο πιο αγαπημένος αρκούδος στον κόσμο, επιστρέφει σε μία ξεκαρδιστική και γεμάτη δράση ταινία. Ο Πάντινγκτον ζει πλέον ευτυχισμένος με την καινούρια του οικογένεια, τους Μπράουν, στο Ουίνζντορ Γκάρντενς. Κι ενώ ψάχνει να βρει το τέλειο δώρο για την θεία του τη Λούση, που κλείνει τα 100 της χρόνια, ο Πάντινγκτον εντοπίζει ένα μοναδικό pop-up βιβλίο στην αντικερί του κ. Γκρούμπεν. Όταν όμως το βιβλίο εξαφανίζεται, ο Πάντινγκτον και οι Μπράουν ξεκινάνε ένα απίστευτο περιπετειώδες ταξίδι προκειμένου να λύσουν το μυστήριο.',
-                image: '../../assets/images/bear.jpg',
-                price: 8,
-                numberOfTickets: 60,
-                location: 'Ανδρέα Παπανδρέου 35, Μαρούσι 151 22',
-                type: ['Κινηματογράφος'],
-                age: ['3-5 ετών', ' 5-12 ετών'],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '13/03/2018'
-            },
-            { id: 7,
-                title: 'Ο ΓΥΡΟΣ ΤΟΥ ΚΟΣΜΟΥ',
-                short_description: 'Θα ήθελες να κάνεις τον Γύρο του Κόσμου; Να δεις πώς ζουν τα παιδιά από τη μία άκρη της γης έως την άλλη! Φαντάσου πώς είναι η ζωή στην έρημο, στη ζούγκλα και στους πάγους. Υπάρχουν τόσα διαφορετικά μέρη! Εσένα, πού θα σου άρεσε να ζεις; Έλα να διαλέξεις, αφού ανακαλύψεις μικρά μυστικά κάθε τόπου μέσα από το παιχνίδι!',
-                description: 'Θα ήθελες να κάνεις τον Γύρο του Κόσμου; Να δεις πώς ζουν τα παιδιά από τη μία άκρη της γης έως την άλλη! Φαντάσου πώς είναι η ζωή στην έρημο, στη ζούγκλα και στους πάγους. Υπάρχουν τόσα διαφορετικά μέρη! Εσένα, πού θα σου άρεσε να ζεις; Έλα να διαλέξεις, αφού ανακαλύψεις μικρά μυστικά κάθε τόπου μέσα από το παιχνίδι! Ένα μαγικό χαλί μας ταξιδεύει σε κάθε γωνιά της γης. Ένα ταξίδι στις πέντε ηπείρους για να ανακαλύψουμε στοιχεία πολιτισμού, πανίδας και χλωρίδας. Ένα ταξίδι γεμάτο παιχνίδι, χορό, εικόνες και δημιουργία!',
-                image: '../../assets/images/world.jpg',
-                price: 35,
-                numberOfTickets: 30,
-                location: 'Πειραιώς 254, Αθήνα 177 78',
-                type: ['Εκπαίδευση'],
-                age: ['3-5 ετών'],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '14/03/2018'
-            },
-            { id: 8,
-                title: 'ΑΘΛΗΤΙΚΟ ΦΕΣΤΙΒΑΛ',
-                short_description: 'Καλοκαιρινός αγώνας με ποδήλατα ισορροπίας για μικρά παιδιά, με σκοπό κάθε παιδί να παίξει, να τρέξει και να νικήσει, μαθαίνοντας ότι στην ζωή η αγάπη πάντα θα νικάει. Σε αυτό τον αγώνα κάθε παιδί είναι νικητής και γι’ αυτό το λόγο όλα τα παιδιά βραβεύονται με μετάλλια, επαίνους, καπέλα, σφυρίχτρες, μπαλόνια και πολλά άλλα πλούσια δώρα. Οι μεγάλοι νικητές των κατηγοριών ανταμείβονται με ένα πλήρες σετ ποδηλάτου.',
-                description: 'Κάθε μικρός ποδηλάτης θα έχει την ευκαιρία να «τρέξει» με ένα ποδήλατο ισορροπίας στην ειδικά διαμορφωμένη πίστα που θα κατασκευαστεί στο μέσο του γηπέδου, να διασκεδάσει με τους ανιματέρ, να σκαρφαλώσει και να συμμετέχει σε εκπαιδευτικά παιχνίδια και ζωντανές εκδηλώσεις. Το παιδί δεν χρειάζεται να ξέρει ποδήλατο για να πάρει μέρος αφού το ποδήλατο ισορροπίας δεν έχει πετάλια. Είναι εκπαιδευτικό και χρησιμοποιείται ως περπατούρα για την εκμάθηση της ισορροπίας. Για κάθε παιδί που δεν έχει ποδήλατο ισορροπίας, η γραμματεία θα φροντίσει ώστε να του παρέχει ένα, καθώς και παιδικό κράνος ποδηλάτου και γάντια ποδηλάτου.',
-                image: '../../assets/images/race.jpg',
-                price: 3,
-                numberOfTickets: 150,
-                location: 'Νίκου Ζέρβα 56, Γλυφάδα',
-                type: ['Αθλητισμός'],
-                age: ['1-3 ετών'],
-                sex: ['Αγόρι'],
-                date: '16/03/2018'
-            },
-            { id: 9,
-                title: 'ΠΡΩΤΑΘΛΗΜΑ ΤΕΝΙΣ',
-                short_description: 'Η Ακαδημία Αντισφαίρισης του Sunny Sports Club σε συνεργασία με την ομάδα γυμναστών του Ομίλου διοργανώνουν το δεύτερο μαραθώνιο event της χρονιάς για όλα τα παιδιά της Ακαδημίας.',
-                description: 'Κατά την διάρκεια του διημέρου τα παιδιά θα αγωνιστούν σε κατηγορίες ανάλογα την ηλικία και το βαθμό εξοικείωσης τους με το άθλημα και θα έχουν την ευκαιρία να παίξουν αγώνες τένις, να αναμετρηθούν με τους συναθλητές τους και τον εαυτό τους, αλλά και να καταλάβουν γιατί το τένις μπορεί να είναι ένα τόσο διασκεδαστικό άθλημα!',
-                image: '../../assets/images/tennis.jpg',
-                price: 10,
-                numberOfTickets: 100,
-                location: 'Καστρίτσας 61, Νεά Ερυθραία',
-                type: ['Αθλητισμός'],
-                age: ['3-5 ετών', ' 5-12 ετών', ' 12-18 ετών'],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '09/03/2018'
-            },
-            { id: 10,
-                title: 'ΝΕΟΣ ΠΑΙΔΟΤΟΠΟΣ',
-                short_description: 'Με ξεχωριστές δραστηριότητες που θα κρατήσουν τα παιδιά απασχολημένα για ώρα, ο παιδότοπος υπόσχεται ότι θα εξάψει τη δημιουργικότητα και τη φαντασία τους, χωρίς να βαρεθούν ούτε λεπτό.',
-                description: 'Με ξεχωριστές δραστηριότητες που θα κρατήσουν τα παιδιά απασχολημένα για ώρα, ο παιδότοπος υπόσχεται ότι θα εξάψει τη δημιουργικότητα και τη φαντασία τους, χωρίς να βαρεθούν ούτε λεπτό. Ενδεικτικά, η δημιουργική απασχόληση περιλαμβάνει ξεχωριστές κατασκευές, παιχνίδια, ζωγραφική, μουσική, ακόμα και πειράματα τόσο στα πρωινά όσο και στα απογευματινά εργαστήρια.',
-                image: '../../assets/images/draw.jpg',
-                price: 7,
-                numberOfTickets: 25,
-                location: 'Θεομήτορος 48, Άγιος Δημήτριος',
-                type: ['Παιδότοποι', 'Ζωγραφική'],
-                age: ['1-3', ' 3-5', ' 5-12',],
-                sex: ['Αγόρι', 'Κορίτσι'],
-                date: '05/03/2018'
-            },
-        ];
-        return { events: events };
-    };
-    return InMemoryDataService;
 }());
 
 
@@ -1379,23 +1213,23 @@ var LocationService = /** @class */ (function () {
     //   // tslint:disable-next-line:max-line-length
     //   return this.http.get<any>('https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback');
     // }
-    //   getLatLon(term: string): Promise<any> {
-    //     // tslint:disable-next-line:max-line-length
-    //     return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + term + ', ΕλλάδαCA&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback&language=el')
-    //          .toPromise()
-    //          .then((response) => Promise.resolve(response.json()))
-    //          .catch((error) => Promise.resolve(error.json()));
-    //  }
-    LocationService.prototype.getLοcation = function (location) {
+    LocationService.prototype.getLatLon = function (term) {
         // tslint:disable-next-line:max-line-length
-        return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.lat + ',' + location.lon + '&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback&language=el')
+        return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?address=' + term + ', ΕλλάδαCA&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback&language=el')
+            .toPromise()
+            .then(function (response) { return Promise.resolve(response.json()); })
+            .catch(function (error) { return Promise.resolve(error.json()); });
+    };
+    LocationService.prototype.getLοcation = function (geo) {
+        // tslint:disable-next-line:max-line-length
+        return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + geo.lat + ',' + geo.lon + '&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback&language=el')
             .toPromise()
             .then(function (response) { return Promise.resolve(response.json()); })
             .catch(function (error) { return Promise.resolve(error.json()); });
     };
     LocationService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]])
     ], LocationService);
     return LocationService;
 }());

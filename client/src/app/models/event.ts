@@ -1,17 +1,17 @@
 export class Event {
-    id: number;
+    _id: number;
     title: string;
-    short_description: string;
+    shortDescription: string;
     description: string;
     image: string;
     price: number;
     numberOfTickets: number;
-    location: {
+    geo: {
       lat: number;
       lon: number;
     };
-    type: [string];
+    eventType: [string];
     age: [number];
     sex: [string];
-    date: Date;
+    startDate: Date;
 }

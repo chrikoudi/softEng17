@@ -18,17 +18,18 @@ export class EventpageComponent implements OnInit {
 
   @ViewChild('content') content: ElementRef;
 
-  @Input() event: Event;
+  event: Event;
   show: boolean;
-  quantity = 1;
+  numberOfTickets = 1;
   total: number;
   user: object;
+  events: Event[];
 
   constructor(
     private route: ActivatedRoute,
     public auth: AuthService,
     private eventService: EventService,
-    private location: Location,
+    private geo: Location,
     private locService: LocationService) {
 
       this.user = this.auth.getUser();
@@ -42,45 +43,45 @@ export class EventpageComponent implements OnInit {
   }
 
   getEvent(): void {
-    const id = +this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('id');
     this.eventService.getEvent(id)
     .subscribe( (event) => {
       this.event = event;
-      this.locService.getLοcation(this.event.location)
-      .then((response) => this.event.location = response.results[0].formatted_address);
+      this.locService.getLοcation(this.event.geo)
+      .then((response) => this.event.geo = response.results[0].formatted_address);
     });
   }
 
   goBack(): void {
-    this.location.back();
+    this.geo.back();
   }
 
   minus() {
-    if (this.quantity === 1) { this.quantity = 1;
-    } else { this.quantity =  this.quantity - 1; }
+    if (this.numberOfTickets === 1) { this.numberOfTickets = 1;
+    } else { this.numberOfTickets =  this.numberOfTickets - 1; }
   }
 
   plus() {
-    if (this.quantity === this.event.numberOfTickets) {
-      this.quantity = this.quantity;
+    if (this.numberOfTickets === this.event.numberOfTickets) {
+      this.numberOfTickets = this.numberOfTickets;
     } else {
-      this.quantity = this.quantity + 1;
+      this.numberOfTickets = this.numberOfTickets + 1;
     }
   }
 
   buy_tickets() {
     this.show = true;
-    this.total = this.quantity * this.event.price;
+    this.total = this.numberOfTickets * this.event.price;
   }
 
   checkout(): void {
     console.log('okey');
     this.download();
-    this.event.numberOfTickets = this.event.numberOfTickets - this.quantity;
+    this.event.numberOfTickets = this.event.numberOfTickets - this.numberOfTickets;
     if (this.event.numberOfTickets === 0) {
-      this.quantity = 0;
+      this.numberOfTickets = 0;
     } else {
-      this.quantity = 1;
+      this.numberOfTickets = 1;
     }
     // this.eventService.updateEvent(this.event).subscribe();
     this.show = false;
@@ -88,14 +89,14 @@ export class EventpageComponent implements OnInit {
 
   buy_close() {
     this.show = false;
-    this.quantity = 1;
+    this.numberOfTickets = 1;
   }
 
   public download() {
 
     let doc = new jsPDF();
 
-    for (let i = 0 ; i < this.quantity; i++) {
+    for (let i = 0 ; i < this.numberOfTickets; i++) {
       let specialElementHandlers = {
         '#editor': function(element, renderer) {
           return true;
@@ -112,7 +113,7 @@ export class EventpageComponent implements OnInit {
       doc.addPage();
       // i = i + 1 ;
     }
-    doc.deletePage(this.quantity + 1);
+    doc.deletePage(this.numberOfTickets + 1);
     // Save the PDF
     doc.save(this.event.title + '.pdf');
 

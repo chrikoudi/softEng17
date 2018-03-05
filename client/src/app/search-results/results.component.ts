@@ -9,10 +9,10 @@ declare const google: any;
 
 interface SearchForm {
    searchTerms: string;
-   location: {
+   geo: {
      lat: number;
      lon: number;
-   } 
+   }
    distance: number;
 }
 
@@ -24,7 +24,7 @@ interface SearchForm {
 
 export class ResultsComponent implements OnInit {
 
-  newDate : any;
+  newDate: any;
 
   selectedType: [string];
   selectedAge: [string];
@@ -52,43 +52,43 @@ export class ResultsComponent implements OnInit {
 
    events: Event[];
 
-   results: Observable<Event[]>; 
+   results: Observable<Event[]>;
    temp_results: Observable<Event[]>;
 
   searchQuery: SearchForm = {
     searchTerms: '',
-    location: {
+    geo: {
       lat: 37.983810,
       lon: 23.727539
     },
     distance: 5
   };
 
-   constructor(private eventService: EventService, private locService: LocationService) { 
+   constructor(private eventService: EventService, private locService: LocationService) {
       this.show = false;
       this.show_map = false;
-   }     
+   }
 
   ngOnInit(): void {
     this.getEvents();
   }
-  
+
   search() {
-    const { searchTerms , location , distance } = this.searchQuery;
-    this.results = this.eventService.searchEvents(searchTerms, location, distance);
+    const { searchTerms , geo , distance } = this.searchQuery;
+    this.results = this.eventService.searchEvents(searchTerms, geo, distance);
     this.temp_results = this.results;
   }
 
   location_search(locationStr: string): void {
     this.locService.getLatLon(locationStr)
-        .then((response) => this.searchQuery.location = { lat: response.results[0].geometry.location.lat, lon: response.results[0].geometry.location.lng})
+        .then((response) => this.searchQuery.geo = { lat: response.results[0].geometry.geo.lat, lon: response.results[0].geometry.geo.lng})
         .catch((error) => console.error(error));
   }
 
   onClickDistanceHandler(dist: number) {
     this.searchQuery.distance = dist;
  }
-  
+
 
    getEvents(): void {
      this.results = this.eventService.getEvents();
@@ -96,97 +96,88 @@ export class ResultsComponent implements OnInit {
 
    selectType (selectedType) {
 
-    function check_type(element, index, array){ 
-      return element === selectedType
+    function check_type(element, index, array){
+      return element === selectedType;
     }
-    
-    if(selectedType == this.types[1] || selectedType == this.types[2] 
-         || selectedType == this.types[3] || selectedType == this.types[4] 
-         || selectedType == this.types[5] || selectedType == this.types[6]) 
-    {
-      this.results = this.results.map(results => results.filter(result => result.type.some(check_type)));
+
+    if (selectedType === this.types[1] || selectedType === this.types[2]
+         || selectedType === this.types[3] || selectedType === this.types[4]
+         || selectedType === this.types[5] || selectedType === this.types[6]) {
+      this.results = this.results.map(results => results.filter(result => result.eventType.some(check_type)));
     }
   }
 
    selectAge (selectedAge) {
 
-    function check_type(element, index, array){ 
-      return element === selectedAge
+    function check_type(element, index, array) {
+      return element === selectedAge;
     }
-    
-    if(selectedAge == this.ages[1] || selectedAge == this.ages[2] 
-         || selectedAge == this.ages[3] || selectedAge == this.ages[4]) 
-    {
+
+    if (selectedAge === this.ages[1] || selectedAge === this.ages[2]
+         || selectedAge === this.ages[3] || selectedAge === this.ages[4]) {
       this.results = this.results.map(results => results.filter(result => result.age.some(check_type)));
     }
   }
 
-  selectDate (selectedDate) { 
+  selectDate (selectedDate) {
 
-    if(selectedDate === this.dates[1])
-    {
-      selectedDate = new Date(); 
+    if (selectedDate === this.dates[1]) {
+      selectedDate = new Date();
       selectedDate = selectedDate.setDate(selectedDate.getDate() + 1);
       let dateFormatPipeFilter = new dateFormatPipe();
       this.newDate = dateFormatPipeFilter.transform(selectedDate);
-      this.results = this.results.map(results => results.filter(result => result.date === this.newDate));
-    } 
-    else if(selectedDate == this.dates[2])
-    {
-      selectedDate = new Date(); 
+      this.results = this.results.map(results => results.filter(result => result.startDate === this.newDate));
+    }
+    else if (selectedDate === this.dates[2]) {
+      selectedDate = new Date();
       selectedDate = selectedDate.setDate(selectedDate.getDate() + 7);
       let dateFormatPipeFilter = new dateFormatPipe();
       this.newDate = dateFormatPipeFilter.transform(selectedDate);
-      this.results = this.results.map(results => results.filter(result => result.date < this.newDate));
-    } 
-    else if(selectedDate == this.dates[3])
-    {
-      selectedDate = new Date(); 
+      this.results = this.results.map(results => results.filter(result => result.startDate < this.newDate));
+    }
+    else if (selectedDate === this.dates[3]) {
+      selectedDate = new Date();
       selectedDate = selectedDate.setDate(selectedDate.getDate() + 14);
       let dateFormatPipeFilter = new dateFormatPipe();
       this.newDate = dateFormatPipeFilter.transform(selectedDate);
-      this.results = this.results.map(results => results.filter(result => result.date < this.newDate));
+      this.results = this.results.map(results => results.filter(result => result.startDate < this.newDate));
     }
   }
 
   onClickPrice(selectedPrice) {
 
-    if(selectedPrice == this.num[0])
+    if(selectedPrice === this.num[0])
     {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[0]));
     }
-    else if(selectedPrice == this.num[1])
+    else if(selectedPrice === this.num[1])
     {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[1]));
     }
-    else if(selectedPrice == this.num[2])
+    else if(selectedPrice === this.num[2])
     {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[2]));
     }
-    else if(selectedPrice == this.num[3])
-    {
+    else if(selectedPrice === this.num[3]) {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[3]));
-    }
-    else if(selectedPrice == this.num[4])
-    {
+    } else if(selectedPrice === this.num[4]) {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[4]));
     }
   }
 
   onClickSex(selectedSex) {
 
-    function check_type(element, index, array){ 
-      return element === selectedSex
+    function check_type(element, index, array) {
+      return element === selectedSex;
     }
-     
-    if(selectedSex == this.sex[0] || selectedSex == this.sex[1]) 
-    {
+
+    if(selectedSex === this.sex[0] || selectedSex === this.sex[1]) {
       this.results = this.results.map(results => results.filter(result => result.sex.some(check_type)));
     }
-  }  
+  }
 
-  onClickLocationHandler(location) {
-    this.selectedLocation = location;
+  onClickLocationHandler(geo) {
+    this.selectedLocation = geo;
     this.show = true;
   }
 
@@ -210,8 +201,7 @@ export class ResultsComponent implements OnInit {
     this.selectedSex = sex;
   }
 
-  onClick()
-  {
+  onClick() {
     this.results = this.temp_results;
     this.selectType(this.selectedType);
     this.selectAge(this.selectedAge);

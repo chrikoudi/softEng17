@@ -15,7 +15,7 @@
             <div class="grid grid-pad">
               <a *ngFor="let event of events" class="col-1-4">
                 <div class="module event">
-                  <a routerLink="/results/{{event.id}}">
+                  <a routerLink="/results/{{event._id}}">
                     <h4>{{event.title}}</h4>
                     <img class="card-img-top" id="image" src="{{event.image}}" alt="Card image">
                   </a>

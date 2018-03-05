@@ -131,17 +131,17 @@
                 <li *ngFor="let ev of results | async | paginate: { itemsPerPage: 4, currentPage: p }" class="row card">
                     <img class="card-img-top" id="image" src="{{ev.image}}" alt="Card image">
                     <h4 class="card-title" id="title">{{ev.title}}</h4>
-                    <p class="card-text" id="text">{{ev.short_description}}</p>
-                    <a routerLink="/results/{{ev.id}}" class="btn btn-primary btn-sm" id="button">Προβολή</a>
+                    <p class="card-text" id="text">{{ev.shortDescription}}</p>
+                    <a routerLink="/results/{{ev._id}}" class="btn btn-primary btn-sm" id="button">Προβολή</a>
                 </li>
                 <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </form>
             <form *ngIf="show_map">
-                <agm-map [latitude]="searchQuery.location.lat" [longitude]="searchQuery.location.lon" [zoom]="(18 - searchQuery.distance * 0.4) ">
+                <agm-map [latitude]="searchQuery.geo.lat" [longitude]="searchQuery.geo.lon" [zoom]="(18 - searchQuery.distance * 0.4) ">
                     <div *ngFor="let ev of results | async">
                         <agm-marker 
-                            [latitude]="ev.location.lat" 
-                            [longitude]="ev.location.lon" 
+                            [latitude]="ev.geo.lat" 
+                            [longitude]="ev.geo.lon" 
                             [label]="ev.title">
                         </agm-marker>
                     </div> 

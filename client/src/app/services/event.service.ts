@@ -6,7 +6,7 @@ import { of } from 'rxjs/observable/of';
 import { catchError } from 'rxjs/operators';
 import { Event } from '../models/event';
 
-interface Loc {
+interface Geo {
   lat: number;
   lon: number;
 }
@@ -27,7 +27,7 @@ export class EventService {
     );
   }
 
-  getEvent(id: number): Observable<Event> {
+  getEvent(id: string): Observable<Event> {
     const url = `${this.BASE_URL}/api/events/${id}`;
     return this.http.get<Event>(url).pipe(
       catchError(this.handleError<Event>(`getEvent id=${id}`))
@@ -57,13 +57,13 @@ export class EventService {
 
     /* GET heroes whose name contains search term */
 
-    searchEvents(searchTerms: string, location: Loc, distance: number): Observable<Event[]> {
+    searchEvents(searchTerms: string, geo: Geo, distance: number): Observable<Event[]> {
       if (!searchTerms.trim()) {
         // if not search term, return empty hero array.
         return of([]);
       }
       // tslint:disable-next-line:max-line-length
-      return this.http.get<Event[]>(`${this.BASE_URL}/api/events/search?searchTerms=${searchTerms}&distance=${distance}&lat=${location.lat}&lon=${location.lon}`).pipe(
+      return this.http.get<Event[]>(`${this.BASE_URL}/api/events/search?searchTerms=${searchTerms}&distance=${distance}&lat=${geo.lat}&lon=${geo.lon}`).pipe(
         catchError(this.handleError<Event[]>('searchEvents', []))
       );
     }

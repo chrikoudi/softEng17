@@ -16,7 +16,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { ResultsComponent } from './search-results/results.component';
 import { BuypointsComponent } from './buypoints/buypoints.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './services/in-memory-data.service';
+// import { InMemoryDataService } from './services/in-memory-data.service';
 import { CreateeventComponent } from './createevent/createevent.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SignupformComponent } from './signupform/signupform.component';
@@ -55,7 +55,7 @@ import { AgmSnazzyInfoWindowModule } from '@agm/snazzy-info-window';
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
+    // HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, { dataEncapsulation: false }),
     RouterModule.forRoot(routes),
     NgxPaginationModule,
     AgmCoreModule.forRoot({

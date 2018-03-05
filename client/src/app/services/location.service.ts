@@ -23,9 +23,9 @@ export class LocationService {
            .catch((error) => Promise.resolve(error.json()));
    }
 
-   getLοcation(location): Promise<any> {
+   getLοcation(geo): Promise<any> {
     // tslint:disable-next-line:max-line-length
-    return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + location.lat + ',' + location.lon + '&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback&language=el')
+    return this.http.get('https://maps.googleapis.com/maps/api/geocode/json?latlng=' + geo.lat + ',' + geo.lon + '&key=AIzaSyCGYll29pPK9lk2lpQOGSL7e5XQOBovGBM&callback&language=el')
          .toPromise()
          .then((response) => Promise.resolve(response.json()))
          .catch((error) => Promise.resolve(error.json()));
