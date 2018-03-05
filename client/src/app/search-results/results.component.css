@@ -132,6 +132,12 @@
     padding: 0% 2%;
 }
 
+#info {
+    width: 35%;
+    height: 35%;
+    margin: auto;
+}
+
 agm-map {
     height: 600px;
   }

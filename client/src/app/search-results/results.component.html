@@ -15,9 +15,9 @@
                     <div class="col-12 col-lg-7 position">
                         <h5>Τοποθεσία</h5>
                         <form *ngIf="!show">
-                            <button type="button" class="btn btn-info btn-sm" (click) = "onClickLocationHandler(loc[0])">{{loc[0]}}</button>
+                            <button type="button" class="btn btn-info btn-sm" (click) = "onClickLocationH(loc[0])">{{loc[0]}}</button>
                             &nbsp;
-                            <button type="button" class="btn btn-info btn-sm" (click) = "onClickLocationH(loc[1])">{{loc[1]}}</button>
+                            <button type="button" class="btn btn-info btn-sm" (click) = "onClickLocationHandler(loc[1])">{{loc[1]}}</button>
                         </form>
                         <form *ngIf="show">
                             <div class="input-group">
@@ -35,6 +35,8 @@
                                 <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[0])">< {{dis[0]}}</button>
                                 <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[1])">< {{dis[1]}}</button>
                                 <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[2])">< {{dis[2]}}</button>
+                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[3])">< {{dis[3]}}</button>
+                                <button type="button" class="btn btn-info btn-sm" (click) = "onClickDistanceHandler(dis[4])">< {{dis[4]}}</button>                            
                             </div>
                         </div>
                     </div>
@@ -142,7 +144,18 @@
                         <agm-marker 
                             [latitude]="ev.geo.lat" 
                             [longitude]="ev.geo.lon" 
-                            [label]="ev.title">
+                            (mouseOver)="onMouseOver(infoWindow,gm)">
+
+                            <agm-info-window [disableAutoPan]="false" #infoWindow>
+                                <div>
+                                    <h4>{{ev.title}}</h4>
+                                    <p>{{ev.shortDescription}}</p>
+                                    <img id="info" src="{{ev.image}}">
+                                </div>
+                                <div>
+                                    <a (click)="onClickInfoView({id:ev._id})"></a>
+                                </div>
+                            </agm-info-window>
                         </agm-marker>
                     </div> 
                 </agm-map>

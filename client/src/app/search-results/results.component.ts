@@ -12,7 +12,7 @@ interface SearchForm {
    geo: {
      lat: number;
      lon: number;
-   }
+   };
    distance: number;
 }
 
@@ -31,10 +31,9 @@ export class ResultsComponent implements OnInit {
   selectedDate: Date;
   selectedPrice: number;
   selectedSex: [string];
-  selectedDistance: number;
   selectedLocation: string;
 
-   p: number = 1;
+   p = 1;
 
    event: Event;
 
@@ -42,7 +41,7 @@ export class ResultsComponent implements OnInit {
    show_map: boolean;
 
    num = [5, 10, 15, 30, 50];
-   dis = [1, 5, 10];
+   dis = [1, 3, 5, 10, 20];
    sex = ['Αγόρι', 'Κορίτσι'];
    loc = ['Τρέχουσα', 'Ορισμός'];
 
@@ -58,8 +57,8 @@ export class ResultsComponent implements OnInit {
   searchQuery: SearchForm = {
     searchTerms: '',
     geo: {
-      lat: 37.983810,
-      lon: 23.727539
+      lat: 37.9700818,
+      lon: 23.7284641
     },
     distance: 5
   };
@@ -92,6 +91,7 @@ export class ResultsComponent implements OnInit {
 
    getEvents(): void {
      this.results = this.eventService.getEvents();
+     this.temp_results = this.results;
    }
 
    selectType (selectedType) {
@@ -146,21 +146,15 @@ export class ResultsComponent implements OnInit {
 
   onClickPrice(selectedPrice) {
 
-    if(selectedPrice === this.num[0])
-    {
+    if (selectedPrice === this.num[0]) {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[0]));
-    }
-    else if(selectedPrice === this.num[1])
-    {
+    } else if (selectedPrice === this.num[1]) {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[1]));
-    }
-    else if(selectedPrice === this.num[2])
-    {
+    } else if (selectedPrice === this.num[2]) {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[2]));
-    }
-    else if(selectedPrice === this.num[3]) {
+    } else if (selectedPrice === this.num[3]) {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[3]));
-    } else if(selectedPrice === this.num[4]) {
+    } else if (selectedPrice === this.num[4]) {
       this.results = this.results.map(results => results.filter(result => result.price < this.num[4]));
     }
   }
@@ -171,7 +165,7 @@ export class ResultsComponent implements OnInit {
       return element === selectedSex;
     }
 
-    if(selectedSex === this.sex[0] || selectedSex === this.sex[1]) {
+    if (selectedSex === this.sex[0] || selectedSex === this.sex[1]) {
       this.results = this.results.map(results => results.filter(result => result.sex.some(check_type)));
     }
   }
@@ -221,5 +215,16 @@ export class ResultsComponent implements OnInit {
   list() {
     this.show_map = false;
   }
+
+  onMouseOver(infoWindow, gm) {
+
+    if (gm.lastOpen != null) {
+        gm.lastOpen.close();
+    }
+
+    gm.lastOpen = infoWindow;
+
+    infoWindow.open();
+}
 
 }
